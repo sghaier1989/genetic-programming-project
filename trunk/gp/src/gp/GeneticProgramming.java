@@ -98,7 +98,6 @@ public class GeneticProgramming extends javax.swing.JFrame {
 	private javax.swing.JLabel runtimeLabel;
 	private javax.swing.JLabel runtimeValueLabel;
 	private javax.swing.JSplitPane splitPane;
-	private javax.swing.JButton stopButton;
 	private javax.swing.JTabbedPane tabbedPane;
 	private javax.swing.JLabel terminalSetLabel;
 	private javax.swing.JTextField terminalSetTextField;
@@ -133,10 +132,6 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		return chart;
 	}
 
-	private void equationTextFieldActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
 	private void equationTextFieldActionPerformed(java.awt.event.KeyEvent e) {
 		char c = e.getKeyChar();
 		if (!((Character.isDigit(c) || (c == KeyEvent.VK_BACK_SPACE)
@@ -150,11 +145,6 @@ public class GeneticProgramming extends javax.swing.JFrame {
 
 	@SuppressWarnings("unused")
 	private void fitnessTextFieldActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void functionalSetTextFieldActionPerformed(
-			java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 	}
 
@@ -226,7 +216,6 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		fitnassValueLabel = new javax.swing.JLabel();
 		buttonPanel = new javax.swing.JPanel();
 		runButton = new javax.swing.JButton();
-		stopButton = new javax.swing.JButton();
 		tabbedPane = new javax.swing.JTabbedPane();
 
 		finalResultPanel.setBorder(javax.swing.BorderFactory
@@ -654,7 +643,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 			return false;
 		}
 		try {
-			int min = Integer.parseInt(minTrainingDataTextField.getText());
+			Integer.parseInt(minTrainingDataTextField.getText());
 		} catch (Exception e) {
 			JOptionPane
 					.showMessageDialog(
@@ -778,21 +767,6 @@ public class GeneticProgramming extends javax.swing.JFrame {
 	@SuppressWarnings("unused")
 	private void runtimeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
-	}
-
-	private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		if (thread.isAlive()) {
-			System.out.println("HERE ");
-			try {
-
-				Thread.currentThread().interrupt();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
-			// do nothing its already stopped
-		}
-
 	}
 
 	private void terminalSetTextFieldActionPerformed(java.awt.event.KeyEvent e) {
