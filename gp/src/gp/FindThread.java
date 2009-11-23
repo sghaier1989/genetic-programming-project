@@ -643,8 +643,8 @@ public class FindThread extends Thread {
 			EquationGraphPanel equationGraphPanel) {
 		equationGraphPanel.setTree(newTree);
 		equationGraphPanel.setTargetEquation(getTargetExpersion());
-		equationGraphPanel.setTrainingData(genertateTrainingDataSet(-10000,
-				10000));
+		equationGraphPanel.setTrainingData(genertateTrainingDataSet(-100,
+				100));
 		JFreeChart chart = getEquationGraphPanel().createChart(
 				equationGraphPanel.createDataset());
 		equationGraphPanel.setChart(chart);
