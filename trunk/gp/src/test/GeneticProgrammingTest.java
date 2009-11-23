@@ -35,7 +35,7 @@ public class GeneticProgrammingTest {
 		while (st2.hasMoreElements()) {
 			functionalSet.add(st2.nextToken());
 		}
-		for (int numberOfTrees = 100; numberOfTrees <= 5000; numberOfTrees = numberOfTrees + 100) {
+		for (int numberOfTrees = 100; numberOfTrees <= 2000; numberOfTrees = numberOfTrees + 100) {
 			startTime = System.currentTimeMillis();
 			System.out.println("Number Of Trees " + numberOfTrees);
 			createAndRun(startTime, terminalSet, functionalSet,

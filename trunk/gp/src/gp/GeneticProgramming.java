@@ -107,6 +107,9 @@ public class GeneticProgramming extends javax.swing.JFrame {
 	private javax.swing.JPanel trainingDataPanel;
 	private javax.swing.JComboBox treeHeightComboBox;
 	private javax.swing.JLabel treeHeightLabel;
+	private javax.swing.JPanel treePanel;
+	private javax.swing.JTree treeView;
+	private javax.swing.JScrollPane treeViewScrollPane;
 
 	/** Creates new form NewJFrame */
 	public GeneticProgramming() {
@@ -120,7 +123,8 @@ public class GeneticProgramming extends javax.swing.JFrame {
 	}
 
 	private JFreeChart createChart() {
-		final JFreeChart chart = ChartFactory.createXYLineChart("Result", // chart
+		final JFreeChart chart = ChartFactory.createXYLineChart(
+				"Equation Graph", // chart
 				// title
 				"X", // x axis label
 				"Y", // y axis label
@@ -217,7 +221,9 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		buttonPanel = new javax.swing.JPanel();
 		runButton = new javax.swing.JButton();
 		tabbedPane = new javax.swing.JTabbedPane();
-
+		treePanel = new javax.swing.JPanel();
+		treeViewScrollPane = new javax.swing.JScrollPane();
+		treeView = new javax.swing.JTree();
 		finalResultPanel.setBorder(javax.swing.BorderFactory
 				.createTitledBorder("Final Result"));
 		finalResultPanel.setLayout(new java.awt.GridBagLayout());
@@ -311,6 +317,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 
 		equationTextField.setText("(x^2-1)/2");
 		equationTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				equationTextFieldActionPerformed(evt);
 			}
@@ -321,6 +328,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 
 		populationSizeTextField.setText("1000");
 		populationSizeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				populationSizeTextFieldActionPerformed(evt);
 			}
@@ -347,6 +355,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 
 		terminalSetTextField.setText("1,2,3,4,5,6,7,8,9,x");
 		terminalSetTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				terminalSetTextFieldActionPerformed(evt);
 			}
@@ -418,6 +427,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 
 		functionalSetTextField.setText("+,-,/,*");
 		functionalSetTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				functionalSetTextFieldActionPerformed(evt);
 			}
@@ -458,6 +468,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		minTrainingDataTextField.setText("-100");
 		minTrainingDataTextField
 				.addKeyListener(new java.awt.event.KeyAdapter() {
+					@Override
 					public void keyTyped(java.awt.event.KeyEvent evt) {
 						minTrainingDataTextFieldActionPerformed(evt);
 					}
@@ -478,6 +489,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		maxTrainingDataTextField.setText("100");
 		maxTrainingDataTextField
 				.addKeyListener(new java.awt.event.KeyAdapter() {
+					@Override
 					public void keyTyped(java.awt.event.KeyEvent evt) {
 						maxTrainingDataTextFieldActionPerformed(evt);
 					}
@@ -590,9 +602,16 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		buttonPanel.add(runButton);
 
 		getContentPane().add(buttonPanel, java.awt.BorderLayout.SOUTH);
+
+		treePanel.setLayout(new java.awt.BorderLayout());
+
+		treeViewScrollPane.setViewportView(treeView);
+
+		treePanel.add(treeViewScrollPane, java.awt.BorderLayout.CENTER);
+
 		tabbedPane.addTab("Result Graph", equationGraphPanel);
 		tabbedPane.addTab("Population Fitness", populationFitnessPanel);
-
+		// tabbedPane.addTab("Tree", treePanel);
 		getContentPane().add(tabbedPane, java.awt.BorderLayout.EAST);
 		pack();
 	}
@@ -757,6 +776,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 			ft.setFrame(this);
 			ft.setEquationGraphPanel(equationGraphPanel);
 			ft.setPopulationFitnessPanel(populationFitnessPanel);
+			ft.setTreeView(treeView);
 			thread.start();
 		} else {
 

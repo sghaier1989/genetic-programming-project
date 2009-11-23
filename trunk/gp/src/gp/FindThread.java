@@ -3,13 +3,13 @@ package gp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
 import org.jfree.chart.JFreeChart;
-import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.data.xy.XYDataset;
 
 import com.graphbuilder.math.Expression;
 import com.graphbuilder.math.ExpressionTree;
@@ -25,10 +25,17 @@ import com.graphbuilder.math.VarMap;
 public class FindThread extends Thread {
 	public static final String DATE_FORMAT = "mm:ss";
 	static Logger logger = Logger.getLogger(GeneticProgramming.class);
+
+	public static TreeFitnessComparator getTreeComparator() {
+		return FindThread.treeComparator;
+	}
+
+	public static void sortTrees(ArrayList<Tree> newTrees) {
+		Collections.sort(newTrees, getTreeComparator());
+	}
+
 	private javax.swing.JLabel bestResultValueLabel;
-
 	private double crossoverRate;
-
 	private EquationGraphPanel equationGraphPanel = null;
 	private javax.swing.JLabel finalEquationResultLabel;
 	private javax.swing.JLabel finalGenerationResultLabel;
@@ -40,7 +47,7 @@ public class FindThread extends Thread {
 	private javax.swing.JLabel generationValueLabel;
 	private boolean gui = false;
 	private int hieghtOfTree;
-	private double lowestFitness = 99999999;
+	private double lowestFitness = 1.79769E+308;
 	private int maxHeight;
 	private int maxRange;
 	private int minRange;
@@ -54,7 +61,31 @@ public class FindThread extends Thread {
 	private long startTime = 0;
 	private String targetExpersion = new String();
 	private TerminalSet terminalSet = new TerminalSet();
-	private TreeFitnessComparator treeComparator = new TreeFitnessComparator();
+	private static TreeFitnessComparator treeComparator = new TreeFitnessComparator();
+	private javax.swing.JTree treeView;
+
+	private double[] calculateTargetValues(String targetedExpresion,
+			int[] dataset) {
+		int datasetSize = dataset.length;
+		double[] targetTreeValues = new double[datasetSize];
+		for (int x = 0; x < datasetSize; x++) {
+			Expression exp = ExpressionTree.parse(targetedExpresion);
+			VarMap vm = new VarMap(false /* case sensitive */);
+			vm.setValue("x", dataset[x]);
+			targetTreeValues[x] = exp.eval(vm, null);
+		}
+		return targetTreeValues;
+	}
+
+	private ArrayList<Tree> cull(ArrayList<Tree> newTrees) throws Exception {
+		logger.debug("Max Number of Trees: " + getNumberOfTrees());
+		logger.debug("Original pop size: " + newTrees.size());
+		for (int x = getNumberOfTrees(); getNumberOfTrees() < newTrees.size(); x++) {
+			logger.debug(" pop size  = " + newTrees.size());
+			newTrees.remove(getNumberOfTrees());
+		}
+		return newTrees;
+	}
 
 	/**
 	 * Method for populating a tree with nodes.
@@ -71,7 +102,6 @@ public class FindThread extends Thread {
 	private void generateNodes(Tree newTree, Node newParent, int howDeepToMakeIt) {
 		try {
 			if (newParent.getLevel() == howDeepToMakeIt - 1) {
-
 				Node lOperand = new Node(newParent, getTerminalSet()
 						.randomOperand(), Node.LEFT, Node.OPERAND);
 				newTree.addNode(lOperand);
@@ -82,15 +112,11 @@ public class FindThread extends Thread {
 				Node lOperator = new Node(newParent, getFunctionalSet()
 						.randomOperator(), Node.LEFT, Node.OPERATOR);
 				newTree.addNode(lOperator);
-
 				generateNodes(newTree, lOperator, howDeepToMakeIt);
-
 				Node rOperator = new Node(newParent, getFunctionalSet()
 						.randomOperator(), Node.RIGHT, Node.OPERATOR);
 				newTree.addNode(rOperator);
-
 				generateNodes(newTree, rOperator, howDeepToMakeIt);
-
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,7 +135,6 @@ public class FindThread extends Thread {
 	 */
 	private int[] genertateTrainingDataSet(int newMin, int newMax) {
 		int[] values = new int[newMax - newMin];
-
 		for (int x = 0; x < values.length; x++) {
 			values[x] = newMin++;
 		}
@@ -123,24 +148,18 @@ public class FindThread extends Thread {
 	 * @return - bestResultValueLabel
 	 */
 	private javax.swing.JLabel getBestResultValueLabel() {
-		return bestResultValueLabel;
+		return this.bestResultValueLabel;
 	}
 
-	// public Tree getBestTree() {
-	// return bestTree;
-	// }
 	/**
 	 * This method gives the thread access to the crossover rate in the GUI
 	 * 
 	 * @return - double - crossover rate
 	 */
 	private double getCrossoverRate() {
-		return crossoverRate;
+		return this.crossoverRate;
 	}
 
-	// public Tree getEquation() {
-	// return equation;
-	// }
 	/**
 	 * This method gives the thread access to the equation graph panel in the
 	 * GUI
@@ -148,7 +167,7 @@ public class FindThread extends Thread {
 	 * @return - Equation Graph Panel
 	 */
 	private EquationGraphPanel getEquationGraphPanel() {
-		return equationGraphPanel;
+		return this.equationGraphPanel;
 	}
 
 	/**
@@ -158,7 +177,7 @@ public class FindThread extends Thread {
 	 * @return - final Equation Result Label
 	 */
 	private javax.swing.JLabel getFinalEquationResultLabel() {
-		return finalEquationResultLabel;
+		return this.finalEquationResultLabel;
 	}
 
 	/**
@@ -168,7 +187,7 @@ public class FindThread extends Thread {
 	 * @return - final generation result label
 	 */
 	private javax.swing.JLabel getFinalGenerationResultLabel() {
-		return finalGenerationResultLabel;
+		return this.finalGenerationResultLabel;
 	}
 
 	/**
@@ -178,7 +197,7 @@ public class FindThread extends Thread {
 	 * @return - final generation time label
 	 */
 	private javax.swing.JLabel getFinalTimeresultLabel() {
-		return finalTimeresultLabel;
+		return this.finalTimeresultLabel;
 	}
 
 	/**
@@ -187,7 +206,7 @@ public class FindThread extends Thread {
 	 * @return - Fitness value label
 	 */
 	private javax.swing.JLabel getFitnessValueLabel() {
-		return fitnessValueLabel;
+		return this.fitnessValueLabel;
 	}
 
 	/**
@@ -196,7 +215,7 @@ public class FindThread extends Thread {
 	 * @return - GUI JFrame
 	 */
 	private javax.swing.JFrame getFrame() {
-		return frame;
+		return this.frame;
 	}
 
 	/**
@@ -205,7 +224,7 @@ public class FindThread extends Thread {
 	 * @return - FunctionalSet
 	 */
 	private FunctionalSet getFunctionalSet() {
-		return functionalSet;
+		return this.functionalSet;
 	}
 
 	// private int getGeneration() {
@@ -217,7 +236,7 @@ public class FindThread extends Thread {
 	 * @return - GenerationValueLabel
 	 */
 	private javax.swing.JLabel getGenerationValueLabel() {
-		return generationValueLabel;
+		return this.generationValueLabel;
 	}
 
 	/**
@@ -226,7 +245,7 @@ public class FindThread extends Thread {
 	 * @return - int - tree height
 	 */
 	private int getHieghtOfTree() {
-		return hieghtOfTree;
+		return this.hieghtOfTree;
 	}
 
 	// private double getLowestFitness() {
@@ -238,7 +257,7 @@ public class FindThread extends Thread {
 	 * @return - int - tree height
 	 */
 	private int getMaxHeight() {
-		return maxHeight;
+		return this.maxHeight;
 	}
 
 	/**
@@ -247,7 +266,7 @@ public class FindThread extends Thread {
 	 * @return - int - max training size
 	 */
 	private int getMaxRange() {
-		return maxRange;
+		return this.maxRange;
 	}
 
 	/**
@@ -256,7 +275,7 @@ public class FindThread extends Thread {
 	 * @return - int - min training size
 	 */
 	private int getMinRange() {
-		return minRange;
+		return this.minRange;
 	}
 
 	/**
@@ -265,7 +284,7 @@ public class FindThread extends Thread {
 	 * @return - double - mutation rate
 	 */
 	private double getMutationRate() {
-		return mutationRate;
+		return this.mutationRate;
 	}
 
 	/**
@@ -274,7 +293,7 @@ public class FindThread extends Thread {
 	 * @return - int - number Of Trees
 	 */
 	private int getNumberOfTrees() {
-		return numberOfTrees;
+		return this.numberOfTrees;
 	}
 
 	/**
@@ -283,7 +302,7 @@ public class FindThread extends Thread {
 	 * @return - PopulationFitnessPanel
 	 */
 	private PopulationFitnessPanel getPopulationFitnessPanel() {
-		return populationFitnessPanel;
+		return this.populationFitnessPanel;
 	}
 
 	/**
@@ -292,7 +311,7 @@ public class FindThread extends Thread {
 	 * @return JDialog resultDialog
 	 */
 	private javax.swing.JDialog getResultDialog() {
-		return resultDialog;
+		return this.resultDialog;
 	}
 
 	/**
@@ -301,7 +320,7 @@ public class FindThread extends Thread {
 	 * @return JLabel Runtime Value Label
 	 */
 	private javax.swing.JLabel getRuntimeValueLabel() {
-		return runtimeValueLabel;
+		return this.runtimeValueLabel;
 	}
 
 	/**
@@ -310,7 +329,7 @@ public class FindThread extends Thread {
 	 * @return String - target Expression
 	 */
 	private String getTargetExpersion() {
-		return targetExpersion;
+		return this.targetExpersion;
 	}
 
 	/**
@@ -318,123 +337,128 @@ public class FindThread extends Thread {
 	 * @return TerminalSet
 	 */
 	private TerminalSet getTerminalSet() {
-		return terminalSet;
+		return this.terminalSet;
+	}
+
+	public javax.swing.JTree getTreeView() {
+		return this.treeView;
+	}
+
+	public void getUniqueValues(ArrayList<Tree> newTrees) {
+		try {
+			HashMap<String, Tree> map = new HashMap<String, Tree>();
+			for (int t = 0; t < newTrees.size() - 1; t++) {
+				String id = newTrees.get(t).toString();
+				map.put(id, newTrees.get(t));
+			}
+			newTrees.clear();
+			Iterator<Tree> values = map.values().iterator();
+			while (values.hasNext()) {
+				newTrees.add(values.next());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean isGui() {
-		return gui;
+		return this.gui;
 	}
 
 	private void keepLooking(ArrayList<Tree> newTrees, double newCrossoverRate,
 			double newMutationRate, int[] newDataset,
 			double[] newTargetTreeValues, int newMaxHeight) throws Exception {
 		if ((System.currentTimeMillis() - startTime) > 900000) {
-
 			if (isGui()) {
 				JOptionPane.showMessageDialog(getFrame(),
 						"This run has taken longer then 15 minutes!!", "Error",
 						JOptionPane.ERROR_MESSAGE);
 			}
-
 			throw new Exception("This run has taken longer then 15 minutes!!");
-
-		}
-		try {
-			logger.debug("Generation: " + generation++);
-			if (isGui()) {
-				this.getGenerationValueLabel().setText(generation + "");
-			}
-			sortTree(newTrees);
-			logger
-					.debug("+++++++++++++++++++Trimming Tree++++++++++++++++++++++");
-			while (newTrees.size() > this.getNumberOfTrees()) {
-				Tree p = newTrees.get(newTrees.size() - 1);
-				logger.debug("Removing Equation: " + p.getEquation()
-						+ " Fittness: " + p.getFitness());
-				newTrees.remove(newTrees.size() - 1);
-			}
-			logger.debug("+++++++++++++++++++++++++++++++++++++++++++++++");
-
-			logger.debug("Number of Trees: " + newTrees.size());
-			Crossover.cross(newTrees, newCrossoverRate, newMaxHeight);
-			sortTree(newTrees);
-			Mutation.mutateTrees(newTrees, newMutationRate);
-			DefaultPieDataset defaultPieDataset = null;
-			JFreeChart populationFitnessPanelChart = null;
-			for (int x = 0; x < newTrees.size(); x++) {
-				Tree tr = newTrees.get(x);
-				double fn = Fitness.checkFitness(newTargetTreeValues, tr,
-						newDataset);
-				if (isGui() && getPopulationFitnessPanel().isVisible()) {
-					getPopulationFitnessPanel().setTrees(newTrees);
-					defaultPieDataset = getPopulationFitnessPanel()
-							.createDataset();
-					populationFitnessPanelChart = getPopulationFitnessPanel()
-							.createChart(defaultPieDataset);
-					getPopulationFitnessPanel().setChart(
-							populationFitnessPanelChart);
-					getPopulationFitnessPanel().repaint();
-					this.getFrame().pack();
+		} else {
+			try {
+				logger.debug("Generation: " + generation++);
+				if (isGui()) {
+					this.getGenerationValueLabel().setText(generation + "");
 				}
+				logger.debug("Number of Trees: " + newTrees.size());
+				Mutation.mutateTrees(newTrees, newMutationRate, newDataset,
+						newTargetTreeValues);
+				sortTrees(newTrees);
+				if (isGui()) {
+					this.getRuntimeValueLabel().setText(
+							sdf.format(System.currentTimeMillis() - startTime));
+				}
+				Crossover.cross(newTrees, newCrossoverRate, newMaxHeight,
+						newDataset, newTargetTreeValues);
+				sortTrees(newTrees);
+				if (isGui()) {
+					this.getRuntimeValueLabel().setText(
+							sdf.format(System.currentTimeMillis() - startTime));
+				}
+				// getUniqueValues(newTrees);
+				newTrees = cull(newTrees);
+				int numberOfTrees = newTrees.size();
+				for (int x = 0; x < numberOfTrees; x++) {
+					Tree tr = newTrees.get(x);
 
-				if (fn < lowestFitness) {
-					lowestFitness = fn;
-					if (isGui()) {
-						this.getBestResultValueLabel().setText(
-								tr.getEquation().toString());
-						this.getFitnessValueLabel().setText(fn + "");
-						getEquationGraphPanel().setTree(tr);
-						getEquationGraphPanel().setTargetEquation(
-								getTargetExpersion());
-						getEquationGraphPanel().setTrainingData(
-								genertateTrainingDataSet(-10000, 10000));
-						XYDataset dataset = getEquationGraphPanel()
-								.createDataset();
-						JFreeChart chart = getEquationGraphPanel().createChart(
-								dataset);
-						getEquationGraphPanel().setChart(chart);
-						getEquationGraphPanel().repaint();
-						this.getFrame().pack();
+					if (tr.getFitness() < lowestFitness) {
+						lowestFitness = tr.getFitness();
+						if (isGui()) {
+							this.getBestResultValueLabel().setText(
+									tr.toString());
+							this.getFitnessValueLabel().setText(
+									tr.getFitness() + "");
+							if (getEquationGraphPanel().isVisible()) {
+								updateEquationChart(tr, equationGraphPanel);
+							}
+						}
 					}
-
-				}
-				if (fn == 0) {
-
-					logger.info("found tree");
-					logger.info("Generation: " + generation);
-					logger.info("Equation: " + tr.getEquation());
-					logger.info("Time: "
-							+ sdf
-									.format(System.currentTimeMillis()
-											- startTime));
-					if (isGui()) {
-						this.getBestResultValueLabel().setText(
-								tr.getEquation().toString());
-						this.getFitnessValueLabel().setText(fn + "");
-						getFinalEquationResultLabel().setText(
-								tr.getEquation().toString());
-						getFinalGenerationResultLabel()
-								.setText(generation + "");
-						getFinalTimeresultLabel().setText(
-								sdf.format(System.currentTimeMillis()
+					if (tr.getFitness() == 0) {
+						logger.info("found tree");
+						logger.info("Generation: " + generation);
+						logger.info("Equation: " + tr.toString());
+						logger.info("Time: "
+								+ sdf.format(System.currentTimeMillis()
 										- startTime));
-						getResultDialog().pack();
-						getResultDialog().setVisible(true);
+						if (isGui()) {
+							getFinalTimeresultLabel().setText(
+									sdf.format(System.currentTimeMillis()
+											- startTime));
+							updateEquationChart(tr, equationGraphPanel);
+							updateFitnessChart(newDataset, newTargetTreeValues,
+									newTrees, getPopulationFitnessPanel());
+
+							getBestResultValueLabel().setText(tr.toString());
+							getFitnessValueLabel()
+									.setText(tr.getFitness() + "");
+							getFinalEquationResultLabel()
+									.setText(tr.toString());
+							getFinalGenerationResultLabel().setText(
+									generation + "");
+
+							getResultDialog().pack();
+							getResultDialog().setVisible(true);
+						}
+						return;
 					}
-					return;
+
 				}
+				if (isGui()) {
+					this.getRuntimeValueLabel().setText(
+							sdf.format(System.currentTimeMillis() - startTime));
+				}
+				if (isGui() && getPopulationFitnessPanel().isVisible()) {
+					updateFitnessChart(newDataset, newTargetTreeValues,
+							newTrees, getPopulationFitnessPanel());
+				}
+				keepLooking(newTrees, newCrossoverRate, newMutationRate,
+						newDataset, newTargetTreeValues, newMaxHeight);
+
+			} catch (Exception e) {
+				e.printStackTrace();
 
 			}
-			if (isGui()) {
-				this.getRuntimeValueLabel().setText(
-						sdf.format(System.currentTimeMillis() - startTime));
-			}
-			keepLooking(newTrees, newCrossoverRate, newMutationRate,
-					newDataset, newTargetTreeValues, newMaxHeight);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-
 		}
 	}
 
@@ -448,7 +472,8 @@ public class FindThread extends Thread {
 	 * 
 	 * @return - Returns a ArrayList of binary trees
 	 */
-	private ArrayList<Tree> populate(int newNumberOfTrees, int newHeight) {
+	private ArrayList<Tree> populate(int newNumberOfTrees, int newHeight,
+			int[] newDataset, double[] newTargetTreeValues) {
 		this.population = new ArrayList<Tree>();
 		try {
 			for (int tree = 0; tree < newNumberOfTrees; tree++) {
@@ -456,7 +481,12 @@ public class FindThread extends Thread {
 						.randomOperator(), null, Node.OPERATOR);
 				Tree bt = new Tree(rootNode, this.getTerminalSet(), this
 						.getFunctionalSet());
+				rootNode.setTree(bt);
 				generateNodes(bt, rootNode, newHeight);
+
+				double fitness = Fitness.checkFitness(newTargetTreeValues,
+						Fitness.calculateExpressionValues(bt, newDataset));
+				bt.setFitness(fitness);
 				this.population.add(bt);
 			}
 		} catch (Exception e) {
@@ -471,20 +501,12 @@ public class FindThread extends Thread {
 			startTime = System.currentTimeMillis();
 			int[] dataset = genertateTrainingDataSet(this.getMinRange(), this
 					.getMaxRange());
-			int datasetSize = dataset.length;
-			double[] targetTreeValues = new double[datasetSize];
-			for (int x = 0; x < datasetSize; x++) {
-				Expression exp = ExpressionTree.parse(getTargetExpersion()
-						.toString());
-				VarMap vm = new VarMap(false /* case sensitive */);
-				vm.setValue("x", dataset[x]);
-				targetTreeValues[x] = exp.eval(vm, null);
-			}
+			double[] targetValues = calculateTargetValues(getTargetExpersion()
+					.toString(), dataset);
 			ArrayList<Tree> populationTree = populate(this.getNumberOfTrees(),
-					this.getHieghtOfTree());
-
+					this.getHieghtOfTree(), dataset, targetValues);
 			keepLooking(populationTree, this.getCrossoverRate(), this
-					.getMutationRate(), dataset, targetTreeValues, this
+					.getMutationRate(), dataset, targetValues, this
 					.getMaxHeight());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -493,41 +515,40 @@ public class FindThread extends Thread {
 
 	public void setBestResultValueLabel(
 			javax.swing.JLabel newBestResultValueLabel) {
-
 		this.bestResultValueLabel = newBestResultValueLabel;
 
 	}
 
 	public void setCrossoverRate(double newCrossoverRate) {
-
 		this.crossoverRate = newCrossoverRate;
 
 	}
 
-	public void setEquationGraphPanel(EquationGraphPanel equationGraphPanel) {
-		this.equationGraphPanel = equationGraphPanel;
+	public void setEquationGraphPanel(EquationGraphPanel newEquationGraphPanel) {
+		this.equationGraphPanel = newEquationGraphPanel;
 	}
 
 	public void setFinalEquationResultLabel(
-			javax.swing.JLabel finalEquationResultLabel) {
-		this.finalEquationResultLabel = finalEquationResultLabel;
+			javax.swing.JLabel newFinalEquationResultLabel) {
+		this.finalEquationResultLabel = newFinalEquationResultLabel;
 	}
 
 	public void setFinalGenerationResultLabel(
-			javax.swing.JLabel finalGenerationResultLabel) {
-		this.finalGenerationResultLabel = finalGenerationResultLabel;
+			javax.swing.JLabel newFinalGenerationResultLabel) {
+		this.finalGenerationResultLabel = newFinalGenerationResultLabel;
 	}
 
-	public void setFinalTimeresultLabel(javax.swing.JLabel finalTimeresultLabel) {
-		this.finalTimeresultLabel = finalTimeresultLabel;
+	public void setFinalTimeresultLabel(
+			javax.swing.JLabel newFinalTimeresultLabel) {
+		this.finalTimeresultLabel = newFinalTimeresultLabel;
 	}
 
 	public void setFitnessValueLabel(javax.swing.JLabel newFitnessValueLabel) {
 		this.fitnessValueLabel = newFitnessValueLabel;
 	}
 
-	public void setFrame(javax.swing.JFrame frame) {
-		this.frame = frame;
+	public void setFrame(javax.swing.JFrame newFrame) {
+		this.frame = newFrame;
 	}
 
 	public void setFunctionalSet(FunctionalSet newFunctionalSet) {
@@ -543,8 +564,8 @@ public class FindThread extends Thread {
 		this.generationValueLabel = newGenerationValueLabel;
 	}
 
-	public void setGui(boolean gui) {
-		this.gui = gui;
+	public void setGui(boolean newGui) {
+		this.gui = newGui;
 	}
 
 	public void setHieghtOfTree(int newHieghtOfTree) {
@@ -580,12 +601,12 @@ public class FindThread extends Thread {
 	}
 
 	public void setPopulationFitnessPanel(
-			PopulationFitnessPanel populationFitnessPanel) {
-		this.populationFitnessPanel = populationFitnessPanel;
+			PopulationFitnessPanel newPopulationFitnessPanel) {
+		this.populationFitnessPanel = newPopulationFitnessPanel;
 	}
 
-	public void setResultDialog(javax.swing.JDialog resultDialog) {
-		this.resultDialog = resultDialog;
+	public void setResultDialog(javax.swing.JDialog newResultDialog) {
+		this.resultDialog = newResultDialog;
 	}
 
 	public void setRuntimeValueLabel(javax.swing.JLabel newRuntimeValueLabel) {
@@ -605,22 +626,42 @@ public class FindThread extends Thread {
 	}
 
 	public void setTreeComparator(TreeFitnessComparator newTreeComparator) {
-		this.treeComparator = newTreeComparator;
+		FindThread.treeComparator = newTreeComparator;
 	}
 
-	private void sortTree(ArrayList<Tree> newTrees) {
-		Collections.sort(newTrees, treeComparator);
+	public void setTreeView(javax.swing.JTree newTreeView) {
+		this.treeView = newTreeView;
 	}
+
 	/*
-	 * public void getUniqueValues(ArrayList<Tree> newTrees) { try {
-	 * HashMap<String, Tree> map = new HashMap<String, Tree>(); for (int t = 0;
-	 * t < newTrees.size() - 1; t++) { String id =
-	 * newTrees.get(t).getEquation().toString(); map.put(id, newTrees.get(t)); }
-	 * newTrees.clear(); Iterator<Tree> values = map.values().iterator(); while
-	 * (values.hasNext()) { newTrees.add(values.next()); } } catch (Exception e)
-	 * { e.printStackTrace(); }
-	 * 
-	 * }
+	 * private void updateTreeView(Tree newTree, JTree treeView) throws
+	 * Exception { treeView.setModel(new
+	 * javax.swing.tree.DefaultTreeModel(newTree .getRoot()));
+	 * treeView.repaint(); this.getFrame().pack(); }
 	 */
+	private void updateEquationChart(Tree newTree,
+			EquationGraphPanel equationGraphPanel) {
+		equationGraphPanel.setTree(newTree);
+		equationGraphPanel.setTargetEquation(getTargetExpersion());
+		equationGraphPanel.setTrainingData(genertateTrainingDataSet(-10000,
+				10000));
+		JFreeChart chart = getEquationGraphPanel().createChart(
+				equationGraphPanel.createDataset());
+		equationGraphPanel.setChart(chart);
+		equationGraphPanel.repaint();
+		this.getFrame().pack();
+	}
 
+	private void updateFitnessChart(int[] newDataset,
+			double[] newTargetTreeValues, ArrayList<Tree> newTrees,
+			PopulationFitnessPanel populationFitnesspanel) {
+		populationFitnesspanel.setDataset(newDataset);
+		populationFitnesspanel.setTrees(newTrees);
+		populationFitnesspanel.setTargetTreeValues(newTargetTreeValues);
+		JFreeChart chart = populationFitnesspanel
+				.createChart(populationFitnesspanel.createDataset());
+		populationFitnesspanel.setChart(chart);
+		populationFitnesspanel.repaint();
+		getFrame().pack();
+	}
 }
