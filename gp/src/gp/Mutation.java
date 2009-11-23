@@ -51,25 +51,36 @@ public final class Mutation {
 	 * 
 	 */
 	public static void mutateTrees(ArrayList<Tree> newTrees,
-			double newMutationRate) {
+			double newMutationRate, int[] trainingData,
+			double[] newTargetTreeValues) {
 		logger.debug("Performing mutation on trees");
 		try {
 			Random randomGenerator = new Random();
 			int size = newTrees.size();
 			int numberToMutate = (int) Math.ceil(newMutationRate * size);
 			logger.debug("numberToMutate " + numberToMutate);
-			Tree treeToMutate = null;
-			for (int x = 0; x <= numberToMutate; x++) {
+			for (int x = 0; x < numberToMutate; x++) {
 				int randomInt = randomGenerator.nextInt(numberToMutate);
-				logger.debug("BEFORE MUTATION "
-						+ newTrees.get(randomInt).getEquation());
-				treeToMutate = newTrees.get(randomInt);
+				Tree tree = newTrees.get(randomInt);
+				logger.debug("BEFORE MUTATION " + tree.getEquation()
+						+ " Fitness = " + tree.getFitness());
 				// make a copy of the tree before mutation
-				newTrees.add(treeToMutate);
-				mutateTree(treeToMutate);
-				logger.debug("AFTER MUTATION "
-						+ newTrees.get(randomInt).getEquation());
+				Tree copy = tree.copyTree();
+				logger.debug("ADDING A COPY  " + copy.getEquation()
+						+ " Fitness = " + copy.getFitness());
+				newTrees.add(copy);
+				FindThread.sortTrees(newTrees);
+
+				mutateTree(tree);
+				tree.setFitness(Fitness.checkFitness(newTargetTreeValues,
+						Fitness.calculateExpressionValues(tree, trainingData)));
+				logger.debug("AFTER MUTATION " + tree.getEquation()
+						+ " Fitness = " + tree.getFitness());
+				logger.debug("AFTER MUTATION COPY  " + copy.getEquation()
+						+ " Fitness = " + copy.getFitness());
+				newTrees.add(copy);
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

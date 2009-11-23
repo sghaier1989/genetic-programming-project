@@ -1,6 +1,6 @@
 package gp;
 
-import java.util.ArrayList;
+//import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.apache.log4j.Logger;
 
@@ -19,87 +19,54 @@ import org.apache.log4j.Logger;
  * @version 1.0
  */
 
+// public class Node extends DefaultMutableTreeNode {
 public class Node {
-	public static final String LEFT = "LEFT";
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 401754073156283817L;
 	static Logger logger = Logger.getLogger(GeneticProgramming.class);
 	public static final String OPERAND = "OPERAND";
 	public static final String OPERATOR = "OPERATOR";
 	public static final String RIGHT = "RIGHT";
+	public static final String LEFT = "LEFT";
 	public static final String ROOT = "ROOT";
 	public static final String VARIABLE = "VARIABLE";
-	private boolean isRoot = false;
-	private Node left = null;
-	private int level = 0;
-	private String operand = null;
-	private String operator = null;
-	private Node parent = null;
-	// pointer
-	private String pointer = null;
-	private Node right = null;
 
-	// types
-	private String type = null;
-	private String value = null;
-
-	public Node(Node newParent, String newValue, String newPointer,
-			String newType) throws Exception {
-		this.setValue(newValue);
-		this.setType(newType);
-		if (newType == Node.OPERAND) {
-			this.setOperand(newValue);
-		} else if (newType == Node.OPERATOR) {
-			this.setOperator(newValue);
-		} else {
-			throw new Exception("Invalid type ");
-		}
-		if (newParent == null) {
-			this.setRoot(true);
-		} else if ((newPointer == LEFT) || (newPointer == RIGHT)) {
-			this.setParent(newParent);
-			this.setRoot(false);
-			if (newPointer == LEFT) {
-				this.setPointer(newPointer);
-				getParent().setLeft(this);
-			} else {
-				this.setPointer(newPointer);
-				getParent().setRight(this);
-			}
-		} else {
-			throw new Exception(
-					"Invalid pointer must be RIGHT, LEFT or parent must be null");
-		}
-
-	}
-
-	public Node copyNode(Tree newTree, Node nodeToCopy, Node newNodeParent) {
+	public static Node copyNode(Tree newTree, Node nodeToCopy,
+			Node newNodeParent, TerminalSet ts, FunctionalSet fs, int count)
+			throws Exception {
 		Node newNode = null;
-		Node newLeft = null;
-		Node newRight = null;
+		Tree tree = newTree;
+		if (count > 100) {
+			throw new Exception(
+					"We are likely in a loop, trying to copy a node.  AHHHHH!");
+		}
+		count++;
 		try {
-			if (!nodeToCopy.isRoot) {
+			if (newNodeParent == null) {
+				newNode = new Node(null, nodeToCopy.getValue(), nodeToCopy
+						.getPointer(), nodeToCopy.getType());
+				newNode.setLevel(nodeToCopy.getLevel());
+				newNode.setRoot(true);
+				tree = new Tree(newNode, ts, fs);
+				newNode.setTree(tree);
+			} else {
 				newNode = new Node(newNodeParent, nodeToCopy.getValue(),
 						nodeToCopy.getPointer(), nodeToCopy.getType());
 				newNode.setLevel(nodeToCopy.getLevel());
-				newNode.setOperand(nodeToCopy.getOperand());
-				newNode.setOperator(nodeToCopy.getOperator());
-				newNode.setRoot(nodeToCopy.isRoot());
-
-				newTree.addNode(newNode);
-			} else {
-				newNode = newTree.getRoot();
+				newNode.setRoot(nodeToCopy.isRoot);
+				tree.addNode(newNode);
 			}
 			Node leftNodeToCopy = nodeToCopy.getLeft();
-			// System.out.println("leftNodeToCopy " + leftNodeToCopy);
 			if (leftNodeToCopy != null) {
-				newLeft = copyNode(newTree, leftNodeToCopy, newNode);
-				newNode.setLeft(newLeft);
+				newNode.setLeft(copyNode(tree, leftNodeToCopy, newNode, ts, fs,
+						count));
 			}
 			Node rightNodeToCopy = nodeToCopy.getRight();
-			// System.out.println("rightNodeToCopy " + rightNodeToCopy);
 			if (rightNodeToCopy != null) {
-				newRight = copyNode(newTree, rightNodeToCopy, newNode);
-				newNode.setRight(newRight);
+				newNode.setRight(copyNode(tree, rightNodeToCopy, newNode, ts,
+						fs, count));
 			}
 
 		} catch (Exception e) {
@@ -108,151 +75,141 @@ public class Node {
 		return newNode;
 	}
 
-	private ArrayList<Node> findChildren(Node par, ArrayList<Node> nods) {
-		if (par != null) {
-			Node l = par.getLeft();
-			if (l != null) {
-				nods.add(l);
-				findChildren(l, nods);
-			}
-			Node r = par.getRight();
-			if (r != null) {
-				nods.add(r);
-				findChildren(r, nods);
-			}
+	private boolean isRoot = false;
+	private Node left = null;
+	private int level = 0;
+	private Node parent = null;
+	private String pointer = null;
+	private Node right = null;
+	private Tree tree = null;
+	private String type = null;
+
+	private String value = null;
+
+	public Node(Node newParent, String newValue, String newPointer,
+			String newType) throws Exception {
+		setType(newType);
+		setValue(newValue);
+		if (newParent == null
+				&& !((newPointer == LEFT) && (newPointer == RIGHT))) {
+			setRoot(true);
+			setLevel(0);
+		} else if (!(newParent == null)
+				&& ((newPointer == LEFT) || (newPointer == RIGHT))) {
+			setPointer(newPointer);
+			setParent(newParent);
+			setRoot(false);
+			newParent.setChild(this);
+		} else {
+			throw new Exception("Invalid node inputs");
 		}
-		return nods;
 
-	}
-
-	public ArrayList<Node> getChildren() {
-		return findChildren(this, new ArrayList<Node>());
 	}
 
 	public Node getLeft() {
-		return left;
+		return this.left;
 	}
 
 	public int getLevel() {
-		int newLevel = 0;
-		Node par = this.getParent();
-		while (par != null && newLevel < 100) {
-			newLevel++;
-			par = par.getParent();
-		}
-		this.level = newLevel;
-		return level;
-	}
-
-	public String getOperand() {
-		return operand;
-	}
-
-	public String getOperator() {
-		return operator;
+		return this.level;
 	}
 
 	public Node getParent() {
-		return parent;
+		return this.parent;
 	}
 
 	public String getPointer() {
-		return pointer;
+		return this.pointer;
 	}
 
 	public Node getRight() {
-		return right;
+		return this.right;
+	}
+
+	public Tree getTree() {
+		return this.tree;
 	}
 
 	public String getType() {
-		return type;
+		return this.type;
 	}
 
 	public String getValue() {
-		return value;
+		return this.value;
 	}
 
 	public boolean isRoot() {
-		return isRoot;
+		return this.isRoot;
 	}
 
 	public void printNodeInfo() {
 		logger.info("-------------" + this + "------------- ");
-		logger.info("Is Root?: " + this.isRoot());
-		logger.info("Operand: " + this.getOperand());
-		logger.info("Operator: " + this.getOperator());
-		logger.info("Level: " + this.getLevel());
-		logger.info("Pointer: " + this.getPointer());
-		logger.info("Type: " + this.getType());
-		logger.info("Parent: " + this.getParent());
+		logger.info("Get tree: " + getTree());
+		logger.info("Is Root?: " + isRoot());
+		logger.info("Level: " + getLevel());
+		logger.info("Pointer: " + getPointer());
+		logger.info("Type: " + getType());
+		logger.info("Parent: " + getParent());
 		logger.info("Node: " + this);
-		logger.info("Left Node: " + this.getLeft());
-		logger.info("Right Node: " + this.getRight());
-		logger.info("Value: " + this.getValue());
+		logger.info("Left Node: " + getLeft());
+		logger.info("Right Node: " + getRight());
+		logger.info("Value: " + getValue());
 		logger.info("-------------END------------- ");
 	}
 
 	public void setChild(Node newNode) throws Exception {
-
 		if (newNode.getPointer() == Node.LEFT) {
-			this.setLeft(newNode);
+			setLeft(newNode);
 		} else if (newNode.getPointer() == Node.RIGHT) {
-			this.setRight(newNode);
+			setRight(newNode);
 		} else {
 			throw new Exception("No pointer set on node");
 		}
-
 	}
 
 	public void setLeft(Node newLeft) throws Exception {
 		try {
 			if (!newLeft.isRoot()) {
-				this.setRoot(false);
 				this.left = newLeft;
-				this.setPointer(Node.LEFT);
 			} else {
 				logger.error("Root can not be set to left node");
-				this.printNodeInfo();
+				printNodeInfo();
+				newLeft.printNodeInfo();
 				new Exception("Root can not be set to left node");
 			}
 		} catch (Exception e) {
 			throw e;
 		}
-
 	}
 
 	public void setLevel(int newLevel) {
 		this.level = newLevel;
 	}
 
-	public void setOperand(String newOperand) {
-
-		this.operand = newOperand;
-
-	}
-
-	public void setOperator(String newOperator) {
-
-		this.operator = newOperator;
-
-	}
-
 	public void setParent(Node newParent) throws Exception {
-
-		if (!this.isRoot) {
-			this.parent = newParent;
-		} else {
+		if (isRoot) {
 			logger
 					.error("This node is a root and can not have a parent assigned to it.");
 			printNodeInfo();
+			logger.error("The parent looks like this:");
+			newParent.printNodeInfo();
 			throw new Exception(
 					"This node is a root and can not have a parent assigned to it.");
 		}
-
+		if (this == newParent) {
+			logger
+					.error("Error:  Tried to set the nodes parent to itself ex node.setPartent(node)");
+			printNodeInfo();
+			logger.error("The parent looks like this:");
+			newParent.printNodeInfo();
+			throw new Exception(
+					"Error:  Tried to set the nodes parent to itself ex node.setPartent(node)");
+		} else {
+			this.parent = newParent;
+		}
 	}
 
 	public void setPointer(String newPointer) throws Exception {
-
 		if ((newPointer == LEFT) || (newPointer == RIGHT)) {
 			this.pointer = newPointer;
 		} else {
@@ -264,38 +221,29 @@ public class Node {
 	}
 
 	public void setRight(Node newRight) throws Exception {
-
 		try {
 			if (!newRight.isRoot()) {
-				this.setRoot(false);
-				this.setPointer(Node.RIGHT);
 				this.right = newRight;
 			} else {
 				logger.error("Root can not be set to right node");
-				this.printNodeInfo();
+				printNodeInfo();
+				newRight.printNodeInfo();
 				new Exception("Root can not be set to right node");
 			}
 		} catch (Exception e) {
 			throw e;
 		}
-
 	}
 
 	public void setRoot(boolean newIsRoot) throws Exception {
+		this.isRoot = newIsRoot;
+	}
 
-		if (newIsRoot && this.getParent() != null) {
-			logger
-					.error("Can not make a root of this node because it has a parent");
-			printNodeInfo();
-			throw new Exception(
-					"Can not make a root of this node because it has a parent");
-		} else {
-			this.isRoot = newIsRoot;
-		}
+	public void setTree(Tree newTree) {
+		this.tree = newTree;
 	}
 
 	public void setType(String newType) throws Exception {
-
 		if ((newType == OPERAND) || (newType == OPERATOR)
 				|| (newType == VARIABLE)) {
 			this.type = newType;
@@ -307,9 +255,7 @@ public class Node {
 	}
 
 	public void setValue(String newValue) {
-
 		this.value = newValue;
-
 	}
 
 }

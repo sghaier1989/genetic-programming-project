@@ -80,12 +80,11 @@ public class EquationGraphPanel extends ChartPanel {
 		final XYSeriesCollection dataset = new XYSeriesCollection();
 		if (getTrainingData() != null && getTree() != null) {
 			try {
-				final XYSeries series1 = new XYSeries(getTree().getEquation()
-						.toString());
+				final XYSeries series1 = new XYSeries(getTree().toString());
 				final XYSeries series2 = new XYSeries(getTargetEquation());
 				int datasetSize = getTrainingData().length;
 				for (int x = 0; x < datasetSize; x++) {
-					String eq = getTree().getEquation().toString();
+					String eq = getTree().toString();
 					Expression exp = ExpressionTree.parse(eq);
 					VarMap vm = new VarMap(false);
 					vm.setValue("x", getTrainingData()[x]);

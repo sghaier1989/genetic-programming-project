@@ -1,6 +1,7 @@
 package gp;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 import org.apache.log4j.Logger;
@@ -28,9 +29,13 @@ import org.apache.log4j.Logger;
  * @version 1.0
  */
 public class Tree {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1310947610682501856L;
 	static Logger logger = Logger.getLogger(Tree.class);
 	private StringBuffer equation = new StringBuffer();
-	private double fitness = 999999999;
+	private double fitness = 1.79769E+308;
 	private FunctionalSet functionalSet = new FunctionalSet();
 	private ArrayList<Node> nodes = new ArrayList<Node>();
 	private ArrayList<Node> operands = new ArrayList<Node>();
@@ -48,19 +53,20 @@ public class Tree {
 	 */
 	public Tree(Node newRoot, TerminalSet newTerminalSet,
 			FunctionalSet newFunctionalSet) throws Exception {
-		this.setFunctionalSet(newFunctionalSet);
-		this.setTerminalSet(newTerminalSet);
-		this.setRoot(newRoot);
-		this.setFitness(this.fitness);
 		try {
+			setFunctionalSet(newFunctionalSet);
+			setTerminalSet(newTerminalSet);
+			setRoot(newRoot);
+			setFitness(1.79769E+308);
 			if (!newRoot.isRoot()) {
 				logger
 						.error("The root node used to create tree is not set to root.");
 				newRoot.printNodeInfo();
 				new Exception(
 						"The root node used to create tree is not set to root.");
+			} else {
+				addNode(newRoot);
 			}
-			this.addNode(newRoot);
 		} catch (Exception e) {
 			logger
 					.error("Error on creating tree while adding root node to tree");
@@ -76,17 +82,22 @@ public class Tree {
 	 * @throws Exception
 	 */
 	public void addNode(Node newNode) throws Exception {
-		this.getNodes().add(newNode);
+		getNodes().add(newNode);
+		newNode.setTree(this);
+		if (!newNode.isRoot()) {
+			newNode.setLevel(newNode.getParent().getLevel() + 1);
+		} else {
+			newNode.setLevel(0);
+		}
 		if (newNode.getType() == Node.OPERAND) {
-			this.getOperands().add(newNode);
+			getOperands().add(newNode);
 		} else if (newNode.getType() == Node.OPERATOR) {
-			this.getOperators().add(newNode);
+			getOperators().add(newNode);
 		} else {
 			new Exception(
 					"Error while adding node to tree.  The node type is not an operator or operand.  It is currently set to: "
 							+ newNode.getType());
 		}
-
 	}
 
 	/**
@@ -95,22 +106,17 @@ public class Tree {
 	 * @return Tree
 	 */
 	public Tree copyTree() {
-		Tree newTree = null;
 		try {
-			Node oldRoot = this.getRoot();
-			Node newRootNode = new Node(null, oldRoot.getValue(), oldRoot
-					.getPointer(), oldRoot.getType());
-			newRootNode.setLevel(oldRoot.getLevel());
-			newRootNode.setOperand(oldRoot.getOperand());
-			newRootNode.setOperator(oldRoot.getOperator());
-			newRootNode.setRoot(true);
-			newTree = new Tree(newRootNode, this.getTerminalSet(), this
-					.getFunctionalSet());
-			oldRoot.copyNode(newTree, oldRoot, null);
+			Tree copy = Node.copyNode(null, getRoot(), null, getTerminalSet(),
+					getFunctionalSet(), 0).getTree();
+			copy.setFitness(this.getFitness());
+			copy.setFunctionalSet(this.getFunctionalSet());
+			copy.setTerminalSet(this.getTerminalSet());
+			return copy;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return newTree;
+		return null;
 	}
 
 	/**
@@ -120,11 +126,56 @@ public class Tree {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		Tree other = (Tree) obj;
-		if (this.equation.toString() == other.equation.toString()) {
+		if (toString() == ((Tree) obj).toString()) {
 			return true;
 		}
 		return false;
+	}
+
+	private void evaluateTree(Node newParentNode, Node newNode, int newCount)
+			throws Exception {
+		if (!newNode.isRoot()) {
+			newNode.setLevel(newNode.getParent().getLevel() + 1);
+		} else {
+			newNode.setLevel(0);
+		}
+		if (newParentNode == newNode) {
+			newParentNode.printNodeInfo();
+			newNode.printNodeInfo();
+			throw new Exception(
+					"We have a problem.  The node being evaluated is equal to the parent node");
+		}
+		if (newCount > 100) {
+			logger.error("May be in a loop with the define tree method");
+			logger.error("Size of bad tree is: " + getNodes().size());
+			Iterator<Node> ir = getNodes().iterator();
+			while (ir.hasNext()) {
+				System.out.print(ir.next());
+			}
+			System.exit(0);
+		}
+		Node leftChild = newNode.getLeft();
+		Node rightChild = newNode.getRight();
+		if (leftChild != null) {
+			evaluateTree(newNode, leftChild, newCount++);
+		}
+		if (newNode.getPointer() == Node.LEFT
+				&& newNode.getType() == Node.OPERAND) {
+			equation.append("(");
+			equation.append(newNode.getValue());
+			addNode(newNode);
+		} else if (newNode.getPointer() == Node.RIGHT
+				&& newNode.getType() == Node.OPERAND) {
+			equation.append(newNode.getValue());
+			equation.append(")");
+			addNode(newNode);
+		} else {
+			equation.append(newNode.getValue());
+			addNode(newNode);
+		}
+		if (rightChild != null) {
+			evaluateTree(newNode, rightChild, newCount++);
+		}
 	}
 
 	/**
@@ -132,42 +183,53 @@ public class Tree {
 	 * 
 	 * @return Node
 	 */
-	public Node findRandomNonRootNode() {
-		Random randomGenerator = new Random();
-		int randomInt = randomGenerator.nextInt(getOperators().size() - 1) + 1;
-		Node n = getOperatorAt(randomInt);
-		if (n.getParent() == null || n.isRoot()) {
-			n.printNodeInfo();
-			findRandomNonRootNode();
-
-		} else {
-			return n;
+	public Node findRandomNonRootOperatorNode(int newCount) throws Exception {
+		Node n = null;
+		if (newCount > 100) {
+			logger
+					.error("We may be in a loop in the findRandomNonRootOperatorNode method");
 		}
-		return null;
+		if (getOperators().size() > 1) {
+			Random randomGenerator = new Random();
+			int randomInt = randomGenerator.nextInt(getOperators().size());
+			n = getOperators().get(randomInt);
+			if (n.getParent() == null || n.isRoot()) {
+				n = findRandomNonRootOperatorNode(newCount++);
+			} else {
+				return n;
+			}
+		} else {
+			throw new Exception(
+					"There are not enough operators to find a rendom operator node");
+		}
+		return n;
 	}
 
 	/**
-	 * This method is the main method for retrieving the tree's equation.
+	 * This method is the main method for retrieving the tree's equation. It's
+	 * currently a very expensive operation because it recalculates the tree. We
+	 * added a dirty flag that will reduce the cost by only recalculating when
+	 * the tree changes
 	 * 
 	 * @return tree equation as a stringbuffer.
 	 * @throws Exception
 	 */
 	public StringBuffer getEquation() throws Exception {
-		equation.delete(0, equation.length());
+		if (this.equation == null) {
+			this.equation = new StringBuffer();
+		}
+		this.equation.delete(0, equation.length());
 		getOperators().clear();
 		getOperands().clear();
 		getNodes().clear();
 		try {
-
-			printTree(this.getRoot(), 0);
-
+			evaluateTree(null, getRoot(), 0);
 		} catch (Exception e) {
 			logger
 					.error("An error occured while generating the tree equation.");
 			throw e;
 		}
-
-		return equation;
+		return this.equation;
 	}
 
 	/**
@@ -177,14 +239,8 @@ public class Tree {
 	 * 
 	 * @return double
 	 */
-	public double getFitness() {
-		if (Double.isNaN(fitness) || Double.isInfinite(fitness)) {
-			fitness = 999999999;
-		}
-		if (fitness < 0) {
-			fitness = fitness * -1;
-		}
-		return fitness;
+	public double getFitness() throws Exception {
+		return this.fitness;
 	}
 
 	/**
@@ -193,7 +249,7 @@ public class Tree {
 	 * @return FunctionalSet
 	 */
 	public FunctionalSet getFunctionalSet() {
-		return functionalSet;
+		return this.functionalSet;
 	}
 
 	/*
@@ -204,18 +260,24 @@ public class Tree {
 	 * @return int
 	 */
 	public int getHeight() {
-		return getHeight(nodes.size());
-	}
-
-	/*
-	 * The height of a tree is the length of the path from the root to the
-	 * deepest node in the tree. A (rooted) tree with only a node (the root) has
-	 * a height of zero.
-	 * 
-	 * @return int
-	 */
-	private int getHeight(int newNumberOfNodes) {
-		return (int) Math.log(newNumberOfNodes + 1) - 1;
+		Iterator<Node> it = getNodes().iterator();
+		int longestLeg = 0;
+		while (it.hasNext()) {
+			Node n = it.next();
+			int h = 0;
+			if (n.getType() == Node.OPERAND) {
+				h++;
+				Node parent = n.getParent();
+				while (parent != null) {
+					h++;
+					parent = parent.getParent();
+				}
+				if (h > longestLeg) {
+					longestLeg = h;
+				}
+			}
+		}
+		return longestLeg - 1;
 	}
 
 	/*
@@ -233,7 +295,7 @@ public class Tree {
 	 * @return Node
 	 */
 	public Node getOperandAt(int newIndex) {
-		return operands.get(newIndex);
+		return this.operands.get(newIndex);
 	}
 
 	/*
@@ -242,7 +304,7 @@ public class Tree {
 	 * @return ArrayList<Node>
 	 */
 	public ArrayList<Node> getOperands() {
-		return operands;
+		return this.operands;
 	}
 
 	/*
@@ -251,7 +313,7 @@ public class Tree {
 	 * @return Node
 	 */
 	public Node getOperatorAt(int newIndex) {
-		return operators.get(newIndex);
+		return this.operators.get(newIndex);
 	}
 
 	/*
@@ -260,7 +322,7 @@ public class Tree {
 	 * @return ArrayList<Node>
 	 */
 	public ArrayList<Node> getOperators() {
-		return operators;
+		return this.operators;
 	}
 
 	/*
@@ -269,12 +331,7 @@ public class Tree {
 	 * @return Node
 	 */
 	public Node getRoot() throws Exception {
-		try {
-			root.setRoot(true);
-		} catch (Exception e) {
-			throw e;
-		}
-		return root;
+		return this.root;
 	}
 
 	/*
@@ -283,34 +340,7 @@ public class Tree {
 	 * @return TerminalSet
 	 */
 	public TerminalSet getTerminalSet() {
-		return terminalSet;
-	}
-
-	private void printTree(Node newNode, int newCount) throws Exception {
-		Node leftChild = null;
-		Node rightChild = null;
-		leftChild = newNode.getLeft();
-		rightChild = newNode.getRight();
-		if (leftChild != null) {
-			printTree(leftChild, newCount++);
-		}
-		if (newNode.getPointer() == Node.LEFT
-				&& newNode.getType() == Node.OPERAND) {
-			equation.append("(");
-			equation.append(newNode.getValue());
-			getOperands().add(newNode);
-		} else if (newNode.getPointer() == Node.RIGHT
-				&& newNode.getType() == Node.OPERAND) {
-			equation.append(newNode.getValue());
-			equation.append(")");
-			getOperators().add(newNode);
-		} else {
-			equation.append(newNode.getValue());
-			getNodes().add(newNode);
-		}
-		if (rightChild != null) {
-			printTree(rightChild, newCount++);
-		}
+		return this.terminalSet;
 	}
 
 	public void setFitness(double newFitness) {
@@ -322,25 +352,14 @@ public class Tree {
 	}
 
 	public void setNodes(ArrayList<Node> newNodes) {
-
 		this.nodes = newNodes;
-
 	}
 
 	public void setOperands(ArrayList<Node> newOperands) {
-
 		this.operands = newOperands;
-
-	}
-
-	public void setOperators(ArrayList<Node> newOperators) {
-
-		this.operators = newOperators;
-
 	}
 
 	public void setRoot(Node newRoot) throws Exception {
-
 		if (newRoot.getParent() == null) {
 			this.root = newRoot;
 		} else {
@@ -350,7 +369,6 @@ public class Tree {
 			throw new Exception(
 					"Can not make a root of this node because it has a parent");
 		}
-
 	}
 
 	public void setTerminalSet(TerminalSet newTerminalSet) {
@@ -360,6 +378,11 @@ public class Tree {
 
 	@Override
 	public String toString() {
-		return "Tree [equation=" + equation + "]";
+		try {
+			return getEquation().toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

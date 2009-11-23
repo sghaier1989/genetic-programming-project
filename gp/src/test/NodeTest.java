@@ -1,134 +1,44 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import gp.FunctionalSet;
+import gp.Node;
+import gp.TerminalSet;
 
 import org.junit.Test;
 
 public class NodeTest {
 
 	@Test
-	public final void testNode() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
 	public final void testCopyNode() {
-		fail("Not yet implemented"); // TODO
-	}
+		try {
 
-	@Test
-	public final void testGetChildren() {
-		fail("Not yet implemented"); // TODO
-	}
+			FunctionalSet functionalSet = new FunctionalSet();
+			functionalSet.add("+");
+			functionalSet.add("-");
+			functionalSet.add("/");
+			functionalSet.add("*");
+			TerminalSet terminalSet = new TerminalSet();
+			terminalSet.add("1");
+			terminalSet.add("2");
+			terminalSet.add("3");
+			terminalSet.add("4");
+			terminalSet.add("5");
+			terminalSet.add("6");
+			terminalSet.add("7");
+			terminalSet.add("8");
+			terminalSet.add("9");
+			terminalSet.add("x");
+			Node root = new Node(null, "/", null, Node.OPERATOR);
+			Node newNode = Node.copyNode(null, root, null, terminalSet,
+					functionalSet, 0);
+			assertEquals(root.getValue(), newNode.getValue());
 
-	@Test
-	public final void testGetLeft() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetLevel() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetOperand() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetOperator() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetParent() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetPointer() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetRight() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetType() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetValue() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testIsRoot() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testPrintNodeInfo() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetChild() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetLeft() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetLevel() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetOperand() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetOperator() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetParent() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetPointer() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetRight() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetRoot() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetType() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testSetValue() {
-		fail("Not yet implemented"); // TODO
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("Threw exception ");
+		}
 	}
 
 }

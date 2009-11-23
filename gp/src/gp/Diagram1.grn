@@ -4,15 +4,15 @@
       <name="=gp/src<gp{GeneticProgramming.java[GeneticProgramming"/>
       <height="1004"/>
       <width="631"/>
-      <x="1408"/>
-      <y="-116"/>
+      <x="1094"/>
+      <y="-258"/>
    </type>
    <type>
       <name="=gp/src<gp{Tree.java[Tree"/>
       <height="699"/>
       <width="579"/>
-      <x="996"/>
-      <y="-244"/>
+      <x="1058"/>
+      <y="800"/>
    </type>
    <type>
       <name="=gp/src<gp{Node.java[Node"/>
@@ -25,94 +25,63 @@
       <name="=gp/src<gp{FunctionalSet.java[FunctionalSet"/>
       <height="-1"/>
       <width="-1"/>
-      <x="475"/>
-      <y="833"/>
+      <x="291"/>
+      <y="1085"/>
    </type>
    <type>
       <name="=gp/C:\/Sun\/SDK\/jdk\/jre\/lib\/rt.jar<java.util(ArrayList.class[ArrayList"/>
       <height="416"/>
       <width="373"/>
-      <x="1865"/>
-      <y="-53"/>
+      <x="-37"/>
+      <y="635"/>
    </type>
    <type>
       <name="=gp/src<gp{Crossover.java[Crossover"/>
       <height="-1"/>
       <width="-1"/>
-      <x="1824"/>
-      <y="546"/>
+      <x="456"/>
+      <y="-68"/>
    </type>
    <type>
       <name="=gp/C:\/Sun\/SDK\/jdk\/jre\/lib\/rt.jar<java.util(Random.class[Random"/>
       <height="538"/>
       <width="323"/>
-      <x="-87"/>
-      <y="677"/>
+      <x="609"/>
+      <y="403"/>
    </type>
    <type>
       <name="=gp/src<gp{Fitness.java[Fitness"/>
       <height="-1"/>
       <width="-1"/>
-      <x="1838"/>
-      <y="670"/>
+      <x="454"/>
+      <y="148"/>
    </type>
    <type>
       <name="=gp/src<gp{Mutation.java[Mutation"/>
       <height="-1"/>
       <width="-1"/>
-      <x="480"/>
-      <y="-130"/>
+      <x="456"/>
+      <y="20"/>
    </type>
    <type>
       <name="=gp/src<gp{TreeFitnessComparator.java[TreeFitnessComparator"/>
       <height="-1"/>
       <width="-1"/>
-      <x="548"/>
-      <y="-245"/>
+      <x="460"/>
+      <y="-239"/>
    </type>
    <type>
       <name="=gp/src<gp{TerminalSet.java[TerminalSet"/>
       <height="118"/>
       <width="210"/>
-      <x="642"/>
-      <y="664"/>
+      <x="356"/>
+      <y="744"/>
    </type>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyLPart"/>
       <sourceType="=gp/src<gp{Tree.java[Tree"/>
-      <targetType="=gp/src<gp{Tree.java[Tree"/>
+      <targetType="=gp/C:\/Sun\/SDK\/jdk\/jre\/lib\/rt.jar<java.util(Random.class[Random"/>
       <bendpoints>
-         <bendpoint>
-            <x="40"/>
-            <y="0"/>
-         </bendpoint>
-         <bendpoint>
-            <x="40"/>
-            <y="-40"/>
-         </bendpoint>
-         <bendpoint>
-            <x="0"/>
-            <y="-40"/>
-         </bendpoint>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyLPart"/>
-      <sourceType="=gp/src<gp{Node.java[Node"/>
-      <targetType="=gp/src<gp{Node.java[Node"/>
-      <bendpoints>
-         <bendpoint>
-            <x="40"/>
-            <y="0"/>
-         </bendpoint>
-         <bendpoint>
-            <x="40"/>
-            <y="-40"/>
-         </bendpoint>
-         <bendpoint>
-            <x="0"/>
-            <y="-40"/>
-         </bendpoint>
       </bendpoints>
    </relationship>
    <relationship>
@@ -123,9 +92,9 @@
       </bendpoints>
    </relationship>
    <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyLPart"/>
-      <sourceType="=gp/src<gp{Tree.java[Tree"/>
-      <targetType="=gp/src<gp{Node.java[Node"/>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=gp/src<gp{FunctionalSet.java[FunctionalSet"/>
+      <targetType="=gp/C:\/Sun\/SDK\/jdk\/jre\/lib\/rt.jar<java.util(ArrayList.class[ArrayList"/>
       <bendpoints>
       </bendpoints>
    </relationship>
@@ -137,9 +106,9 @@
       </bendpoints>
    </relationship>
    <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyLPart"/>
-      <sourceType="=gp/src<gp{Tree.java[Tree"/>
-      <targetType="=gp/C:\/Sun\/SDK\/jdk\/jre\/lib\/rt.jar<java.util(Random.class[Random"/>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=gp/src<gp{TerminalSet.java[TerminalSet"/>
+      <targetType="=gp/C:\/Sun\/SDK\/jdk\/jre\/lib\/rt.jar<java.util(ArrayList.class[ArrayList"/>
       <bendpoints>
       </bendpoints>
    </relationship>
