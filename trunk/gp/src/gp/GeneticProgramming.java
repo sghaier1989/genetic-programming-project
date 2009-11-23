@@ -465,7 +465,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 5);
 		trainingDataPanel.add(minTrainingDataLabel, gridBagConstraints);
 
-		minTrainingDataTextField.setText("-100");
+		minTrainingDataTextField.setText("-10");
 		minTrainingDataTextField
 				.addKeyListener(new java.awt.event.KeyAdapter() {
 					@Override
@@ -486,7 +486,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 5);
 		trainingDataPanel.add(maxTrainingDataLabel, gridBagConstraints);
 
-		maxTrainingDataTextField.setText("100");
+		maxTrainingDataTextField.setText("10");
 		maxTrainingDataTextField
 				.addKeyListener(new java.awt.event.KeyAdapter() {
 					@Override
