@@ -1,78 +1,92 @@
 package test;
 
-import static org.junit.Assert.fail;
 import gp.FindThread;
 import gp.FunctionalSet;
 import gp.TerminalSet;
-
-import java.text.SimpleDateFormat;
-import java.util.StringTokenizer;
+import junit.framework.TestCase;
 
 import org.junit.Test;
 
-public class GeneticProgrammingTest {
-	public static final String DATE_FORMAT = "mm:ss";
-	private SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+/**
+ * This is a test for testing the GeneticProgramming class.
+ * 
+ * @author Trevor Greene
+ * @version 1.0
+ */
+public class GeneticProgrammingTest extends TestCase {
 
+	/**
+	 * Test for finding the best starting population.
+	 */
 	@Test
-	public final void bestPopulationTest() {
-		int maxTrainingData = 100;
-		int minTrainingData = -100;
-		int mutation = 25;
-		int crossover = 80;
-		int hieghtOfTree = 4;
-		int maxHeight = 5;
+	public final void testBestPopulationTest() {
+		final int maxTrainingData = 10;
+		final int minTrainingData = -10;
+		final int mutation = 25;
+		final int crossover = 80;
+		final int hieghtOfTree = 4;
+		final int maxHeight = 5;
 		long startTime = System.currentTimeMillis();
-		String terminalSetValue = "1,2,3,4,5,6,7,8,9,x";
-		StringTokenizer st = new StringTokenizer(terminalSetValue, ",");
-		TerminalSet terminalSet = new TerminalSet();
-		while (st.hasMoreElements()) {
-			terminalSet.add(st.nextToken());
-		}
-		String functionalSetValue = "+,-,/,*";
-		StringTokenizer st2 = new StringTokenizer(functionalSetValue, ",");
-		FunctionalSet functionalSet = new FunctionalSet();
-		while (st2.hasMoreElements()) {
-			functionalSet.add(st2.nextToken());
-		}
-		for (int numberOfTrees = 100; numberOfTrees <= 2000; numberOfTrees = numberOfTrees + 100) {
+		long endTime = 0;
+		final TerminalSet terminalSet = TestHelper.getTerminalSet();
+		final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+		for (int numOfTs = 100; numOfTs <= 2000; numOfTs = numOfTs + 100) {
 			startTime = System.currentTimeMillis();
-			System.out.println("Number Of Trees " + numberOfTrees);
 			createAndRun(startTime, terminalSet, functionalSet,
 					maxTrainingData, minTrainingData, mutation, crossover,
-					hieghtOfTree, maxHeight, numberOfTrees);
-			System.out.println("Time: "
-					+ sdf.format(System.currentTimeMillis() - startTime));
+					hieghtOfTree, maxHeight, numOfTs);
+			endTime = System.currentTimeMillis();
+			assertTrue("Needs to solve the problem in 15 minutes", endTime
+					- startTime <= 900000);
 		}
 	}
 
-	public synchronized void createAndRun(long startTime,
-			TerminalSet terminalSet, FunctionalSet functionalSet,
-			int maxTrainingData, int minTrainingData, int mutation,
-			int crossover, int hieghtOfTree, int maxHeight, int numberOfTrees) {
-		try {
-			FindThread ft = new FindThread();
-			ft.setGui(false);
-			ft.setTerminalSet(terminalSet);
-			ft.setStartTime(startTime);
-			ft.setTargetExpersion("(x^2-1)/2");
-			ft.setFunctionalSet(functionalSet);
-			ft.setMutationRate(mutation / 100.00);
-			ft.setCrossoverRate(crossover / 100.00);
-			ft.setHieghtOfTree(hieghtOfTree);
-			ft.setMaxRange(maxTrainingData);
-			ft.setMinRange(minTrainingData);
-			ft.setNumberOfTrees(numberOfTrees);
-			ft.setMaxHeight(maxHeight);
-			ThreadGroup tg = new ThreadGroup("FindThread");
-			Thread thread = new Thread(tg, ft, "");
-			thread.start();
-			while (thread.isAlive()) {
-			}
+	/**
+	 * Method for running a genetic programming application.
+	 * 
+	 * @param startTime
+	 *            - the start time of the test.
+	 * @param terminalSet
+	 *            - the terminal set.
+	 * @param functionalSet
+	 *            - the functional set.
+	 * @param maxTrainingData
+	 *            - Training data maximum.
+	 * @param minTrainingData
+	 *            - Training data minimum
+	 * @param mutation
+	 *            - Mutation rate of test
+	 * @param crossover
+	 *            - crossover rate of test
+	 * @param hieghtOfTree
+	 *            - starting height of tree
+	 * @param maxHeight
+	 *            - max tree height
+	 * @param numberOfTrees
+	 *            - population/number of trees
+	 */
+	public final synchronized void createAndRun(final long startTime,
+			final TerminalSet terminalSet, final FunctionalSet functionalSet,
+			final int maxTrainingData, final int minTrainingData,
+			final int mutation, final int crossover, final int hieghtOfTree,
+			final int maxHeight, final int numberOfTrees) {
+		final FindThread findThread = new FindThread();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			fail("Threw exception ");
-		}
+		findThread.setGui(false);
+		findThread.setTerminalSet(terminalSet);
+		findThread.setStartTime(startTime);
+		findThread.setTargetExpersion("(x^2-1)/2");
+		findThread.setFunctionalSet(functionalSet);
+		findThread.setMutationRate(mutation / 100.00);
+		findThread.setCrossoverRate(crossover / 100.00);
+		findThread.setHieghtOfTree(hieghtOfTree);
+		findThread.setMaxRange(maxTrainingData);
+		findThread.setMinRange(minTrainingData);
+		findThread.setNumberOfTrees(numberOfTrees);
+		findThread.setMaxHeight(maxHeight);
+		final ThreadGroup threadGroup = new ThreadGroup("FindThread");
+		final Thread thread = new Thread(threadGroup, findThread, "");
+		thread.start();
+
 	}
 }
