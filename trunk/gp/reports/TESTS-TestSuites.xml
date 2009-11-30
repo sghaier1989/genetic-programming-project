@@ -1,154 +1,158 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="STP3301655" id="0" name="AllTests" package="test" tests="13" time="0.093" timestamp="2009-11-30T19:30:37">
+  <testsuite errors="0" failures="0" hostname="STP3301655" id="0" name="AllTests" package="test" tests="13" time="0.094" timestamp="2009-11-30T22:49:54">
       <properties>
-          <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
-
-          <property name="reports" value="C:\workspace\gp\reports" />
-
-          <property name="sun.boot.library.path" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\bin" />
-
-          <property name="java.vm.version" value="11.0-b15" />
-
-          <property name="ant.library.dir" value="C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib" />
-
-          <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
-
-          <property name="ant.java.version" value="1.6" />
-
-          <property name="java.vm.vendor" value="Sun Microsystems Inc." />
-
-          <property name="java.vendor.url" value="http://java.sun.com/" />
-
-          <property name="path.separator" value=";" />
-
-          <property name="dist" value="C:\workspace\gp\dist" />
-
-          <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
-
-          <property name="file.encoding.pkg" value="sun.io" />
-
-          <property name="user.country" value="US" />
+          <property name="java.vendor" value="Sun Microsystems Inc." />
 
           <property name="sun.java.launcher" value="SUN_STANDARD" />
 
-          <property name="sun.os.patch.level" value="Service Pack 3" />
+          <property name="sun.management.compiler" value="HotSpot Client Compiler" />
 
-          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
-
-          <property name="user.dir" value="C:\workspace\gp\config" />
+          <property name="dist" value="C:\workspace\gp\dist" />
 
           <property name="lib" value="C:\workspace\gp\lib" />
 
-          <property name="java.runtime.version" value="1.6.0_10-b33" />
-
-          <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
-
-          <property name="basedir" value="C:\workspace\gp\config" />
-
-          <property name="java.endorsed.dirs" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\endorsed" />
-
-          <property name="os.arch" value="x86" />
-
-          <property name="java.io.tmpdir" value="C:\WINDOWS\TEMP\" />
-
-          <property name="ant.core.lib" value="C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant.jar" />
-
-          <property name="line.separator" value=" " />
-
-          <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
-
-          <property name="user.variant" value="" />
+          <property name="instr" value="C:\workspace\gp\config\instr" />
 
           <property name="os.name" value="Windows XP" />
 
-          <property name="DSTAMP" value="20091130" />
-
-          <property name="ant.home" value="C:\Documents and Settings\LocalService\.hudson\tools\Ant" />
-
-          <property name="ant.project.name" value="Genetic Programming Project" />
-
-          <property name="sun.jnu.encoding" value="Cp1252" />
+          <property name="sun.boot.class.path" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\resources.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\rt.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\sunrsasign.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\jsse.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\jce.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\charsets.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\classes" />
 
           <property name="TODAY" value="November 30 2009" />
 
-          <property name="java.library.path" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Documents and Settings\LocalService\.hudson\tools\JDK/bin;C:\Sun\SDK\bin;C:\Subversion\bin;C:\apache-ant-1.7.1\bin;C:\apache-ant-1.7.1\bin;C:\Oracle\ora9\bin;C:\Program Files\Oracle\jre\1.3.1\bin;C:\Program Files\Oracle\jre\1.1.8\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;L:\PROGRAMS\DOCUMENTUM\SHARED;C:\Program Files\Common Files\Lenovo;C:\PROGRA~1\COMMON~1\AUTODE~1;C:\Program Files\QuickTime\QTSystem\;C:\Subversion\bin;C:\Program Files\TortoiseSVN\bin" />
+          <property name="sun.desktop" value="windows" />
 
-          <property name="src" value="C:\workspace\gp\src" />
+          <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+
+          <property name="ant.home" value="C:\Documents and Settings\LocalService\.hudson\tools\Ant" />
+
+          <property name="java.runtime.version" value="1.6.0_10-b33" />
+
+          <property name="user.name" value="SYSTEM" />
+
+          <property name="ant.file.Genetic Programming Project" value="C:\workspace\gp\config\build.xml" />
+
+          <property name="reports" value="C:\workspace\gp\reports" />
+
+          <property name="user.language" value="en" />
+
+          <property name="build" value="C:\workspace\gp\bin" />
+
+          <property name="sun.boot.library.path" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\bin" />
+
+          <property name="ant.project.name" value="Genetic Programming Project" />
+
+          <property name="DSTAMP" value="20091130" />
+
+          <property name="java.version" value="1.6.0_10" />
+
+          <property name="user.timezone" value="" />
+
+          <property name="sun.arch.data.model" value="32" />
+
+          <property name="java.endorsed.dirs" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\endorsed" />
+
+          <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
+
+          <property name="sun.jnu.encoding" value="Cp1252" />
+
+          <property name="file.encoding.pkg" value="sun.io" />
+
+          <property name="file.separator" value="\" />
 
           <property name="java.specification.name" value="Java Platform API Specification" />
 
           <property name="java.class.version" value="50.0" />
 
-          <property name="sun.management.compiler" value="HotSpot Client Compiler" />
+          <property name="src" value="C:\workspace\gp\src" />
 
-          <property name="os.version" value="5.1" />
-
-          <property name="ant.file" value="C:\workspace\gp\config\build.xml" />
-
-          <property name="user.home" value="C:\Documents and Settings\LocalService" />
-
-          <property name="user.timezone" value="" />
-
-          <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
-
-          <property name="java.specification.version" value="1.6" />
-
-          <property name="file.encoding" value="Cp1252" />
-
-          <property name="TSTAMP" value="1330" />
-
-          <property name="user.name" value="SYSTEM" />
-
-          <property name="java.class.path" value="C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-launcher.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-antlr.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-bcel.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-bsf.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-log4j.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-oro.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-regexp.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-resolver.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-commons-logging.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-commons-net.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-jai.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-javamail.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-jdepend.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-jmf.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-jsch.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-junit.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-launcher.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-netrexx.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-nodeps.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-starteam.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-stylebook.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-swing.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-testutil.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-trax.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-weblogic.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\xercesImpl.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\xml-apis.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\lib\tools.jar" />
-
-          <property name="docs" value="C:\workspace\gp\doc" />
-
-          <property name="java.vm.specification.version" value="1.0" />
+          <property name="user.country" value="US" />
 
           <property name="java.home" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre" />
 
-          <property name="sun.arch.data.model" value="32" />
-
-          <property name="java.specification.vendor" value="Sun Microsystems Inc." />
-
-          <property name="user.language" value="en" />
-
-          <property name="build" value="C:\workspace\gp\build" />
-
-          <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
-
           <property name="java.vm.info" value="mixed mode, sharing" />
 
-          <property name="java.version" value="1.6.0_10" />
+          <property name="ant.file" value="C:\workspace\gp\config\build.xml" />
 
-          <property name="java.ext.dirs" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+          <property name="os.version" value="5.1" />
 
-          <property name="sun.boot.class.path" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\resources.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\rt.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\sunrsasign.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\jsse.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\jce.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\charsets.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\classes" />
+          <property name="path.separator" value=";" />
 
-          <property name="java.vendor" value="Sun Microsystems Inc." />
+          <property name="java.vm.version" value="11.0-b15" />
 
-          <property name="file.separator" value="\" />
+          <property name="docs" value="C:\workspace\gp\doc" />
 
-          <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+          <property name="user.variant" value="" />
 
-          <property name="sun.cpu.endian" value="little" />
+          <property name="ant.library.dir" value="C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib" />
+
+          <property name="coverage" value="C:\workspace\gp\reports\coverage" />
+
+          <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
 
           <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
 
-          <property name="ant.file.Genetic Programming Project" value="C:\workspace\gp\config\build.xml" />
+          <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
 
-          <property name="sun.desktop" value="windows" />
+          <property name="user.home" value="C:\Documents and Settings\LocalService" />
 
-          <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
+          <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+
+          <property name="java.library.path" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Documents and Settings\LocalService\.hudson\tools\JDK/bin;C:\Sun\SDK\bin;C:\Subversion\bin;C:\apache-ant-1.7.1\bin;C:\apache-ant-1.7.1\bin;C:\Oracle\ora9\bin;C:\Program Files\Oracle\jre\1.3.1\bin;C:\Program Files\Oracle\jre\1.1.8\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;L:\PROGRAMS\DOCUMENTUM\SHARED;C:\Program Files\Common Files\Lenovo;C:\PROGRA~1\COMMON~1\AUTODE~1;C:\Program Files\QuickTime\QTSystem\;C:\Subversion\bin;C:\Program Files\TortoiseSVN\bin" />
+
+          <property name="java.vendor.url" value="http://java.sun.com/" />
+
+          <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+
+          <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+
+          <property name="java.class.path" value="C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-launcher.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-antlr.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-bcel.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-bsf.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-log4j.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-oro.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-regexp.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-apache-resolver.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-commons-logging.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-commons-net.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-jai.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-javamail.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-jdepend.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-jmf.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-jsch.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-junit.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-launcher.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-netrexx.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-nodeps.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-starteam.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-stylebook.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-swing.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-testutil.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-trax.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant-weblogic.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\xercesImpl.jar;C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\xml-apis.jar;C:\Documents and Settings\LocalService\.hudson\tools\JDK\lib\tools.jar" />
+
+          <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
+
+          <property name="TSTAMP" value="1649" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="java.vm.specification.version" value="1.0" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="sun.os.patch.level" value="Service Pack 3" />
+
+          <property name="java.io.tmpdir" value="C:\WINDOWS\TEMP\" />
+
+          <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+
+          <property name="os.arch" value="x86" />
+
+          <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+
+          <property name="java.ext.dirs" value="C:\Documents and Settings\LocalService\.hudson\tools\JDK\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+
+          <property name="user.dir" value="C:\workspace\gp\config" />
+
+          <property name="line.separator" value=" " />
+
+          <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
+
+          <property name="basedir" value="C:\workspace\gp\config" />
+
+          <property name="ant.java.version" value="1.6" />
+
+          <property name="ant.core.lib" value="C:\Documents and Settings\LocalService\.hudson\tools\Ant\lib\ant.jar" />
+
+          <property name="file.encoding" value="Cp1252" />
+
+          <property name="java.specification.version" value="1.6" />
 
       </properties>
 
       <testcase classname="test.NodeTest" name="testCopyNode" time="0.016" />
 
-      <testcase classname="test.FitnessTest" name="testFitness" time="0.0" />
+      <testcase classname="test.FitnessTest" name="testFitness" time="0.015" />
 
-      <testcase classname="test.TreeFitnessComparatorTest" name="testSort" time="0.015" />
+      <testcase classname="test.TreeFitnessComparatorTest" name="testSort" time="0.0" />
 
       <testcase classname="test.CrossoverTest" name="testCross" time="0.0" />
 
