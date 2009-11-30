@@ -25,30 +25,45 @@ import com.graphbuilder.math.VarMap;
  * @version 1.0
  */
 public class EquationGraphPanel extends ChartPanel {
-
+	/**
+	 * Serial Version UID.
+	 */
 	private static final long serialVersionUID = -8263631782800794519L;
+	/**
+	 * Target equation.
+	 */
 	private String targetEquation = null;
+	/**
+	 * Training data.
+	 */
 	private int[] trainingData = null;
+	/**
+	 * Tree value.
+	 */
 	private Tree tree = null;
 
 	/**
 	 * Constructor class the builds a JPanel.
+	 * 
+	 * @param chart
+	 *            - chart object.
 	 */
-	public EquationGraphPanel(JFreeChart chart) {
+	public EquationGraphPanel(final JFreeChart chart) {
 		super(chart);
 	}
 
 	/**
-	 * method for creating the chart.
+	 * Method for creating the chart.
 	 * 
 	 * @param dataset
 	 *            the data for the chart.
 	 * 
-	 * @return JFreeChart
+	 * @return JFreeChart - XY chart of equation
 	 */
-	public JFreeChart createChart(final XYDataset dataset) {
+	public final JFreeChart createChart(final XYDataset dataset) {
 		final JFreeChart chart = ChartFactory.createXYLineChart(
-				"Equation Graph", // chart
+
+		"Equation Graph", // chart
 				// title
 				"X", // x axis label
 				"Y", // y axis label
@@ -74,41 +89,41 @@ public class EquationGraphPanel extends ChartPanel {
 	/**
 	 * Populates graph with data.
 	 * 
-	 * @return XYDataset.
+	 * @return XYDataset - XY data set
+	 * @exception GeneticProgrammingException
+	 *                - if something goes wrong
 	 */
-	public XYDataset createDataset() {
+	public final XYDataset createDataset() throws GeneticProgrammingException {
 		final XYSeriesCollection dataset = new XYSeriesCollection();
 		if (getTrainingData() != null && getTree() != null) {
-			try {
-				final XYSeries series1 = new XYSeries(getTree().toString());
-				final XYSeries series2 = new XYSeries(getTargetEquation());
-				int datasetSize = getTrainingData().length;
-				for (int x = 0; x < datasetSize; x++) {
-					String eq = getTree().toString();
-					Expression exp = ExpressionTree.parse(eq);
-					VarMap vm = new VarMap(false);
-					vm.setValue("x", getTrainingData()[x]);
-					int val = (int) exp.eval(vm, null);
-					series1.add(getTrainingData()[x], val);
-				}
-				for (int x = 0; x < datasetSize; x++) {
-					Expression exp = ExpressionTree.parse(getTargetEquation());
-					VarMap vm = new VarMap(false);
-					vm.setValue("x", getTrainingData()[x]);
-					int val = (int) exp.eval(vm, null);
-					series2.add(getTrainingData()[x], val);
-				}
-				dataset.addSeries(series1);
-				dataset.addSeries(series2);
-			} catch (Exception e) {
-				e.printStackTrace();
+			final XYSeries series1 = new XYSeries(getTree().getEquation()
+					.toString());
+			final XYSeries series2 = new XYSeries(getTargetEquation());
+			final int datasetSize = getTrainingData().length;
+			final String equation = getTree().getEquation().toString();
+			Expression exp = ExpressionTree.parse(equation);
+			final VarMap variableMap = new VarMap(false);
+			for (int x = 0; x < datasetSize; x++) {
+				variableMap.setValue("x", getTrainingData()[x]);
+				series1.add(getTrainingData()[x], (int) exp.eval(variableMap,
+						null));
 			}
+			exp = ExpressionTree.parse(getTargetEquation());
+			for (int x = 0; x < datasetSize; x++) {
+				variableMap.setValue("x", getTrainingData()[x]);
+				series2.add(getTrainingData()[x], (int) exp.eval(variableMap,
+						null));
+			}
+			dataset.addSeries(series1);
+			dataset.addSeries(series2);
 		}
 		return dataset;
 	}
 
 	/**
-	 * method to get the target equation
+	 * method to get the target equation.
+	 * 
+	 * @return - the tree equation
 	 * 
 	 */
 	private String getTargetEquation() {
@@ -116,16 +131,16 @@ public class EquationGraphPanel extends ChartPanel {
 	}
 
 	/**
-	 * method to get the training data
+	 * method to get the training data.
 	 * 
-	 * @return int[].
+	 * @return training data
 	 */
 	private int[] getTrainingData() {
 		return trainingData;
 	}
 
 	/**
-	 * method to get the tree
+	 * method to get the tree.
 	 * 
 	 * @return Tree.
 	 */
@@ -134,26 +149,32 @@ public class EquationGraphPanel extends ChartPanel {
 	}
 
 	/**
-	 * method to set the target equation
+	 * Method to set the target equation.
 	 * 
+	 * @param newTargetEq
+	 *            - The target equation.
 	 */
-	public void setTargetEquation(String targetEquation) {
-		this.targetEquation = targetEquation;
+	public final void setTargetEquation(final String newTargetEq) {
+		this.targetEquation = newTargetEq;
 	}
 
 	/**
-	 * method to set the training data
+	 * Method to set the training data.
 	 * 
+	 * @param newTrainingData
+	 *            - The training data.
 	 */
-	public void setTrainingData(int[] trainingData) {
-		this.trainingData = trainingData;
+	public final void setTrainingData(final int[] newTrainingData) {
+		this.trainingData = newTrainingData;
 	}
 
 	/**
-	 * method to set the tree
+	 * method to set the tree.
 	 * 
+	 * @param newTree
+	 *            - The tree.
 	 */
-	public void setTree(Tree tree) {
-		this.tree = tree;
+	public final void setTree(final Tree newTree) {
+		this.tree = newTree;
 	}
 }

@@ -23,8 +23,8 @@ public final class TerminalSet extends ArrayList<String> {
 	 * @return - String
 	 */
 	public String randomOperand() {
-		Random randomGenerator = new Random();
-		int randomOperand = randomGenerator.nextInt(this.size());
+		final Random randomGenerator = new Random();
+		final int randomOperand = randomGenerator.nextInt(this.size());
 		return this.get(randomOperand);
 	}
 

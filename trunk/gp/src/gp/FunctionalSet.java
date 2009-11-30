@@ -3,8 +3,6 @@ package gp;
 import java.util.ArrayList;
 import java.util.Random;
 
-import org.apache.log4j.Logger;
-
 /**
  * A class that represents the functional set. For Example: +,-,*,/
  * 
@@ -12,7 +10,9 @@ import org.apache.log4j.Logger;
  * @version 1.0
  */
 public final class FunctionalSet extends ArrayList<String> {
-	static Logger logger = Logger.getLogger(FunctionalSet.class);
+	/**
+	 * Serial Version UID.
+	 */
 	private static final long serialVersionUID = 6556667568340406821L;
 
 	/**
@@ -21,9 +21,8 @@ public final class FunctionalSet extends ArrayList<String> {
 	 * @return - String
 	 */
 	public String randomOperator() {
-		Random randomGenerator = new Random();
-		int randomOperator = randomGenerator.nextInt(this.size());
-		randomGenerator = null;
+		final Random randomGenerator = new Random();
+		final int randomOperator = randomGenerator.nextInt(this.size());
 		return this.get(randomOperator);
 
 	}
