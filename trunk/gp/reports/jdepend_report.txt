@@ -1,0 +1,167 @@
+
+--------------------------------------------------
+- Package: com.graphbuilder.math
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: gp
+--------------------------------------------------
+
+Stats:
+    Total Classes: 22
+    Concrete Classes: 22
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 14
+
+    A: 0
+    I: 0.93
+    D: 0.07
+
+Abstract Classes:
+
+Concrete Classes:
+    gp.Crossover
+    gp.EquationGraphPanel
+    gp.FindThread
+    gp.Fitness
+    gp.FunctionalSet
+    gp.GeneticProgramming
+    gp.GeneticProgramming$1
+    gp.GeneticProgramming$2
+    gp.GeneticProgramming$3
+    gp.GeneticProgramming$4
+    gp.GeneticProgramming$5
+    gp.GeneticProgramming$6
+    gp.GeneticProgramming$7
+    gp.GeneticProgramming$8
+    gp.GeneticProgramming$9
+    gp.GeneticProgrammingException
+    gp.Mutation
+    gp.Node
+    gp.PopulationFitnessPanel
+    gp.TerminalSet
+    gp.Tree
+    gp.TreeFitnessComparator
+
+Depends Upon:
+    com.graphbuilder.math
+    java.awt
+    java.awt.event
+    java.lang
+    java.text
+    java.util
+    javax.swing
+    org.apache.log4j
+    org.jfree.chart
+    org.jfree.chart.axis
+    org.jfree.chart.plot
+    org.jfree.chart.renderer.xy
+    org.jfree.data.general
+    org.jfree.data.xy
+
+Used By:
+    test
+
+--------------------------------------------------
+- Package: org.apache.log4j
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.jfree.chart
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.jfree.chart.axis
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.jfree.chart.plot
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.jfree.chart.renderer.xy
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.jfree.data.general
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.jfree.data.xy
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.junit
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: test
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 6
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 6
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    test.CrossoverTest
+    test.FindThreadTest
+    test.GeneticProgrammingTest
+    test.MutationTest
+    test.NodeTest
+    test.TreeTest
+
+Depends Upon:
+    com.graphbuilder.math
+    gp
+    java.lang
+    java.text
+    java.util
+    org.junit
+
+Used By:
+    Not used by any packages.
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+com.graphbuilder.math,0,0,2,0,0,0,1,1
+gp,22,0,1,14,0,0.93,0.07,1
+org.apache.log4j,0,0,1,0,0,0,1,1
+org.jfree.chart,0,0,1,0,0,0,1,1
+org.jfree.chart.axis,0,0,1,0,0,0,1,1
+org.jfree.chart.plot,0,0,1,0,0,0,1,1
+org.jfree.chart.renderer.xy,0,0,1,0,0,0,1,1
+org.jfree.data.general,0,0,1,0,0,0,1,1
+org.jfree.data.xy,0,0,1,0,0,0,1,1
+org.junit,0,0,1,0,0,0,1,1
+test,6,0,0,6,0,1,0,1

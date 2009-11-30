@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics scope="gp" type="Project" date="2009-11-25" xmlns="http://metrics.sourceforge.net/2003/Metrics-First-Flat">
+   <Metric id = "NSM" description ="Number of Static Methods">
+      <Values per = "type" total = "11" avg = "0.846" stddev = "1.099" max = "3">
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="3"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="3"/>
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="1"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="0"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="0"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="0"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="0"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "TLOC" description ="Total Lines of Code">
+      <Value value="1864"/>
+   </Metric>
+   <Metric id = "CA" description ="Afferent Coupling">
+      <Values per = "packageFragment" avg = "0" stddev = "0" max = "0">
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+         <Value name="gp" package ="gp" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMD" description ="Normalized Distance">
+      <Values per = "packageFragment" avg = "0" stddev = "0" max = "0">
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+         <Value name="gp" package ="gp" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOC" description ="Number of Classes">
+      <Values per = "packageFragment" total = "13" avg = "13" stddev = "0" max = "13">
+         <Value name="gp" package ="gp" value ="13"/>
+         <Value name="(default package)" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "SIX" description ="Specialization Index">
+      <Values per = "type" avg = "0.003" stddev = "0.009" max = "0.034">
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="0.034"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="0"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="0"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="0"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="0"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="0"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="0"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="0"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="0"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMI" description ="Instability">
+      <Values per = "packageFragment" avg = "1" stddev = "0" max = "1">
+         <Value name="(default package)" package ="(default package)" value ="1"/>
+         <Value name="gp" package ="gp" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOF" description ="Number of Attributes">
+      <Values per = "type" total = "92" avg = "7.077" stddev = "13.691" max = "51">
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="51"/>
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="18"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="9"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="8"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="3"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="3"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="0"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="0"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="0"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="0"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="0"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="0"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOP" description ="Number of Packages">
+      <Value value="1"/>
+   </Metric>
+   <Metric id = "MLOC" description ="Method Lines of Code">
+      <Values per = "method" total = "1298" avg = "8.77" stddev = "33.385" max = "386">
+         <Value name="initComponents" source ="GeneticProgramming.java" package ="gp" value ="386"/>
+         <Value name="keepLooking" source ="FindThread.java" package ="gp" value ="80"/>
+         <Value name="isInputValid" source ="GeneticProgramming.java" package ="gp" value ="73"/>
+         <Value name="cross" source ="Crossover.java" package ="gp" value ="52"/>
+         <Value name="runButtonActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="50"/>
+         <Value name="createDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="47"/>
+         <Value name="evaluateTree" source ="Tree.java" package ="gp" value ="33"/>
+         <Value name="copyNode" source ="Node.java" package ="gp" value ="27"/>
+         <Value name="createDataset" source ="EquationGraphPanel.java" package ="gp" value ="24"/>
+         <Value name="mutateTrees" source ="Mutation.java" package ="gp" value ="24"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="22"/>
+         <Value name="createChart" source ="EquationGraphPanel.java" package ="gp" value ="21"/>
+         <Value name="calculateExpressionValues" source ="Fitness.java" package ="gp" value ="21"/>
+         <Value name="setParent" source ="Node.java" package ="gp" value ="19"/>
+         <Value name="getHeight" source ="Tree.java" package ="gp" value ="18"/>
+         <Value name="generateNodes" source ="FindThread.java" package ="gp" value ="17"/>
+         <Value name="addNode" source ="Tree.java" package ="gp" value ="16"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="15"/>
+         <Value name="findRandomNonRootOperatorNode" source ="Tree.java" package ="gp" value ="15"/>
+         <Value name="populate" source ="FindThread.java" package ="gp" value ="14"/>
+         <Value name="run" source ="FindThread.java" package ="gp" value ="12"/>
+         <Value name="checkFitness" source ="Fitness.java" package ="gp" value ="12"/>
+         <Value name="setRandomNodeToValue" source ="Mutation.java" package ="gp" value ="12"/>
+         <Value name="printNodeInfo" source ="Node.java" package ="gp" value ="12"/>
+         <Value name="mutateTree" source ="Mutation.java" package ="gp" value ="11"/>
+         <Value name="createChart" source ="GeneticProgramming.java" package ="gp" value ="10"/>
+         <Value name="calculateTargetValues" source ="FindThread.java" package ="gp" value ="9"/>
+         <Value name="getEquation" source ="Tree.java" package ="gp" value ="9"/>
+         <Value name="setRoot" source ="Tree.java" package ="gp" value ="9"/>
+         <Value name="cull" source ="FindThread.java" package ="gp" value ="8"/>
+         <Value name="updateEquationChart" source ="FindThread.java" package ="gp" value ="8"/>
+         <Value name="updateFitnessChart" source ="FindThread.java" package ="gp" value ="8"/>
+         <Value name="setLeft" source ="Node.java" package ="gp" value ="8"/>
+         <Value name="setPointer" source ="Node.java" package ="gp" value ="8"/>
+         <Value name="setRight" source ="Node.java" package ="gp" value ="8"/>
+         <Value name="equationTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="7"/>
+         <Value name="setChild" source ="Node.java" package ="gp" value ="7"/>
+         <Value name="setType" source ="Node.java" package ="gp" value ="7"/>
+         <Value name="genertateTrainingDataSet" source ="FindThread.java" package ="gp" value ="6"/>
+         <Value name="functionalSetTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="6"/>
+         <Value name="minTrainingDataTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="6"/>
+         <Value name="terminalSetTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="6"/>
+         <Value name="copyTree" source ="Tree.java" package ="gp" value ="6"/>
+         <Value name="compare" source ="TreeFitnessComparator.java" package ="gp" value ="6"/>
+         <Value name="calculateExpressionValues" source ="Fitness.java" package ="gp" value ="5"/>
+         <Value name="main" source ="GeneticProgramming.java" package ="gp" value ="5"/>
+         <Value name="populationSizeTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="5"/>
+         <Value name="randomOperator" source ="FunctionalSet.java" package ="gp" value ="3"/>
+         <Value name="createChart" source ="PopulationFitnessPanel.java" package ="gp" value ="3"/>
+         <Value name="randomOperand" source ="TerminalSet.java" package ="gp" value ="3"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTargetEquation" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTrainingData" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTree" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTargetEquation" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTrainingData" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTree" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getBestResultValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getCrossoverRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getEquationGraphPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalEquationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalGenerationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalTimeresultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFitnessValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFrame" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFunctionalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getGenerationValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getHieghtOfTree" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMaxHeight" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMaxRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMinRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMutationRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getNumberOfTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getPopulationFitnessPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getResultDialog" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getRuntimeValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTargetExpersion" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTerminalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTreeComparator" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="isGui" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setBestResultValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setCrossoverRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setEquationGraphPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalEquationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalGenerationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalTimeresultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFitnessValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFrame" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFunctionalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGenerationValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGeneration" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGui" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setHieghtOfTree" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setLowestFitness" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMaxHeight" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMaxRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMinRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMutationRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setNumberOfTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setPopulationFitnessPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setPopulation" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setResultDialog" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setRuntimeValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setStartTime" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTargetExpersion" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTerminalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTreeComparator" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="sortTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8#actionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[#mousePressed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[#run" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="okButtonMousePressed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="1"/>
+         <Value name="getLeft" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getLevel" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getParent" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getPointer" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getRight" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getTree" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getType" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getValue" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="isRoot" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setLevel" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setRoot" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setTree" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setValue" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getTargetTreeValues" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getTrees" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setTargetTreeValues" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setTrees" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getFitness" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getFunctionalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getNodes" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperandAt" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperands" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperatorAt" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperators" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getRoot" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getTerminalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setEquation" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setFitness" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setFunctionalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setNodes" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setOperands" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setOperators" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setTerminalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="main" source ="Test.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "WMC" description ="Weighted methods per Class">
+      <Values per = "type" total = "292" avg = "22.462" stddev = "23.938" max = "80">
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="80"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="54"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="46"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="40"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="22"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="13"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="12"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="10"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="8"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="3"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="2"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="1"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NORM" description ="Number of Overridden Methods">
+      <Values per = "type" total = "1" avg = "0.077" stddev = "0.266" max = "1">
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="0"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="0"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="0"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="0"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="0"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="0"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="0"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="0"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSF" description ="Number of Static Attributes">
+      <Values per = "type" total = "33" avg = "2.538" stddev = "3.319" max = "12">
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="12"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="8"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="2"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="2"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="1"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="1"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="1"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="1"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="0"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NBD" description ="Nested Block Depth" max ="5" hint ="use Extract-method to split the method up">
+      <Values per = "method" avg = "1.385" stddev = "0.749" max = "5">
+         <Value name="cross" source ="Crossover.java" package ="gp" value ="5"/>
+         <Value name="keepLooking" source ="FindThread.java" package ="gp" value ="5"/>
+         <Value name="createDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="4"/>
+         <Value name="getHeight" source ="Tree.java" package ="gp" value ="4"/>
+         <Value name="createDataset" source ="EquationGraphPanel.java" package ="gp" value ="3"/>
+         <Value name="calculateExpressionValues" source ="Fitness.java" package ="gp" value ="3"/>
+         <Value name="isInputValid" source ="GeneticProgramming.java" package ="gp" value ="3"/>
+         <Value name="runButtonActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="3"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="3"/>
+         <Value name="findRandomNonRootOperatorNode" source ="Tree.java" package ="gp" value ="3"/>
+         <Value name="calculateTargetValues" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="cull" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="generateNodes" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="genertateTrainingDataSet" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="populate" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="run" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="calculateExpressionValues" source ="Fitness.java" package ="gp" value ="2"/>
+         <Value name="checkFitness" source ="Fitness.java" package ="gp" value ="2"/>
+         <Value name="equationTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="functionalSetTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="initComponents" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="main" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="minTrainingDataTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="populationSizeTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="terminalSetTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="mutateTrees" source ="Mutation.java" package ="gp" value ="2"/>
+         <Value name="mutateTree" source ="Mutation.java" package ="gp" value ="2"/>
+         <Value name="setRandomNodeToValue" source ="Mutation.java" package ="gp" value ="2"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="copyNode" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="setChild" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="setLeft" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="setParent" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="setPointer" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="setRight" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="setType" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="addNode" source ="Tree.java" package ="gp" value ="2"/>
+         <Value name="evaluateTree" source ="Tree.java" package ="gp" value ="2"/>
+         <Value name="getEquation" source ="Tree.java" package ="gp" value ="2"/>
+         <Value name="setRoot" source ="Tree.java" package ="gp" value ="2"/>
+         <Value name="compare" source ="TreeFitnessComparator.java" package ="gp" value ="2"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="createChart" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTargetEquation" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTrainingData" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTree" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTargetEquation" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTrainingData" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTree" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getBestResultValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getCrossoverRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getEquationGraphPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalEquationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalGenerationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalTimeresultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFitnessValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFrame" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFunctionalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getGenerationValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getHieghtOfTree" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMaxHeight" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMaxRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMinRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMutationRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getNumberOfTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getPopulationFitnessPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getResultDialog" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getRuntimeValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTargetExpersion" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTerminalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTreeComparator" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="isGui" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setBestResultValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setCrossoverRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setEquationGraphPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalEquationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalGenerationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalTimeresultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFitnessValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFrame" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFunctionalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGenerationValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGeneration" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGui" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setHieghtOfTree" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setLowestFitness" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMaxHeight" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMaxRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMinRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMutationRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setNumberOfTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setPopulationFitnessPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setPopulation" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setResultDialog" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setRuntimeValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setStartTime" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTargetExpersion" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTerminalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTreeComparator" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="sortTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="updateEquationChart" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="updateFitnessChart" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="randomOperator" source ="FunctionalSet.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="createChart" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8#actionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[#mousePressed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[#run" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="okButtonMousePressed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="1"/>
+         <Value name="getLeft" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getLevel" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getParent" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getPointer" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getRight" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getTree" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getType" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getValue" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="isRoot" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="printNodeInfo" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setLevel" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setRoot" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setTree" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setValue" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="createChart" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getTargetTreeValues" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getTrees" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setTargetTreeValues" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setTrees" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="randomOperand" source ="TerminalSet.java" package ="gp" value ="1"/>
+         <Value name="copyTree" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getFitness" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getFunctionalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getNodes" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperandAt" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperands" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperatorAt" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperators" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getRoot" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getTerminalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setEquation" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setFitness" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setFunctionalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setNodes" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setOperands" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setOperators" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setTerminalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="main" source ="Test.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOM" description ="Number of Methods">
+      <Values per = "type" total = "137" avg = "10.538" stddev = "15.756" max = "58">
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="58"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="24"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="21"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="11"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="9"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="9"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="2"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="1"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="1"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="0"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="0"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="0"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "LCOM" description ="Lack of Cohesion of Methods">
+      <Values per = "type" avg = "0.399" stddev = "0.434" max = "0.969">
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="0.969"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="0.901"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="0.895"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="0.85"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="0.8"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="0.778"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="0"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="0"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="0"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="0"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="0"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="0"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "VG" description ="McCabe Cyclomatic Complexity" max ="10" hint ="use Extract-method to split the method up">
+      <Values per = "method" avg = "1.973" stddev = "2.402" max = "15" maxinrange="false">
+         <Value name="keepLooking" source ="FindThread.java" package ="gp" value ="15" inrange="false"/>
+         <Value name="createDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="14" inrange="false"/>
+         <Value name="cross" source ="Crossover.java" package ="gp" value ="12" inrange="false"/>
+         <Value name="equationTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="12" inrange="false"/>
+         <Value name="functionalSetTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="9"/>
+         <Value name="evaluateTree" source ="Tree.java" package ="gp" value ="9"/>
+         <Value name="isInputValid" source ="GeneticProgramming.java" package ="gp" value ="8"/>
+         <Value name="terminalSetTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="6"/>
+         <Value name="createDataset" source ="EquationGraphPanel.java" package ="gp" value ="5"/>
+         <Value name="calculateExpressionValues" source ="Fitness.java" package ="gp" value ="5"/>
+         <Value name="minTrainingDataTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="5"/>
+         <Value name="runButtonActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="5"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="5"/>
+         <Value name="getHeight" source ="Tree.java" package ="gp" value ="5"/>
+         <Value name="populationSizeTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="4"/>
+         <Value name="copyNode" source ="Node.java" package ="gp" value ="4"/>
+         <Value name="setType" source ="Node.java" package ="gp" value ="4"/>
+         <Value name="addNode" source ="Tree.java" package ="gp" value ="4"/>
+         <Value name="findRandomNonRootOperatorNode" source ="Tree.java" package ="gp" value ="4"/>
+         <Value name="checkFitness" source ="Fitness.java" package ="gp" value ="3"/>
+         <Value name="mutateTree" source ="Mutation.java" package ="gp" value ="3"/>
+         <Value name="setRandomNodeToValue" source ="Mutation.java" package ="gp" value ="3"/>
+         <Value name="setChild" source ="Node.java" package ="gp" value ="3"/>
+         <Value name="setParent" source ="Node.java" package ="gp" value ="3"/>
+         <Value name="setPointer" source ="Node.java" package ="gp" value ="3"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="3"/>
+         <Value name="compare" source ="TreeFitnessComparator.java" package ="gp" value ="3"/>
+         <Value name="calculateTargetValues" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="cull" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="generateNodes" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="genertateTrainingDataSet" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="populate" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="run" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="calculateExpressionValues" source ="Fitness.java" package ="gp" value ="2"/>
+         <Value name="mutateTrees" source ="Mutation.java" package ="gp" value ="2"/>
+         <Value name="setLeft" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="setRight" source ="Node.java" package ="gp" value ="2"/>
+         <Value name="getEquation" source ="Tree.java" package ="gp" value ="2"/>
+         <Value name="setRoot" source ="Tree.java" package ="gp" value ="2"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="createChart" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTargetEquation" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTrainingData" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getTree" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTargetEquation" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTrainingData" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTree" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="getBestResultValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getCrossoverRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getEquationGraphPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalEquationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalGenerationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFinalTimeresultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFitnessValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFrame" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getFunctionalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getGenerationValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getHieghtOfTree" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMaxHeight" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMaxRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMinRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getMutationRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getNumberOfTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getPopulationFitnessPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getResultDialog" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getRuntimeValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTargetExpersion" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTerminalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="getTreeComparator" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="isGui" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setBestResultValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setCrossoverRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setEquationGraphPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalEquationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalGenerationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalTimeresultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFitnessValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFrame" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFunctionalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGenerationValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGeneration" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGui" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setHieghtOfTree" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setLowestFitness" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMaxHeight" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMaxRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMinRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMutationRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setNumberOfTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setPopulationFitnessPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setPopulation" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setResultDialog" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setRuntimeValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setStartTime" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTargetExpersion" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTerminalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTreeComparator" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="sortTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="updateEquationChart" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="updateFitnessChart" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="randomOperator" source ="FunctionalSet.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="createChart" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="initComponents" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8#actionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[#mousePressed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="main" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[#run" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="okButtonMousePressed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="1"/>
+         <Value name="getLeft" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getLevel" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getParent" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getPointer" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getRight" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getTree" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getType" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="getValue" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="isRoot" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="printNodeInfo" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setLevel" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setRoot" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setTree" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setValue" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="createChart" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getTargetTreeValues" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="getTrees" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setTargetTreeValues" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setTrees" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="randomOperand" source ="TerminalSet.java" package ="gp" value ="1"/>
+         <Value name="copyTree" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getFitness" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getFunctionalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getNodes" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperandAt" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperands" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperatorAt" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperators" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getRoot" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getTerminalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setEquation" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setFitness" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setFunctionalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setNodes" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setOperands" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setOperators" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setTerminalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="main" source ="Test.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "PAR" description ="Number of Parameters" max ="5" hint ="Move invoked method or pass an object">
+      <Values per = "method" avg = "0.818" stddev = "1" max = "5">
+         <Value name="cross" source ="Crossover.java" package ="gp" value ="5"/>
+         <Value name="copyNode" source ="Node.java" package ="gp" value ="5"/>
+         <Value name="populate" source ="FindThread.java" package ="gp" value ="4"/>
+         <Value name="updateFitnessChart" source ="FindThread.java" package ="gp" value ="4"/>
+         <Value name="mutateTrees" source ="Mutation.java" package ="gp" value ="4"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="4"/>
+         <Value name="generateNodes" source ="FindThread.java" package ="gp" value ="3"/>
+         <Value name="keepLooking" source ="FindThread.java" package ="gp" value ="3"/>
+         <Value name="setRandomNodeToValue" source ="Mutation.java" package ="gp" value ="3"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="3"/>
+         <Value name="calculateTargetValues" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="genertateTrainingDataSet" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="calculateExpressionValues" source ="Fitness.java" package ="gp" value ="2"/>
+         <Value name="calculateExpressionValues" source ="Fitness.java" package ="gp" value ="2"/>
+         <Value name="checkFitness" source ="Fitness.java" package ="gp" value ="2"/>
+         <Value name="evaluateTree" source ="Tree.java" package ="gp" value ="2"/>
+         <Value name="compare" source ="TreeFitnessComparator.java" package ="gp" value ="2"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="createChart" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTargetEquation" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTrainingData" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="setTree" source ="EquationGraphPanel.java" package ="gp" value ="1"/>
+         <Value name="cull" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setBestResultValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setCrossoverRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setEquationGraphPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalEquationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalGenerationResultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFinalTimeresultLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFitnessValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFrame" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setFunctionalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGenerationValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGeneration" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setGui" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setHieghtOfTree" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setLowestFitness" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMaxHeight" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMaxRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMinRange" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setMutationRate" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setNumberOfTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setPopulationFitnessPanel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setPopulation" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setResultDialog" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setRuntimeValueLabel" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setStartTime" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTargetExpersion" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTerminalSet" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="setTreeComparator" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="sortTrees" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="updateEquationChart" source ="FindThread.java" package ="gp" value ="1"/>
+         <Value name="equationTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="functionalSetTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7#keyTyped" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8#actionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[#mousePressed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="main" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="minTrainingDataTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="populationSizeTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="terminalSetTextFieldActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="1"/>
+         <Value name="mutateTree" source ="Mutation.java" package ="gp" value ="1"/>
+         <Value name="setChild" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setLeft" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setLevel" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setParent" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setPointer" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setRight" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setRoot" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setTree" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setType" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="setValue" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="createChart" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setTargetTreeValues" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="setTrees" source ="PopulationFitnessPanel.java" package ="gp" value ="1"/>
+         <Value name="addNode" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperandAt" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="getOperatorAt" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setEquation" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setFitness" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setFunctionalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setNodes" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setOperands" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setOperators" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setRoot" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="setTerminalSet" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="main" source ="Test.java" package ="(default package)" value ="1"/>
+         <Value name="createDataset" source ="EquationGraphPanel.java" package ="gp" value ="0"/>
+         <Value name="getTargetEquation" source ="EquationGraphPanel.java" package ="gp" value ="0"/>
+         <Value name="getTrainingData" source ="EquationGraphPanel.java" package ="gp" value ="0"/>
+         <Value name="getTree" source ="EquationGraphPanel.java" package ="gp" value ="0"/>
+         <Value name="getBestResultValueLabel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getCrossoverRate" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getEquationGraphPanel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getFinalEquationResultLabel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getFinalGenerationResultLabel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getFinalTimeresultLabel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getFitnessValueLabel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getFrame" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getFunctionalSet" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getGenerationValueLabel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getHieghtOfTree" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getMaxHeight" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getMaxRange" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getMinRange" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getMutationRate" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getNumberOfTrees" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getPopulationFitnessPanel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getResultDialog" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getRuntimeValueLabel" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getTargetExpersion" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getTerminalSet" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="getTreeComparator" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="isGui" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="run" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="randomOperator" source ="FunctionalSet.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="createChart" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="initComponents" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="isInputValid" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[#run" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="okButtonMousePressed" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="runButtonActionPerformed" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="0"/>
+         <Value name="getLeft" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="getLevel" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="getParent" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="getPointer" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="getRight" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="getTree" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="getType" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="getValue" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="isRoot" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="printNodeInfo" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="createDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="0"/>
+         <Value name="getDataset" source ="PopulationFitnessPanel.java" package ="gp" value ="0"/>
+         <Value name="getTargetTreeValues" source ="PopulationFitnessPanel.java" package ="gp" value ="0"/>
+         <Value name="getTrees" source ="PopulationFitnessPanel.java" package ="gp" value ="0"/>
+         <Value name="randomOperand" source ="TerminalSet.java" package ="gp" value ="0"/>
+         <Value name="copyTree" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="findRandomNonRootOperatorNode" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getEquation" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getFitness" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getFunctionalSet" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getHeight" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getNodes" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getOperands" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getOperators" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getRoot" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="getTerminalSet" source ="Tree.java" package ="gp" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMA" description ="Abstractness">
+      <Values per = "packageFragment" avg = "0" stddev = "0" max = "0">
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+         <Value name="gp" package ="gp" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOI" description ="Number of Interfaces">
+      <Values per = "packageFragment" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+         <Value name="gp" package ="gp" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "CE" description ="Efferent Coupling">
+      <Values per = "packageFragment" avg = "9" stddev = "0" max = "9">
+         <Value name="gp" package ="gp" value ="9"/>
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSC" description ="Number of Children">
+      <Values per = "type" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="0"/>
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="0"/>
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="0"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="0"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="0"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="0"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="0"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="0"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="0"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="0"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="0"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="0"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "DIT" description ="Depth of Inheritance Tree">
+      <Values per = "type" avg = "2.846" stddev = "2.032" max = "6">
+         <Value name="EquationGraphPanel" source ="EquationGraphPanel.java" package ="gp" value ="6"/>
+         <Value name="GeneticProgramming" source ="GeneticProgramming.java" package ="gp" value ="6"/>
+         <Value name="PopulationFitnessPanel" source ="PopulationFitnessPanel.java" package ="gp" value ="6"/>
+         <Value name="FunctionalSet" source ="FunctionalSet.java" package ="gp" value ="4"/>
+         <Value name="TerminalSet" source ="TerminalSet.java" package ="gp" value ="4"/>
+         <Value name="GeneticProgrammingException" source ="GeneticProgrammingException.java" package ="gp" value ="3"/>
+         <Value name="FindThread" source ="FindThread.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!2" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!3" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!4" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!5" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!6" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!7" source ="GeneticProgramming.java" package ="gp" value ="2"/>
+         <Value name="Crossover" source ="Crossover.java" package ="gp" value ="1"/>
+         <Value name="Fitness" source ="Fitness.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~initComponents[!8" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="GeneticProgramming.anonymous#~main~\[QString;[" source ="GeneticProgramming.java" package ="gp" value ="1"/>
+         <Value name="Mutation" source ="Mutation.java" package ="gp" value ="1"/>
+         <Value name="Node" source ="Node.java" package ="gp" value ="1"/>
+         <Value name="Tree" source ="Tree.java" package ="gp" value ="1"/>
+         <Value name="TreeFitnessComparator" source ="TreeFitnessComparator.java" package ="gp" value ="1"/>
+         <Value name="Test" source ="Test.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   </Metrics>
