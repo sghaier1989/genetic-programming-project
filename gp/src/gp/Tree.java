@@ -2,6 +2,7 @@ package gp;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 import org.apache.log4j.Logger;
@@ -30,17 +31,44 @@ import org.apache.log4j.Logger;
  */
 public class Tree {
 	/**
-	 * 
+	 * serial Version UID.
 	 */
 	private static final long serialVersionUID = -1310947610682501856L;
-	static Logger logger = Logger.getLogger(Tree.class);
-	private StringBuffer equation = new StringBuffer();
+	/**
+	 * The logger.
+	 */
+	private static final Logger GP_LOGGER = Logger.getLogger(Tree.class);
+	/**
+	 * The equation.
+	 */
+	private StringBuilder equation = new StringBuilder();
+	/**
+	 * The fitness.
+	 */
 	private double fitness = 1.79769E+308;
+	/**
+	 * The functional set.
+	 */
 	private FunctionalSet functionalSet = new FunctionalSet();
+	/**
+	 * The nodes.
+	 */
 	private ArrayList<Node> nodes = new ArrayList<Node>();
+	/**
+	 * The operands.
+	 */
 	private ArrayList<Node> operands = new ArrayList<Node>();
+	/**
+	 * The operators.
+	 */
 	private ArrayList<Node> operators = new ArrayList<Node>();
+	/**
+	 * The root node.
+	 */
 	private Node root = null;
+	/**
+	 * The terminal set.
+	 */
 	private TerminalSet terminalSet = new TerminalSet();
 
 	/**
@@ -48,27 +76,36 @@ public class Tree {
 	 * defines the terminal and functional set that the tree uses.
 	 * 
 	 * @param newRoot
+	 *            - the root of the tree
 	 * @param newTerminalSet
+	 *            - the terminal set of the tree
 	 * @param newFunctionalSet
+	 *            - the functional set of the tree
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
 	 */
-	public Tree(Node newRoot, TerminalSet newTerminalSet,
-			FunctionalSet newFunctionalSet) throws Exception {
+	public Tree(final Node newRoot, final TerminalSet newTerminalSet,
+			final FunctionalSet newFunctionalSet)
+			throws GeneticProgrammingException {
+		super();
 		try {
-			setFunctionalSet(newFunctionalSet);
-			setTerminalSet(newTerminalSet);
-			setRoot(newRoot);
-			setFitness(1.79769E+308);
+			functionalSet = newFunctionalSet;
+			terminalSet = newTerminalSet;
+			root = newRoot;
+			fitness = 1.79769E+308;
 			if (!newRoot.isRoot()) {
-				logger
+				GP_LOGGER
 						.error("The root node used to create tree is not set to root.");
 				newRoot.printNodeInfo();
-				new Exception(
+				throw new GeneticProgrammingException(
 						"The root node used to create tree is not set to root.");
-			} else {
-				addNode(newRoot);
 			}
-		} catch (Exception e) {
-			logger
+			nodes.add(newRoot);
+			newRoot.setTree(this);
+			newRoot.setLevel(0);
+			getOperators().add(newRoot);
+		} catch (GeneticProgrammingException e) {
+			GP_LOGGER
 					.error("Error on creating tree while adding root node to tree");
 			throw e;
 		}
@@ -79,85 +116,76 @@ public class Tree {
 	 * This is the main method for adding nodes to a tree.
 	 * 
 	 * @param newNode
-	 * @throws Exception
+	 *            - node to add
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
 	 */
-	public void addNode(Node newNode) throws Exception {
+	public final void addNode(final Node newNode)
+			throws GeneticProgrammingException {
 		getNodes().add(newNode);
 		newNode.setTree(this);
-		if (!newNode.isRoot()) {
-			newNode.setLevel(newNode.getParent().getLevel() + 1);
-		} else {
+		if (newNode.isRoot()) {
 			newNode.setLevel(0);
+		} else {
+			newNode.setLevel(newNode.getParent().getLevel() + 1);
 		}
 		if (newNode.getType() == Node.OPERAND) {
 			getOperands().add(newNode);
 		} else if (newNode.getType() == Node.OPERATOR) {
 			getOperators().add(newNode);
 		} else {
-			new Exception(
-					"Error while adding node to tree.  The node type is not an operator or operand.  It is currently set to: "
+			throw new GeneticProgrammingException(
+					"Error while adding node to tree.  The node type is"
+							+ " not an operator or operand.  It is currently set to: "
 							+ newNode.getType());
 		}
 	}
 
 	/**
-	 * A method for cloning a tree
+	 * A method for cloning a tree.
 	 * 
-	 * @return Tree
+	 * @return Tree copy of the tree
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
 	 */
-	public Tree copyTree() {
-		try {
-			Tree copy = Node.copyNode(null, getRoot(), null, getTerminalSet(),
-					getFunctionalSet(), 0).getTree();
-			copy.setFitness(this.getFitness());
-			copy.setFunctionalSet(this.getFunctionalSet());
-			copy.setTerminalSet(this.getTerminalSet());
-			return copy;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+	public final Tree copyTree() throws GeneticProgrammingException {
+		final Tree copy = Node.copyNode(null, getRoot(), null,
+				getTerminalSet(), getFunctionalSet()).getTree();
+		copy.setFitness(this.getFitness());
+		copy.setFunctionalSet(this.getFunctionalSet());
+		copy.setTerminalSet(this.getTerminalSet());
+		return copy;
+
 	}
 
 	/**
-	 * Method for comparing two trees
+	 * This method evaluates the tress and creates the equation.
 	 * 
-	 * @return boolean
+	 * @param newParentNode
+	 *            - parent node
+	 * @param newNode
+	 *            - node to evaluate
+	 * @throws GeneticProgrammingException
+	 *             - if something goes wrong
 	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (toString() == ((Tree) obj).toString()) {
-			return true;
-		}
-		return false;
-	}
-
-	private void evaluateTree(Node newParentNode, Node newNode, int newCount)
-			throws Exception {
-		if (!newNode.isRoot()) {
-			newNode.setLevel(newNode.getParent().getLevel() + 1);
-		} else {
+	private void evaluateTree(final Node newParentNode, final Node newNode)
+			throws GeneticProgrammingException {
+		if (newNode.isRoot()) {
 			newNode.setLevel(0);
+		} else {
+			newNode.setLevel(newNode.getParent().getLevel() + 1);
 		}
 		if (newParentNode == newNode) {
 			newParentNode.printNodeInfo();
 			newNode.printNodeInfo();
-			throw new Exception(
-					"We have a problem.  The node being evaluated is equal to the parent node");
+			throw new GeneticProgrammingException(
+					"We have a problem.  The node "
+							+ "being evaluated is equal to the parent node");
 		}
-		if (newCount > 100) {
-			logger.error("May be in a loop with the define tree method");
-			logger.error("Size of bad tree is: " + getNodes().size());
-			Iterator<Node> ir = getNodes().iterator();
-			while (ir.hasNext()) {
-				System.out.print(ir.next());
-			}
-			System.exit(0);
-		}
-		Node leftChild = newNode.getLeft();
-		Node rightChild = newNode.getRight();
+		final Node leftChild = newNode.getLeft();
+		final Node rightChild = newNode.getRight();
 		if (leftChild != null) {
-			evaluateTree(newNode, leftChild, newCount++);
+			evaluateTree(newNode, leftChild);
 		}
 		if (newNode.getPointer() == Node.LEFT
 				&& newNode.getType() == Node.OPERAND) {
@@ -174,35 +202,31 @@ public class Tree {
 			addNode(newNode);
 		}
 		if (rightChild != null) {
-			evaluateTree(newNode, rightChild, newCount++);
+			evaluateTree(newNode, rightChild);
 		}
 	}
 
 	/**
 	 * This is a helper method for getting a random non-root node.
 	 * 
-	 * @return Node
+	 * @return Node - random non-root operator node
+	 * @exception GeneticProgrammingException
+	 *                - if something goes wrong.
 	 */
-	public Node findRandomNonRootOperatorNode(int newCount) throws Exception {
-		Node n = null;
-		if (newCount > 100) {
-			logger
-					.error("We may be in a loop in the findRandomNonRootOperatorNode method");
-		}
-		if (getOperators().size() > 1) {
-			Random randomGenerator = new Random();
-			int randomInt = randomGenerator.nextInt(getOperators().size());
-			n = getOperators().get(randomInt);
-			if (n.getParent() == null || n.isRoot()) {
-				n = findRandomNonRootOperatorNode(newCount++);
-			} else {
-				return n;
-			}
-		} else {
-			throw new Exception(
+	public final Node findRandomNonRootOperatorNode()
+			throws GeneticProgrammingException {
+		Node node = null;
+		if (getOperators().size() < 1) {
+			throw new GeneticProgrammingException(
 					"There are not enough operators to find a rendom operator node");
 		}
-		return n;
+		final Random randomGenerator = new Random();
+		final int randomInt = randomGenerator.nextInt(getOperators().size());
+		node = getOperators().get(randomInt);
+		if (node.getParent() == null || node.isRoot()) {
+			node = findRandomNonRootOperatorNode();
+		}
+		return node;
 	}
 
 	/**
@@ -211,24 +235,19 @@ public class Tree {
 	 * added a dirty flag that will reduce the cost by only recalculating when
 	 * the tree changes
 	 * 
-	 * @return tree equation as a stringbuffer.
-	 * @throws Exception
+	 * @return tree equation as a String Builder.
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
 	 */
-	public StringBuffer getEquation() throws Exception {
+	public final StringBuilder getEquation() throws GeneticProgrammingException {
 		if (this.equation == null) {
-			this.equation = new StringBuffer();
+			this.equation = new StringBuilder();
 		}
 		this.equation.delete(0, equation.length());
 		getOperators().clear();
 		getOperands().clear();
 		getNodes().clear();
-		try {
-			evaluateTree(null, getRoot(), 0);
-		} catch (Exception e) {
-			logger
-					.error("An error occured while generating the tree equation.");
-			throw e;
-		}
+		evaluateTree(null, getRoot());
 		return this.equation;
 	}
 
@@ -237,152 +256,205 @@ public class Tree {
 	 * fitness more useful we change negative numbers to positive and change non
 	 * double values to a very large number.
 	 * 
-	 * @return double
+	 * @return double - the trees fitness
 	 */
-	public double getFitness() throws Exception {
+	public final double getFitness() {
 		return this.fitness;
 	}
 
 	/**
-	 * Gets the trees functional set
+	 * Gets the trees functional set.
 	 * 
-	 * @return FunctionalSet
+	 * @return FunctionalSet - Functional set for tree
 	 */
-	public FunctionalSet getFunctionalSet() {
+	public final FunctionalSet getFunctionalSet() {
 		return this.functionalSet;
 	}
 
-	/*
+	/**
 	 * The height of a tree is the length of the path from the root to the
 	 * deepest node in the tree. A (rooted) tree with only a node (the root) has
 	 * a height of zero.
 	 * 
-	 * @return int
+	 * @return height of tree
 	 */
-	public int getHeight() {
-		Iterator<Node> it = getNodes().iterator();
+	public final int getHeight() {
+		final Iterator<Node> iterator = getNodes().iterator();
 		int longestLeg = 0;
-		while (it.hasNext()) {
-			Node n = it.next();
-			int h = 0;
-			if (n.getType() == Node.OPERAND) {
-				h++;
-				Node parent = n.getParent();
+		while (iterator.hasNext()) {
+			final Node node = iterator.next();
+			int counter = 0;
+			if (node.getType() == Node.OPERAND) {
+				counter++;
+				Node parent = node.getParent();
 				while (parent != null) {
-					h++;
+					counter++;
 					parent = parent.getParent();
 				}
-				if (h > longestLeg) {
-					longestLeg = h;
+				if (counter > longestLeg) {
+					longestLeg = counter;
 				}
 			}
 		}
 		return longestLeg - 1;
 	}
 
-	/*
-	 * returns an ArrayList of the trees' nodes
+	/**
+	 * Returns an ArrayList of the trees nodes.
 	 * 
-	 * @return ArrayList<Node>
+	 * @return list of nodes in tree
 	 */
-	public ArrayList<Node> getNodes() {
+	public final List<Node> getNodes() {
 		return this.nodes;
 	}
 
-	/*
-	 * returns an operand node
+	/**
+	 * Returns an operand node.
 	 * 
-	 * @return Node
+	 * @param newIndex
+	 *            - index of operand
+	 * @return operand node
 	 */
-	public Node getOperandAt(int newIndex) {
+	public final Node getOperandAt(final int newIndex) {
 		return this.operands.get(newIndex);
 	}
 
-	/*
-	 * returns a ArrayList of operands
+	/**
+	 * A list of operands.
 	 * 
-	 * @return ArrayList<Node>
+	 * @return operand nodes
 	 */
-	public ArrayList<Node> getOperands() {
+	public final List<Node> getOperands() {
 		return this.operands;
 	}
 
-	/*
-	 * returns an operator node
+	/**
+	 * Returns an operator node.
 	 * 
-	 * @return Node
+	 * @param newIndex
+	 *            - index of operand
+	 * @return operator node
 	 */
-	public Node getOperatorAt(int newIndex) {
+	public final Node getOperatorAt(final int newIndex) {
 		return this.operators.get(newIndex);
 	}
 
-	/*
-	 * returns a ArrayList of Operands
+	/**
+	 * Returns a ArrayList of Operands.
 	 * 
-	 * @return ArrayList<Node>
+	 * @return list of operator nodes
 	 */
-	public ArrayList<Node> getOperators() {
+	public final List<Node> getOperators() {
 		return this.operators;
 	}
 
-	/*
-	 * returns the trees root node
+	/**
+	 * Returns the trees root node.
 	 * 
-	 * @return Node
+	 * @return Node - root node
 	 */
-	public Node getRoot() throws Exception {
+	public final Node getRoot() {
 		return this.root;
 	}
 
-	/*
-	 * returns the trees terminal set
+	/**
+	 * Returns the trees terminal set.
 	 * 
-	 * @return TerminalSet
+	 * @return TerminalSet - terminal set
 	 */
-	public TerminalSet getTerminalSet() {
+	public final TerminalSet getTerminalSet() {
 		return this.terminalSet;
 	}
 
-	public void setFitness(double newFitness) {
+	/**
+	 * Sets the equation.
+	 * 
+	 * @param newEq
+	 *            - The equation
+	 */
+	public final void setEquation(final StringBuilder newEq) {
+		this.equation = newEq;
+	}
+
+	/**
+	 * Sets the tree fitness.
+	 * 
+	 * @param newFitness
+	 *            - fitness
+	 */
+	public final void setFitness(final double newFitness) {
 		this.fitness = newFitness;
 	}
 
-	public void setFunctionalSet(FunctionalSet newFunctionalSet) {
+	/**
+	 * Sets the tree functional set.
+	 * 
+	 * @param newFunctionalSet
+	 *            - functional set
+	 */
+	public final void setFunctionalSet(final FunctionalSet newFunctionalSet) {
 		this.functionalSet = newFunctionalSet;
 	}
 
-	public void setNodes(ArrayList<Node> newNodes) {
+	/**
+	 * Sets the tree's nodes.
+	 * 
+	 * @param newNodes
+	 *            - list of nodes
+	 */
+	public final void setNodes(final ArrayList<Node> newNodes) {
 		this.nodes = newNodes;
 	}
 
-	public void setOperands(ArrayList<Node> newOperands) {
+	/**
+	 * Sets the trees operands.
+	 * 
+	 * @param newOperands
+	 *            - operands
+	 */
+	public final void setOperands(final ArrayList<Node> newOperands) {
 		this.operands = newOperands;
 	}
 
-	public void setRoot(Node newRoot) throws Exception {
+	/**
+	 * Sets the trees operators.
+	 * 
+	 * @param newOpers
+	 *            - operators
+	 */
+	public final void setOperators(final ArrayList<Node> newOpers) {
+		this.operators = newOpers;
+	}
+
+	/**
+	 * Set the trees root node.
+	 * 
+	 * @param newRoot
+	 *            - root node
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
+	 */
+	public final void setRoot(final Node newRoot)
+			throws GeneticProgrammingException {
 		if (newRoot.getParent() == null) {
 			this.root = newRoot;
 		} else {
-			logger
+			GP_LOGGER
 					.error("Can not make a root of this node because it has a parent");
 			newRoot.printNodeInfo();
-			throw new Exception(
+			throw new GeneticProgrammingException(
 					"Can not make a root of this node because it has a parent");
 		}
 	}
 
-	public void setTerminalSet(TerminalSet newTerminalSet) {
+	/**
+	 * Set the terminal set.
+	 * 
+	 * @param newTerminalSet
+	 *            - terminal set
+	 */
+	public final void setTerminalSet(final TerminalSet newTerminalSet) {
 		this.terminalSet = newTerminalSet;
 
-	}
-
-	@Override
-	public String toString() {
-		try {
-			return getEquation().toString();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 }

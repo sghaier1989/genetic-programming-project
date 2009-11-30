@@ -15,72 +15,95 @@ import com.graphbuilder.math.VarMap;
  * @author Trevor Greene
  * @version 1.0
  */
-public final class Fitness {
-	static Logger logger = Logger.getLogger(Fitness.class);
+public abstract class Fitness {
+	/**
+	 * Logger.
+	 */
+	private static final Logger GP_LOGGER = Logger.getLogger(Fitness.class);
 
-	public static double[] calculateExpressionValues(String expression,
-			int[] trainingData) throws Exception {
-		int datasetSize = trainingData.length;
+	/**
+	 * Method for calculation the expression values.
+	 * 
+	 * @param expression
+	 *            - The math expression
+	 * @param trainingData
+	 *            - The training data
+	 * @return - the expression value
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
+	 */
+	public static double[] calculateExpressionValues(final String expression,
+			final int[] trainingData) throws GeneticProgrammingException {
+		final int datasetSize = trainingData.length;
 		double[] expressionValues = new double[datasetSize];
-		if (expression.indexOf("x") < 0) {
-			throw new Exception(
+		if (expression.indexOf('x') < 0) {
+			throw new GeneticProgrammingException(
 					"Expression does not have a variable.  The expression is: "
 							+ expression);
 		}
-		double pv = 1.79769E+308;
+		double value = 1.79769E+308;
+		final Expression exp = ExpressionTree.parse(expression);
+		final VarMap varMap = new VarMap(false /* case sensitive */);
 		for (int x = 0; x < datasetSize; x++) {
-			try {
-				Expression exp = ExpressionTree.parse(expression);
-				VarMap vm = new VarMap(false /* case sensitive */);
-				vm.setValue("x", trainingData[x]);
-				pv = exp.eval(vm, null);
-			} catch (Exception e) {
-				e.printStackTrace();
-				logger.error("The bad equatoin is: " + expression);
-				expressionValues[x] = Double.NaN;
-			}
-			if (Double.isInfinite(pv) || Double.isNaN(pv)) {
+			varMap.setValue("x", trainingData[x]);
+			value = exp.eval(varMap, null);
+			if (Double.isInfinite(value) || Double.isNaN(value)) {
 				expressionValues[x] = 1.79769E+308;
 			} else {
-				expressionValues[x] = pv;
+				expressionValues[x] = value;
 			}
 		}
+		GP_LOGGER.debug("The fitness is: " + expressionValues.toString());
 		return expressionValues;
 	}
 
-	public static double[] calculateExpressionValues(Tree expression,
-			int[] trainingData) throws Exception {
-		if (expression.toString().indexOf("x") < 0) {
+	/**
+	 * Method for calculation the expression values.
+	 * 
+	 * @param expression
+	 *            - The math expression
+	 * @param trainingData
+	 *            - The training data
+	 * @return - the expression value
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
+	 */
+	public static double[] calculateExpressionValues(final Tree expression,
+			final int[] trainingData) throws GeneticProgrammingException {
+		if (expression.getEquation().toString().indexOf("x") < 0) {
 			Mutation.setRandomNodeToValue(expression, "x", Node.OPERAND);
 		}
-		try {
-			return calculateExpressionValues(expression.toString(),
-					trainingData);
-		} catch (Exception e) {
-			throw e;
-		}
+		return calculateExpressionValues(expression.getEquation().toString(),
+				trainingData);
 	}
 
-	public static double checkFitness(double[] newTargetTreeValues,
-			double[] newPopulationTreeValues) throws Exception {
-		if (newTargetTreeValues.length != newPopulationTreeValues.length) {
-			new Exception(
-					"The number of values in the target tree values and population tree values is not the same ");
+	/**
+	 * Method for checking the fitness of an expression.
+	 * 
+	 * @param targetTreeValues
+	 *            - Target equations calculation values
+	 * @param newPopTreeValues
+	 *            - Population equations calculation values
+	 * @return - the fitness
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
+	 */
+	public static double checkFitness(final double[] targetTreeValues,
+			final double[] newPopTreeValues) throws GeneticProgrammingException {
+		if (targetTreeValues.length != newPopTreeValues.length) {
+			throw new GeneticProgrammingException(
+					"The number of values in the target tree "
+							+ " values and population tree values is not the same ");
 		}
-		try {
-			double totalFit = 0;
-			int size = newTargetTreeValues.length;
-			for (int x = 0; x < size; x++) {
-				totalFit = totalFit
-						+ Math
-								.pow(
-										(newTargetTreeValues[x] - newPopulationTreeValues[x]),
-										2);
-			}
-			logger.debug("Fitness = " + totalFit);
-			return totalFit;
-		} catch (Exception e) {
-			throw e;
+
+		double totalFit = 0;
+		final int size = targetTreeValues.length;
+		for (int x = 0; x < size; x++) {
+			totalFit = totalFit
+					+ Math.pow((targetTreeValues[x] - newPopTreeValues[x]), 2);
 		}
+		GP_LOGGER.debug("Fitness = " + totalFit);
+		return totalFit;
+
 	}
 }

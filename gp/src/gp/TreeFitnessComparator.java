@@ -7,36 +7,26 @@ import java.util.Comparator;
  * 
  * @author Trevor Greene
  * @version 1.0
- * 
  */
-class TreeFitnessComparator implements Comparator<Tree> {
-	double[] targetTreeValues = null;
-	int[] dataset = null;
+public class TreeFitnessComparator implements Comparator<Tree> {
 
 	/**
-	 * Description - Method for comparing two trees
+	 * Method for comparing two trees.
 	 * 
 	 * @param newTree1
+	 *            tree one
 	 * @param newTree2
-	 * 
-	 * @return int - value of difference in trees
+	 *            tree two
+	 * @return value of difference in trees
 	 */
-	public int compare(Tree newTree1, Tree newTree2) {
-		try {
-			if (Double.isInfinite(newTree1.getFitness())) {
-				return 2147483647;
-			} else if (Double.isInfinite(newTree2.getFitness())) {
-				return -2147483646;
-			} else {
-				return ((int) newTree1.getFitness() - (int) newTree2
-						.getFitness());
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+	public final int compare(final Tree newTree1, final Tree newTree2) {
+		int value = 2147483647;
+		if (!Double.isInfinite(newTree1.getFitness())
+				|| !Double.isInfinite(newTree2.getFitness())) {
+			value = (int) newTree1.getFitness() - (int) newTree2.getFitness();
 		}
-		return 0;
+		return value;
 	}
-
 }
 // end class StringComparator
 

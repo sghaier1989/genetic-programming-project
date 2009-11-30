@@ -1,6 +1,6 @@
 package gp;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.jfree.chart.ChartFactory;
@@ -15,31 +15,51 @@ import org.jfree.data.general.DefaultPieDataset;
  * @version 1.0
  */
 public class PopulationFitnessPanel extends ChartPanel {
-	private static Logger logger = Logger
+
+	/**
+	 * The Logger.
+	 */
+	private static final Logger GP_LOGGER = Logger
 			.getLogger(PopulationFitnessPanel.class);
+	/**
+	 * Serial Version UID.
+	 */
 	private static final long serialVersionUID = 33356472237112622L;
 
-	private ArrayList<Tree> Trees = null;
+	/**
+	 * The trees.
+	 */
+	private List<Tree> trees = null;
+	/**
+	 * The training data.
+	 */
+	private int[] dataset = null;
+	/**
+	 * The target values.
+	 */
 	private double[] targetTreeValues;
-	private int[] dataset;
 
-	public PopulationFitnessPanel(JFreeChart chart) {
+	/**
+	 * Constructor method to set the chart.
+	 * 
+	 * @param chart
+	 *            - the chart to display
+	 */
+	public PopulationFitnessPanel(final JFreeChart chart) {
 		super(chart);
 	}
 
 	/**
 	 * Creates a pie chart.
 	 * 
-	 * @param dataset
+	 * @param newDataset
 	 *            the data for the chart.
 	 * 
-	 * @return JFreeChart.
+	 * @return JFreeChart The chart
 	 */
-	JFreeChart createChart(final DefaultPieDataset dataset) {
-
-		// create the chart...
+	public final JFreeChart createChart(final DefaultPieDataset newDataset) {
 		final JFreeChart chart = ChartFactory.createPieChart(
-				"Population Fitness", dataset, true, true, false);
+				"Population Fitness", newDataset, true, true, false);
 
 		return chart;
 	}
@@ -47,132 +67,99 @@ public class PopulationFitnessPanel extends ChartPanel {
 	/**
 	 * method for populating the pie chart with data.
 	 * 
-	 * @return DefaultPieDataset
+	 * @return DefaultPieDataset pie chart
+	 * @throws GeneticProgrammingException
+	 *             - something went wrong
 	 */
-	DefaultPieDataset createDataset() {
-		DefaultPieDataset dataset = new DefaultPieDataset();
+	public final DefaultPieDataset createDataset()
+			throws GeneticProgrammingException {
+		final DefaultPieDataset newDataset = new DefaultPieDataset();
 
-		try {
-			int a = 0;
-			int b = 0;
-			int c = 0;
-			int d = 0;
-			int e = 0;
-			int f = 0;
-			int g = 0;
-			int h = 0;
-			int i = 0;
-			int j = 0;
-			if (getTrees() != null) {
-				int size = getTrees().size();
-				for (int x = 0; x < size; x++) {
-					double fit = getTrees().get(x).getFitness();
-
-					if (fit <= 50) {
-						a++;
-					} else if (fit <= 100) {
-						b++;
-					} else if (fit <= 1000) {
-						c++;
-					} else if (fit <= 10000) {
-						d++;
-					} else if (fit <= 100000) {
-						e++;
-					} else if (fit <= 1000000) {
-						f++;
-					} else if (fit <= 10000000) {
-						g++;
-					} else if (fit <= 100000000) {
-						h++;
-					} else if (fit <= 1000000000) {
-						i++;
-					} else {
-						j++;
-					}
+		int a50 = 0;
+		int b100 = 0;
+		int d10000 = 0;
+		int f1000000 = 0;
+		int h100000000 = 0;
+		int everythingElse = 0;
+		if (getTrees() != null) {
+			final int size = getTrees().size();
+			for (int x = 0; x < size; x++) {
+				final double fit = getTrees().get(x).getFitness();
+				if (fit <= 50) {
+					a50++;
+				} else if (fit <= 100) {
+					b100++;
+				} else if (fit <= 10000) {
+					d10000++;
+				} else if (fit <= 1000000) {
+					f1000000++;
+				} else if (fit <= 100000000) {
+					h100000000++;
+				} else {
+					everythingElse++;
 				}
-				logger.debug(a + " " + b + " " + c + " " + d + " " + e + " "
-						+ f + " " + g + " " + h + " " + i + " " + j);
-				if (a != 0) {
-					dataset.setValue("<=50", a);
-				}
-				if (b != 0) {
-					dataset.setValue("<=100", b);
-				}
-				if (c != 0) {
-
-					dataset.setValue("<=1000", c);
-				}
-				if (d != 0) {
-
-					dataset.setValue("<=10000", d);
-				}
-				if (e != 0) {
-
-					dataset.setValue("<=100000", e);
-				}
-				if (f != 0) {
-
-					dataset.setValue("<=1000000", f);
-				}
-				if (g != 0) {
-
-					dataset.setValue("<=10000000", g);
-				}
-				if (h != 0) {
-
-					dataset.setValue("<=100000000", h);
-				}
-				if (i != 0) {
-
-					dataset.setValue("<=1000000000", i);
-				}
-				if (j != 0) {
-
-					dataset.setValue(">1000000000", j);
-				}
-
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+			GP_LOGGER.debug("Distribution is: " + a50 + " " + b100 + " "
+					+ d10000 + " " + f1000000 + " " + h100000000 + " "
+					+ everythingElse);
+			if (a50 != 0) {
+				newDataset.setValue("<=50", 50);
+			}
+			if (b100 != 0) {
+				newDataset.setValue("<=100", b100);
+			}
+			if (d10000 != 0) {
+				newDataset.setValue("<=10000", d10000);
+			}
+			if (f1000000 != 0) {
+				newDataset.setValue("<=1000000", f1000000);
+			}
+			if (h100000000 != 0) {
+				newDataset.setValue("<=100000000", h100000000);
+			}
+			if (everythingElse != 0) {
+				newDataset.setValue(">1000000000", everythingElse);
+			}
 		}
-
-		return dataset;
-
-	}
-
-	public int[] getDataset() {
-		return dataset;
-	}
-
-	public double[] getTargetTreeValues() {
-		return targetTreeValues;
+		return newDataset;
 	}
 
 	/**
-	 * method for getting trees that the chart uses to generate its data points
+	 * Method for getting trees that the chart uses to generate its data points.
 	 * 
-	 * @return ArrayList<Tree>
+	 * @return ArrayList<Tree> list of trees
 	 */
-	public ArrayList<Tree> getTrees() {
-		return Trees;
-	}
-
-	public void setDataset(int[] dataset) {
-		this.dataset = dataset;
-	}
-
-	public void setTargetTreeValues(double[] targetTreeValues) {
-		this.targetTreeValues = targetTreeValues;
+	private List<Tree> getTrees() {
+		return trees;
 	}
 
 	/**
-	 * method for setting trees that the chart uses to generate its data points
+	 * This method sets that array of target equation values.
 	 * 
-	 * @param trees
+	 * @param newTargetTreeVal
+	 *            array of values for target equation
+	 */
+	public final void setTargetTreeValues(final double[] newTargetTreeVal) {
+		this.targetTreeValues = newTargetTreeVal;
+	}
+
+	/**
+	 * Method for setting trees that the chart uses to generate its data points.
+	 * 
+	 * @param newTrees
 	 *            - ArrayList of trees to plot
 	 */
-	public void setTrees(ArrayList<Tree> trees) {
-		Trees = trees;
+	public final void setTrees(final List<Tree> newTrees) {
+		trees = newTrees;
 	}
 
+	/**
+	 * Method for setting the training data.
+	 * 
+	 * @param newDataset
+	 *            - training data
+	 */
+	public final void setDataset(final int[] newDataset) {
+		this.dataset = newDataset;
+	}
 }

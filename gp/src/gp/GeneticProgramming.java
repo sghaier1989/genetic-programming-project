@@ -1,14 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * GeneticProgramming.java
- *
- * Created on Oct 5, 2009, 3:38:25 PM
- */
-
 package gp;
 
 import java.awt.event.KeyEvent;
@@ -26,23 +15,29 @@ import com.graphbuilder.math.ExpressionTree;
 import com.graphbuilder.math.VarMap;
 
 /**
- * Primary class and GUI that starts the application
+ * Primary class and GUI that starts the application.
  * 
  * @author Trevor Greene
  * @version 1.0
  */
 public class GeneticProgramming extends javax.swing.JFrame {
-	static Logger logger = Logger.getLogger(GeneticProgramming.class);
 	/**
-	 * 
+	 * Serial Version UID.
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -7885681233614641547L;
+	/**
+	 * Logger.
+	 */
+	private static final Logger GP_LOGGER = Logger
+			.getLogger(GeneticProgramming.class);
 
 	/**
+	 * Main method that launches application.
+	 * 
 	 * @param args
 	 *            the command line arguments
 	 */
-	public static void main(String args[]) {
+	public static void main(final String[] args) {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new GeneticProgramming().setVisible(true);
@@ -50,82 +45,229 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		});
 	}
 
-	private javax.swing.JLabel bestResultLabel;
-
-	private javax.swing.JLabel bestResultValueLabel;
-
-	private javax.swing.JPanel buttonPanel;
-	JFreeChart chart = createChart();
-	private javax.swing.JLabel crossoverLabel;
+	/**
+	 * Best Value Label.
+	 */
+	private javax.swing.JLabel bestValueLabel;
+	/**
+	 * chart.
+	 */
+	private JFreeChart chart = createChart();
+	/**
+	 * crossover slider.
+	 */
 	private javax.swing.JSlider crossoverSlider;
-	private EquationGraphPanel equationGraphPanel = new EquationGraphPanel(
+	/**
+	 * final Eq Result Label.
+	 */
+	private javax.swing.JLabel finalEqResultLabel;
+	/**
+	 * equation Graph.
+	 */
+	private final EquationGraphPanel equationGraph = new EquationGraphPanel(
 			chart);
+	/**
+	 * equation Label.
+	 */
 	private javax.swing.JLabel equationLabel;
+	/**
+	 * equation TextField.
+	 */
 	private javax.swing.JTextField equationTextField;
-	private javax.swing.JLabel finalEquationLabel;
-	private javax.swing.JLabel finalEquationResultLabel;
-	private javax.swing.JLabel finalGenerationLabel;
-	private javax.swing.JLabel finalGenerationResultLabel;
+	/**
+	 * final eq Label.
+	 */
+	private javax.swing.JLabel finalEqLabel;
+	/**
+	 * final Gen Label.
+	 */
+	private javax.swing.JLabel finalGenLabel;
+	/**
+	 * final Gen Result Label.
+	 */
+	private javax.swing.JLabel finalGenResultLabel;
+	/**
+	 * final Result Panel.
+	 */
 	private javax.swing.JPanel finalResultPanel;
+	/**
+	 * final Time Label.
+	 */
 	private javax.swing.JLabel finalTimeLabel;
+	/**
+	 * final Timeresult Label.
+	 */
 	private javax.swing.JLabel finalTimeresultLabel;
-	private javax.swing.JLabel fitnassValueLabel;
+	/**
+	 * fitness Value Label.
+	 */
+	private javax.swing.JLabel fitnessValueLabel;
+	/**
+	 * fitness Label.
+	 */
 	private javax.swing.JLabel fitnessLabel;
-	// Variables declaration - do not modify
-	FindThread ft = new FindThread();
+	/**
+	 * find Thread.
+	 */
+	private final FindThread findThread = new FindThread();
+	/**
+	 * functional Set Size Label.
+	 */
 	private javax.swing.JLabel functionalSetSizeLabel;
+	/**
+	 * functional Set TextField.
+	 */
 	private javax.swing.JTextField functionalSetTextField;
+	/**
+	 * generation Label.
+	 */
 	private javax.swing.JLabel generationLabel;
+	/**
+	 * generation Value Label.
+	 */
 	private javax.swing.JLabel generationValueLabel;
+	/**
+	 * input Panel.
+	 */
 	private javax.swing.JPanel inputPanel;
+	/**
+	 * max Training Data Label.
+	 */
 	private javax.swing.JLabel maxTrainingDataLabel;
+	/**
+	 * max Training Data TextField.
+	 */
 	private javax.swing.JTextField maxTrainingDataTextField;
+	/**
+	 * max Tree Height ComboBox.
+	 */
 	private javax.swing.JComboBox maxTreeHeightComboBox;
+	/**
+	 * max Tree Height Label.
+	 */
 	private javax.swing.JLabel maxTreeHeightLabel;
+	/**
+	 * min Training Data Label.
+	 */
 	private javax.swing.JLabel minTrainingDataLabel;
+	/**
+	 * min Training Data TextField.
+	 */
 	private javax.swing.JTextField minTrainingDataTextField;
+	/**
+	 * mutation Rate Label.
+	 */
 	private javax.swing.JLabel mutationRateLabel;
+	/**
+	 * mutation Rate Slider.
+	 */
 	private javax.swing.JSlider mutationRateSlider;
+	/**
+	 * ok Button.
+	 */
 	private javax.swing.JButton okButton;
-	private PopulationFitnessPanel populationFitnessPanel = new PopulationFitnessPanel(
+	/**
+	 * pop Fitness Panel.
+	 */
+	private final PopulationFitnessPanel popFitnessPanel = new PopulationFitnessPanel(
 			chart);
+	/**
+	 * population Size Label.
+	 */
 	private javax.swing.JLabel populationSizeLabel;
+	/**
+	 * population Size TextField.
+	 */
 	private javax.swing.JTextField populationSizeTextField;
+	/**
+	 * realTime Results Panel.
+	 */
 	private javax.swing.JPanel realTimeResultsPanel;
+	/**
+	 * result Dialog.
+	 */
 	private javax.swing.JDialog resultDialog;
+	/**
+	 * results Panel.
+	 */
 	private javax.swing.JPanel resultsPanel;
+	/**
+	 * run Button.
+	 */
 	private javax.swing.JButton runButton;
+	/**
+	 * runtime Label.
+	 */
 	private javax.swing.JLabel runtimeLabel;
+	/**
+	 * runtime Value Label.
+	 */
 	private javax.swing.JLabel runtimeValueLabel;
+	/**
+	 * Split Pane.
+	 */
 	private javax.swing.JSplitPane splitPane;
+	/**
+	 * tabbed Pane.
+	 */
 	private javax.swing.JTabbedPane tabbedPane;
+	/**
+	 * terminal Set Label.
+	 */
 	private javax.swing.JLabel terminalSetLabel;
+	/**
+	 * terminal Set TextField.
+	 */
 	private javax.swing.JTextField terminalSetTextField;
-	ThreadGroup tg = new ThreadGroup("FindThread");
-	Thread thread = new Thread(tg, ft, "");
-	long totalTime = 0;
+	/**
+	 * The thread group.
+	 */
+	private final ThreadGroup threadGroup = new ThreadGroup("FindThread");
+	/**
+	 * The thread.
+	 */
+	private Thread thread = new Thread(threadGroup, findThread, "");
+	/**
+	 * training Data Panel.
+	 */
 	private javax.swing.JPanel trainingDataPanel;
+	/**
+	 * tree Height ComboBox.
+	 */
 	private javax.swing.JComboBox treeHeightComboBox;
+	/**
+	 * tree Height Label.
+	 */
 	private javax.swing.JLabel treeHeightLabel;
+	/**
+	 * tree Panel.
+	 */
 	private javax.swing.JPanel treePanel;
+	/**
+	 * tree View.
+	 */
 	private javax.swing.JTree treeView;
+	/**
+	 * tree View Scroll Pane.
+	 */
 	private javax.swing.JScrollPane treeViewScrollPane;
 
-	/** Creates new form NewJFrame */
+	/**
+	 * Creates new form NewJFrame.
+	 * 
+	 */
 	public GeneticProgramming() {
+		super();
 		initComponents();
 	}
 
-	@SuppressWarnings("unused")
-	private void bestResultTextFieldActionPerformed(
-			java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
+	/**
+	 * Method for creating xy line graph.
+	 * 
+	 * @return a xy graph of the equation
+	 */
 	private JFreeChart createChart() {
-		final JFreeChart chart = ChartFactory.createXYLineChart(
-				"Equation Graph", // chart
-				// title
+		return ChartFactory.createXYLineChart("Equation Graph", // chart title
 				"X", // x axis label
 				"Y", // y axis label
 				null, // data
@@ -133,55 +275,56 @@ public class GeneticProgramming extends javax.swing.JFrame {
 				true, // tooltips
 				false // urls
 				);
-		return chart;
 	}
 
-	private void equationTextFieldActionPerformed(java.awt.event.KeyEvent e) {
-		char c = e.getKeyChar();
-		if (!((Character.isDigit(c) || (c == KeyEvent.VK_BACK_SPACE)
-				|| (c == '+') || (c == '(') || (c == ')') || (c == '-')
-				|| (c == '*') || (c == '^') || (c == 'x') || (c == '/')
-				|| (c == ',') || (c == KeyEvent.VK_DELETE)))) {
+	/**
+	 * method to capture the key event.
+	 * 
+	 * @param event
+	 *            - the key event
+	 */
+	private void equationTextFieldActionPerformed(
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(Character.isDigit(value) || value == KeyEvent.VK_BACK_SPACE
+				|| value == KeyEvent.VK_DELETE || value == '+' || value == '('
+				|| value == ')' || value == '*' || value == '-' || value == '^'
+				|| value == 'x' || value == '/')) {
 			getToolkit().beep();
-			e.consume();
+			event.consume();
 		}
 	}
 
-	@SuppressWarnings("unused")
-	private void fitnessTextFieldActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
+	/**
+	 * Method to capture the key event.
+	 * 
+	 * @param event
+	 *            - the key event
+	 */
+	private void functionalSetTextFieldActionPerformed(
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(value == KeyEvent.VK_BACK_SPACE || value == KeyEvent.VK_DELETE
+				|| value == '+' || value == '-' || value == '*' || value == '^'
+				|| value == '/' || value == ',')) {
 
-	private void functionalSetTextFieldActionPerformed(java.awt.event.KeyEvent e) {
-		char c = e.getKeyChar();
-		if (!(((c == KeyEvent.VK_BACK_SPACE) || (c == '+') || (c == '-')
-				|| (c == '*') || (c == '^') || (c == '/') || (c == ',') || (c == KeyEvent.VK_DELETE)))) {
 			getToolkit().beep();
-			e.consume();
+			event.consume();
 		}
-	}
-
-	@SuppressWarnings("unused")
-	private void generationTextFieldActionPerformed(
-			java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
 	}
 
 	/**
 	 * This method is called from within the constructor to initialize the form.
-	 * WARNING: Do NOT modify this code. The content of this method is always
-	 * regenerated by the Form Editor.
 	 */
-
 	private void initComponents() {
 		java.awt.GridBagConstraints gridBagConstraints;
 
 		resultDialog = new javax.swing.JDialog();
 		finalResultPanel = new javax.swing.JPanel();
-		finalEquationLabel = new javax.swing.JLabel();
-		finalEquationResultLabel = new javax.swing.JLabel();
-		finalGenerationLabel = new javax.swing.JLabel();
-		finalGenerationResultLabel = new javax.swing.JLabel();
+		finalEqLabel = new javax.swing.JLabel();
+		finalEqResultLabel = new javax.swing.JLabel();
+		finalGenLabel = new javax.swing.JLabel();
+		finalGenResultLabel = new javax.swing.JLabel();
 		finalTimeLabel = new javax.swing.JLabel();
 		finalTimeresultLabel = new javax.swing.JLabel();
 		okButton = new javax.swing.JButton();
@@ -195,7 +338,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		terminalSetTextField = new javax.swing.JTextField();
 		treeHeightLabel = new javax.swing.JLabel();
 		treeHeightComboBox = new javax.swing.JComboBox();
-		crossoverLabel = new javax.swing.JLabel();
+		final javax.swing.JLabel crossoverLabel = new javax.swing.JLabel();
 		mutationRateSlider = new javax.swing.JSlider();
 		mutationRateLabel = new javax.swing.JLabel();
 		crossoverSlider = new javax.swing.JSlider();
@@ -214,11 +357,11 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		generationValueLabel = new javax.swing.JLabel();
 		runtimeLabel = new javax.swing.JLabel();
 		runtimeValueLabel = new javax.swing.JLabel();
-		bestResultLabel = new javax.swing.JLabel();
-		bestResultValueLabel = new javax.swing.JLabel();
+		final javax.swing.JLabel bestResultLabel = new javax.swing.JLabel();
+		bestValueLabel = new javax.swing.JLabel();
 		fitnessLabel = new javax.swing.JLabel();
-		fitnassValueLabel = new javax.swing.JLabel();
-		buttonPanel = new javax.swing.JPanel();
+		fitnessValueLabel = new javax.swing.JLabel();
+		final javax.swing.JPanel buttonPanel = new javax.swing.JPanel();
 		runButton = new javax.swing.JButton();
 		tabbedPane = new javax.swing.JTabbedPane();
 		treePanel = new javax.swing.JPanel();
@@ -228,15 +371,15 @@ public class GeneticProgramming extends javax.swing.JFrame {
 				.createTitledBorder("Final Result"));
 		finalResultPanel.setLayout(new java.awt.GridBagLayout());
 
-		finalEquationLabel.setText("Equation:");
+		finalEqLabel.setText("Equation:");
 		gridBagConstraints = new java.awt.GridBagConstraints();
 		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 		gridBagConstraints.ipadx = 4;
 		gridBagConstraints.ipady = 4;
 		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-		finalResultPanel.add(finalEquationLabel, gridBagConstraints);
+		finalResultPanel.add(finalEqLabel, gridBagConstraints);
 
-		finalEquationResultLabel.setText("(x^2+1)/2");
+		finalEqResultLabel.setText("(x^2+1)/2");
 		gridBagConstraints = new java.awt.GridBagConstraints();
 		gridBagConstraints.gridx = 1;
 		gridBagConstraints.gridy = 0;
@@ -245,9 +388,9 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		gridBagConstraints.ipady = 4;
 		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
 		gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
-		finalResultPanel.add(finalEquationResultLabel, gridBagConstraints);
+		finalResultPanel.add(finalEqResultLabel, gridBagConstraints);
 
-		finalGenerationLabel.setText("Generation:");
+		finalGenLabel.setText("Generation:");
 		gridBagConstraints = new java.awt.GridBagConstraints();
 		gridBagConstraints.gridx = 0;
 		gridBagConstraints.gridy = 1;
@@ -255,9 +398,9 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		gridBagConstraints.ipadx = 4;
 		gridBagConstraints.ipady = 4;
 		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-		finalResultPanel.add(finalGenerationLabel, gridBagConstraints);
+		finalResultPanel.add(finalGenLabel, gridBagConstraints);
 
-		finalGenerationResultLabel.setText("####");
+		finalGenResultLabel.setText("####");
 		gridBagConstraints = new java.awt.GridBagConstraints();
 		gridBagConstraints.gridx = 1;
 		gridBagConstraints.gridy = 1;
@@ -266,7 +409,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		gridBagConstraints.ipady = 4;
 		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
 		gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
-		finalResultPanel.add(finalGenerationResultLabel, gridBagConstraints);
+		finalResultPanel.add(finalGenResultLabel, gridBagConstraints);
 
 		finalTimeLabel.setText("Time:");
 		gridBagConstraints = new java.awt.GridBagConstraints();
@@ -297,8 +440,8 @@ public class GeneticProgramming extends javax.swing.JFrame {
 				.add(okButton, java.awt.BorderLayout.SOUTH);
 		okButton.addMouseListener(new java.awt.event.MouseAdapter() {
 			@Override
-			public void mousePressed(java.awt.event.MouseEvent evt) {
-				okButtonMousePressed(evt);
+			public void mousePressed(final java.awt.event.MouseEvent evt) {
+				okButtonMousePressed();
 			}
 		});
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -318,7 +461,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		equationTextField.setText("(x^2-1)/2");
 		equationTextField.addKeyListener(new java.awt.event.KeyAdapter() {
 			@Override
-			public void keyTyped(java.awt.event.KeyEvent evt) {
+			public void keyTyped(final java.awt.event.KeyEvent evt) {
 				equationTextFieldActionPerformed(evt);
 			}
 		});
@@ -329,7 +472,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		populationSizeTextField.setText("1000");
 		populationSizeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
 			@Override
-			public void keyTyped(java.awt.event.KeyEvent evt) {
+			public void keyTyped(final java.awt.event.KeyEvent evt) {
 				populationSizeTextFieldActionPerformed(evt);
 			}
 		});
@@ -356,7 +499,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		terminalSetTextField.setText("1,2,3,4,5,6,7,8,9,x");
 		terminalSetTextField.addKeyListener(new java.awt.event.KeyAdapter() {
 			@Override
-			public void keyTyped(java.awt.event.KeyEvent evt) {
+			public void keyTyped(final java.awt.event.KeyEvent evt) {
 				terminalSetTextFieldActionPerformed(evt);
 			}
 		});
@@ -428,7 +571,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		functionalSetTextField.setText("+,-,/,*");
 		functionalSetTextField.addKeyListener(new java.awt.event.KeyAdapter() {
 			@Override
-			public void keyTyped(java.awt.event.KeyEvent evt) {
+			public void keyTyped(final java.awt.event.KeyEvent evt) {
 				functionalSetTextFieldActionPerformed(evt);
 			}
 		});
@@ -469,7 +612,7 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		minTrainingDataTextField
 				.addKeyListener(new java.awt.event.KeyAdapter() {
 					@Override
-					public void keyTyped(java.awt.event.KeyEvent evt) {
+					public void keyTyped(final java.awt.event.KeyEvent evt) {
 						minTrainingDataTextFieldActionPerformed(evt);
 					}
 				});
@@ -490,8 +633,8 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		maxTrainingDataTextField
 				.addKeyListener(new java.awt.event.KeyAdapter() {
 					@Override
-					public void keyTyped(java.awt.event.KeyEvent evt) {
-						maxTrainingDataTextFieldActionPerformed(evt);
+					public void keyTyped(final java.awt.event.KeyEvent evt) {
+						minTrainingDataTextFieldActionPerformed(evt);
 					}
 				});
 		gridBagConstraints = new java.awt.GridBagConstraints();
@@ -558,15 +701,15 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
 		realTimeResultsPanel.add(bestResultLabel, gridBagConstraints);
 
-		bestResultValueLabel.setForeground(new java.awt.Color(102, 102, 255));
-		bestResultValueLabel.setText("none");
+		bestValueLabel.setForeground(new java.awt.Color(102, 102, 255));
+		bestValueLabel.setText("none");
 		gridBagConstraints = new java.awt.GridBagConstraints();
 		gridBagConstraints.gridx = 3;
 		gridBagConstraints.gridy = 0;
 		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
 		gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
-		realTimeResultsPanel.add(bestResultValueLabel, gridBagConstraints);
+		realTimeResultsPanel.add(bestValueLabel, gridBagConstraints);
 
 		fitnessLabel.setText("Fitness:");
 		gridBagConstraints = new java.awt.GridBagConstraints();
@@ -577,15 +720,15 @@ public class GeneticProgramming extends javax.swing.JFrame {
 		gridBagConstraints.insets = new java.awt.Insets(0, 19, 0, 0);
 		realTimeResultsPanel.add(fitnessLabel, gridBagConstraints);
 
-		fitnassValueLabel.setForeground(new java.awt.Color(102, 102, 255));
-		fitnassValueLabel.setText("none");
+		fitnessValueLabel.setForeground(new java.awt.Color(102, 102, 255));
+		fitnessValueLabel.setText("none");
 		gridBagConstraints = new java.awt.GridBagConstraints();
 		gridBagConstraints.gridx = 3;
 		gridBagConstraints.gridy = 1;
 		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
 		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
 		gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
-		realTimeResultsPanel.add(fitnassValueLabel, gridBagConstraints);
+		realTimeResultsPanel.add(fitnessValueLabel, gridBagConstraints);
 
 		resultsPanel.add(realTimeResultsPanel, java.awt.BorderLayout.NORTH);
 
@@ -595,8 +738,8 @@ public class GeneticProgramming extends javax.swing.JFrame {
 
 		runButton.setText("Run");
 		runButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				runButtonActionPerformed(evt);
+			public void actionPerformed(final java.awt.event.ActionEvent evt) {
+				runButtonActionPerformed();
 			}
 		});
 		buttonPanel.add(runButton);
@@ -609,192 +752,209 @@ public class GeneticProgramming extends javax.swing.JFrame {
 
 		treePanel.add(treeViewScrollPane, java.awt.BorderLayout.CENTER);
 
-		tabbedPane.addTab("Result Graph", equationGraphPanel);
-		tabbedPane.addTab("Population Fitness", populationFitnessPanel);
+		tabbedPane.addTab("Result Graph", equationGraph);
+		tabbedPane.addTab("Population Fitness", popFitnessPanel);
 		// tabbedPane.addTab("Tree", treePanel);
 		getContentPane().add(tabbedPane, java.awt.BorderLayout.EAST);
 		pack();
 	}
 
+	/**
+	 * Method that will verify if the form has valid values.
+	 * 
+	 * @return - if the form has valid values
+	 * 
+	 */
 	private boolean isInputValid() {
+		boolean valid = true;
 		try {
-			Expression exp = ExpressionTree.parse(equationTextField.getText());
-			VarMap vm = new VarMap(false /* case sensitive */);
-			vm.setValue("x", 5);
-			exp.eval(vm, null);
+			final Expression exp = ExpressionTree.parse(equationTextField
+					.getText());
+			final VarMap varMap = new VarMap(false /* case sensitive */);
+			varMap.setValue("x", 5);
+			exp.eval(varMap, null);
 
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(this, "Bad target equiation "
-					+ equationTextField.getText(), "Error",
-					JOptionPane.ERROR_MESSAGE);
+					+ equationTextField.getText(),
+					"Bad target equiation error", JOptionPane.ERROR_MESSAGE);
 
-			return false;
+			valid = false;
 		}
 		try {
 			Integer.parseInt(populationSizeTextField.getText());
 			if (Integer.parseInt(populationSizeTextField.getText()) <= 0) {
-				JOptionPane
-						.showMessageDialog(
-								this,
-								"Bad population size needs to be in the range of 1 and 2147483647",
-								"Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this,
+						"Bad population size needs to be "
+								+ "in the range of 1 and 2147483647",
+						"Bad population size error", JOptionPane.ERROR_MESSAGE);
 
-				return false;
+				valid = false;
 			}
-		} catch (Exception e) {
-			JOptionPane
-					.showMessageDialog(
-							this,
-							"Bad population size needs to be in the range of 1 and 2147483647",
-							"Error", JOptionPane.ERROR_MESSAGE);
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(this, "Bad population size needs to"
+					+ " be in the range of 1 and 2147483647",
+					"Bad population error", JOptionPane.ERROR_MESSAGE);
 
-			return false;
+			valid = false;
 		}
 		try {
 			Integer.parseInt(maxTrainingDataTextField.getText());
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			JOptionPane
 					.showMessageDialog(
 							this,
-							"Bad max training data size needs to be in the range of -2147483647 and 2147483647",
-							"Error", JOptionPane.ERROR_MESSAGE);
+							"Bad max training data size needs "
+									+ "to be in the range of -2147483647 and 2147483647",
+							"Bad max training data error",
+							JOptionPane.ERROR_MESSAGE);
 
-			return false;
+			valid = false;
 		}
 		try {
 			Integer.parseInt(minTrainingDataTextField.getText());
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			JOptionPane
 					.showMessageDialog(
 							this,
-							"Bad min training data size needs to be in the range of -2147483648 and 2147483646",
+							"Bad min training data size needs "
+									+ "to be in the range of -2147483648 and 2147483646",
 							"Error", JOptionPane.ERROR_MESSAGE);
 
-			return false;
+			valid = false;
 		}
 		try {
-			int max = Integer.parseInt(maxTrainingDataTextField.getText());
-			int min = Integer.parseInt(minTrainingDataTextField.getText());
+			final int max = Integer
+					.parseInt(maxTrainingDataTextField.getText());
+			final int min = Integer
+					.parseInt(minTrainingDataTextField.getText());
 			if (max <= min) {
-				JOptionPane
-						.showMessageDialog(
-								this,
-								"Bad training data values.  Max needs to be more then the Min",
-								"Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this,
+						"Bad training data values.  "
+								+ "Max needs to be more then the Min", "Error",
+						JOptionPane.ERROR_MESSAGE);
 
-				return false;
+				valid = false;
 			}
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			JOptionPane.showMessageDialog(this,
 					"Bad training data values of -2147483648 and 2147483647",
 					"Error", JOptionPane.ERROR_MESSAGE);
-
-			return false;
+			valid = false;
 		}
-		return true;
+		return valid;
 	}
 
-	private void maxTrainingDataTextFieldActionPerformed(
-			java.awt.event.KeyEvent e) {
-		char c = e.getKeyChar();
-		if (!((Character.isDigit(c) || (c == KeyEvent.VK_BACK_SPACE)
-				|| (c == KeyEvent.VK_MINUS) || (c == KeyEvent.VK_DELETE)))) {
-			getToolkit().beep();
-			e.consume();
-		}
-	}
-
+	/**
+	 * Method to capture the key event.
+	 * 
+	 * @param event
+	 *            - the key event
+	 */
 	private void minTrainingDataTextFieldActionPerformed(
-			java.awt.event.KeyEvent e) {
-		char c = e.getKeyChar();
-		if (!((Character.isDigit(c) || (c == KeyEvent.VK_BACK_SPACE)
-				|| (c == KeyEvent.VK_MINUS) || (c == KeyEvent.VK_DELETE)))) {
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(Character.isDigit(value) || value == KeyEvent.VK_BACK_SPACE
+				|| value == KeyEvent.VK_MINUS || value == KeyEvent.VK_DELETE)) {
 			getToolkit().beep();
-			e.consume();
+			event.consume();
 		}
 	}
 
-	private void okButtonMousePressed(java.awt.event.MouseEvent evt) {
+	/**
+	 * Method to capture the key event.
+	 * 
+	 */
+	private void okButtonMousePressed() {
 		System.exit(0);
 	}
 
+	/**
+	 * Method to capture the key event.
+	 * 
+	 * @param event
+	 *            - the key event
+	 */
 	private void populationSizeTextFieldActionPerformed(
-			java.awt.event.KeyEvent e) {
-		char c = e.getKeyChar();
-		if (!((Character.isDigit(c) || (c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE)))) {
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(Character.isDigit(value) || value == KeyEvent.VK_DELETE || value == KeyEvent.VK_BACK_SPACE)) {
 			getToolkit().beep();
-			e.consume();
+			event.consume();
 		}
 	}
 
-	private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {
-
+	/**
+	 * Method to capture the key event.
+	 * 
+	 */
+	private void runButtonActionPerformed() {
 		if (!thread.isAlive() && isInputValid()) {
+			GP_LOGGER.debug("Starting Run");
 			runButton.setEnabled(false);
-
-			long startTime = System.currentTimeMillis();
-			ft.setStartTime(startTime);
-			ft.setTargetExpersion(equationTextField.getText());
-			String terminalSetValue = terminalSetTextField.getText();
-			StringTokenizer st = new StringTokenizer(terminalSetValue, ",");
-			TerminalSet terminalSet = new TerminalSet();
-			while (st.hasMoreElements()) {
-				terminalSet.add(st.nextToken());
+			final long startTime = System.currentTimeMillis();
+			findThread.setStartTime(startTime);
+			findThread.setTargetExpersion(equationTextField.getText());
+			final String terminalSetValue = terminalSetTextField.getText();
+			final StringTokenizer tokenizer = new StringTokenizer(
+					terminalSetValue, ",");
+			final TerminalSet terminalSet = new TerminalSet();
+			while (tokenizer.hasMoreElements()) {
+				terminalSet.add(tokenizer.nextToken());
 			}
-			ft.setTerminalSet(terminalSet);
-			String functionalSetValue = functionalSetTextField.getText();
-			StringTokenizer st2 = new StringTokenizer(functionalSetValue, ",");
-			FunctionalSet functionalSet = new FunctionalSet();
-			while (st2.hasMoreElements()) {
-				functionalSet.add(st2.nextToken());
+			findThread.setTerminalSet(terminalSet);
+			final String functionalSetValue = functionalSetTextField.getText();
+			final StringTokenizer tokenizer2 = new StringTokenizer(
+					functionalSetValue, ",");
+			final FunctionalSet functionalSet = new FunctionalSet();
+			while (tokenizer2.hasMoreElements()) {
+				functionalSet.add(tokenizer2.nextToken());
 			}
-			ft.setFunctionalSet(functionalSet);
-			ft.setGui(true);
-			ft.setMutationRate(mutationRateSlider.getValue() / 100.00);
-			ft.setCrossoverRate(crossoverSlider.getValue() / 100.00);
-			int hieghtOfTree = Integer.parseInt(treeHeightComboBox
+			findThread.setFunctionalSet(functionalSet);
+			findThread.setGui(true);
+			findThread.setMutationRate(mutationRateSlider.getValue() / 100.00);
+			findThread.setCrossoverRate(crossoverSlider.getValue() / 100.00);
+			final int hieghtOfTree = Integer.parseInt(treeHeightComboBox
 					.getSelectedItem().toString());
-			ft.setHieghtOfTree(hieghtOfTree);
-			int numberOfTrees = (new Integer(populationSizeTextField.getText()))
-					.intValue();
-			ft.setMaxRange(Integer.parseInt(this.maxTrainingDataTextField
-					.getText()));
-			ft.setMinRange(Integer.parseInt(this.minTrainingDataTextField
-					.getText()));
-			ft.setNumberOfTrees(numberOfTrees);
-			int maxHeight = Integer.parseInt(treeHeightComboBox
+			findThread.setHieghtOfTree(hieghtOfTree);
+			final int numberOfTrees = Integer.parseInt(populationSizeTextField
+					.getText());
+			findThread.setMaxRange(Integer
+					.parseInt(this.maxTrainingDataTextField.getText()));
+			findThread.setMinRange(Integer
+					.parseInt(this.minTrainingDataTextField.getText()));
+			findThread.setNumberOfTrees(numberOfTrees);
+			final int maxHeight = Integer.parseInt(treeHeightComboBox
 					.getSelectedItem().toString());
-			ft.setMaxHeight(maxHeight);
-			ft.setGenerationValueLabel(this.generationValueLabel);
-			ft.setRuntimeValueLabel(this.runtimeValueLabel);
-			ft.setBestResultValueLabel(this.bestResultValueLabel);
-			ft.setFitnessValueLabel(this.fitnassValueLabel);
-			ft.setResultDialog(this.resultDialog);
-			ft.setFinalEquationResultLabel(this.finalEquationResultLabel);
-			ft.setFinalGenerationResultLabel(this.finalGenerationResultLabel);
-			ft.setFinalTimeresultLabel(this.finalTimeresultLabel);
-			ft.setFrame(this);
-			ft.setEquationGraphPanel(equationGraphPanel);
-			ft.setPopulationFitnessPanel(populationFitnessPanel);
-			ft.setTreeView(treeView);
+			findThread.setMaxHeight(maxHeight);
+			findThread.setGenerationValueLabel(this.generationValueLabel);
+			findThread.setRuntimeValueLabel(this.runtimeValueLabel);
+			findThread.setBestResultValueLabel(this.bestValueLabel);
+			findThread.setFitnessValueLabel(this.fitnessValueLabel);
+			findThread.setResultDialog(this.resultDialog);
+			findThread.setFinalEquationResultLabel(this.finalEqResultLabel);
+			findThread.setFinalGenerationResultLabel(this.finalGenResultLabel);
+			findThread.setFinalTimeresultLabel(this.finalTimeresultLabel);
+			findThread.setFrame(this);
+			findThread.setEquationGraphPanel(equationGraph);
+			findThread.setPopulationFitnessPanel(popFitnessPanel);
 			thread.start();
-		} else {
-
-			// do nothing its already running
 		}
 	}
 
-	@SuppressWarnings("unused")
-	private void runtimeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void terminalSetTextFieldActionPerformed(java.awt.event.KeyEvent e) {
-		char c = e.getKeyChar();
-		if (!((Character.isDigit(c) || (c == KeyEvent.VK_BACK_SPACE)
-				|| (c == 'x') || (c == ',') || (c == KeyEvent.VK_DELETE)))) {
+	/**
+	 * Method to capture the key event.
+	 * 
+	 * @param event
+	 *            - the key event
+	 */
+	private void terminalSetTextFieldActionPerformed(
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(Character.isDigit(value) || value == KeyEvent.VK_BACK_SPACE
+				|| value == KeyEvent.VK_COMMA || value == 'x' || value == KeyEvent.VK_DELETE)) {
 			getToolkit().beep();
-			e.consume();
+			event.consume();
 		}
 	}
 }
