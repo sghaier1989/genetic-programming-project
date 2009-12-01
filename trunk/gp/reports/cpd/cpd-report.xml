@@ -1,7 +1,10 @@
-Found a 20 line (198 tokens) duplication in the following files: 
-Starting at line 27 of C:\workspace\gp\src\test\MutationTest.java
-Starting at line 74 of C:\workspace\gp\src\test\MutationTest.java
-
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+<duplication lines="20" tokens="198">
+<file line="27" path="C:\workspace\gp\src\test\MutationTest.java"/>
+<file line="74" path="C:\workspace\gp\src\test\MutationTest.java"/>
+<codefragment>
+<![CDATA[
 	public final void testSetRandomNodeToValue() {
 		try {
 			final TerminalSet terminalSet = TestHelper.getTerminalSet();
@@ -22,11 +25,14 @@ Starting at line 74 of C:\workspace\gp\src\test\MutationTest.java
 					Node.OPERAND));
 			final String originalTree = newTree.getEquation().toString();
 			assertEquals("Trees should be equal", "(1-3)/(4*5)", originalTree);
-=====================================================================
-Found a 20 line (174 tokens) duplication in the following files: 
-Starting at line 223 of C:\workspace\gp\src\gp\FindThread.java
-Starting at line 36 of C:\workspace\gp\src\test\TestHelper.java
-
+]]>
+</codefragment>
+</duplication>
+<duplication lines="20" tokens="174">
+<file line="223" path="C:\workspace\gp\src\gp\FindThread.java"/>
+<file line="36" path="C:\workspace\gp\src\test\TestHelper.java"/>
+<codefragment>
+<![CDATA[
 	protected static Tree generateNodes(final Tree newTree,
 			final Node newParent, final int howDeepToMakeIt)
 			throws GeneticProgrammingException {
@@ -47,14 +53,17 @@ Starting at line 36 of C:\workspace\gp\src\test\TestHelper.java
 			newTree.addNode(rOperator);
 			generateNodes(newTree, rOperator, howDeepToMakeIt);
 		}
-=====================================================================
-Found a 12 line (119 tokens) duplication in the following files: 
-Starting at line 65 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
-Starting at line 82 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
-Starting at line 99 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
-Starting at line 116 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
-Starting at line 133 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
-
+]]>
+</codefragment>
+</duplication>
+<duplication lines="12" tokens="119">
+<file line="65" path="C:\workspace\gp\src\test\TreeFitnessComparatorTest.java"/>
+<file line="82" path="C:\workspace\gp\src\test\TreeFitnessComparatorTest.java"/>
+<file line="99" path="C:\workspace\gp\src\test\TreeFitnessComparatorTest.java"/>
+<file line="116" path="C:\workspace\gp\src\test\TreeFitnessComparatorTest.java"/>
+<file line="133" path="C:\workspace\gp\src\test\TreeFitnessComparatorTest.java"/>
+<codefragment>
+<![CDATA[
 		assertEquals("Tree did not get generated corectly", "(x-8)/(4*5)",
 				newTree.getEquation().toString());
 		trees.add(newTree);
@@ -67,11 +76,14 @@ Starting at line 133 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
 		opAOperand = new Node(minusOperator, "x", Node.LEFT, Node.OPERAND);
 		newTree.addNode(opAOperand);
 		opBOperand = new Node(minusOperator, "5", Node.RIGHT, Node.OPERAND);
-=====================================================================
-Found a 12 line (100 tokens) duplication in the following files: 
-Starting at line 38 of C:\workspace\gp\src\test\CrossoverTest.java
-Starting at line 32 of C:\workspace\gp\src\test\MutationTest.java
-
+]]>
+</codefragment>
+</duplication>
+<duplication lines="12" tokens="100">
+<file line="38" path="C:\workspace\gp\src\test\CrossoverTest.java"/>
+<file line="32" path="C:\workspace\gp\src\test\MutationTest.java"/>
+<codefragment>
+<![CDATA[
 			final Tree newTree = new Tree(root, terminalSet, functionalSet);
 			final Node minusOperator = new Node(root, "-", Node.LEFT,
 					Node.OPERATOR);
@@ -84,3 +96,7 @@ Starting at line 32 of C:\workspace\gp\src\test\MutationTest.java
 			newTree.addNode(new Node(minusOperator, "3", Node.RIGHT,
 					Node.OPERAND));
 			newTree.addNode(new Node(multiOperator, "4", Node.LEFT,
+]]>
+</codefragment>
+</duplication>
+</pmd-cpd>
