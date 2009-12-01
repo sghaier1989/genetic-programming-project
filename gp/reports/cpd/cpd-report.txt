@@ -1,0 +1,855 @@
+Found a 19 line (174 tokens) duplication in the following files: 
+Starting at line 36 of C:\workspace\gp\src\test\TestHelper.java
+Starting at line 222 of C:\workspace\gp\src\gp\FindThread.java
+
+	private void generateNodes(final Tree newTree, final Node newParent,
+			final int howDeepToMakeIt) throws GeneticProgrammingException {
+		if (newParent.getLevel() == howDeepToMakeIt - 1) {
+			final Node lOperand = new Node(newParent, getTerminalSet()
+					.randomOperand(), Node.LEFT, Node.OPERAND);
+			newTree.addNode(lOperand);
+			final Node rOperand = new Node(newParent, getTerminalSet()
+					.randomOperand(), Node.RIGHT, Node.OPERAND);
+			newTree.addNode(rOperand);
+		} else {
+			final Node lOperator = new Node(newParent, getFunctionalSet()
+					.randomOperator(), Node.LEFT, Node.OPERATOR);
+			newTree.addNode(lOperator);
+			generateNodes(newTree, lOperator, howDeepToMakeIt);
+			final Node rOperator = new Node(newParent, getFunctionalSet()
+					.randomOperator(), Node.RIGHT, Node.OPERATOR);
+			newTree.addNode(rOperator);
+			generateNodes(newTree, rOperator, howDeepToMakeIt);
+		}
+=====================================================================
+Found a 12 line (119 tokens) duplication in the following files: 
+Starting at line 65 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 82 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 99 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 116 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 133 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+
+		assertEquals("Tree did not get generated corectly", "(x-8)/(4*5)",
+				newTree.getEquation().toString());
+		trees.add(newTree);
+		root = new Node(null, "/", null, Node.OPERATOR);
+		newTree = new Tree(root, terminalset, functionalset);
+		minusOperator = new Node(root, "-", Node.LEFT, Node.OPERATOR);
+		newTree.addNode(minusOperator);
+		multiOperator = new Node(root, "*", Node.RIGHT, Node.OPERATOR);
+		newTree.addNode(multiOperator);
+		opAOperand = new Node(minusOperator, "x", Node.LEFT, Node.OPERAND);
+		newTree.addNode(opAOperand);
+		opBOperand = new Node(minusOperator, "5", Node.RIGHT, Node.OPERAND);
+=====================================================================
+Found a 10 line (104 tokens) duplication in the following files: 
+Starting at line 36 of C:\workspace\gp\src\test\MutationTest.java
+Starting at line 82 of C:\workspace\gp\src\test\MutationTest.java
+
+			Node multiOperator = new Node(root, "*", Node.RIGHT, Node.OPERATOR);
+			newTree.addNode(multiOperator);
+			newTree.addNode(new Node(minusOperator, "1", Node.LEFT,
+					Node.OPERAND));
+			newTree.addNode(new Node(minusOperator, "3", Node.RIGHT,
+					Node.OPERAND));
+			newTree.addNode(new Node(multiOperator, "4", Node.LEFT,
+					Node.OPERAND));
+			newTree.addNode(new Node(multiOperator, "5", Node.RIGHT,
+					Node.OPERAND));
+=====================================================================
+Found a 9 line (100 tokens) duplication in the following files: 
+Starting at line 32 of C:\workspace\gp\src\test\MutationTest.java
+Starting at line 38 of C:\workspace\gp\src\test\CrossoverTest.java
+
+				new FunctionalSet());
+		final Node minusOperator = new Node(root, "-", Node.LEFT, Node.OPERATOR);
+		newTree.addNode(minusOperator);
+		final Node multiOperator = new Node(root, "*", Node.RIGHT,
+				Node.OPERATOR);
+		newTree.addNode(multiOperator);
+		newTree.addNode(new Node(minusOperator, "1", Node.LEFT, Node.OPERAND));
+		newTree.addNode(new Node(minusOperator, "3", Node.RIGHT, Node.OPERAND));
+		newTree.addNode(new Node(multiOperator, "x", Node.LEFT, Node.OPERAND));
+=====================================================================
+Found a 12 line (93 tokens) duplication in the following files: 
+Starting at line 108 of C:\workspace\gp\src\test\TestHelper.java
+Starting at line 176 of C:\workspace\gp\src\gp\FindThread.java
+
+	private double[] calculateTargetValues(final String targetedExpresion,
+			final int[] dataset) {
+		final int datasetSize = dataset.length;
+		double[] targetTreeValues = new double[datasetSize];
+		final Expression exp = ExpressionTree.parse(targetedExpresion);
+		final VarMap varMap = new VarMap(false /* case sensitive */);
+		for (int x = 0; x < datasetSize; x++) {
+			varMap.setValue("x", dataset[x]);
+			targetTreeValues[x] = exp.eval(varMap, null);
+		}
+		return targetTreeValues;
+	}
+=====================================================================
+Found a 13 line (92 tokens) duplication in the following files: 
+Starting at line 70 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 53 of C:\workspace\gp\src\test\FitnessTest.java
+
+			final Node opAOperand = new Node(minusOperator, "x", Node.LEFT,
+					Node.OPERAND);
+			newTree.addNode(opAOperand);
+			final Node opBOperand = new Node(minusOperator, "3", Node.RIGHT,
+					Node.OPERAND);
+			newTree.addNode(opBOperand);
+			final Node opCOperand = new Node(multiOperator, "4", Node.LEFT,
+					Node.OPERAND);
+			newTree.addNode(opCOperand);
+			final Node opDOperand = new Node(multiOperator, "5", Node.RIGHT,
+					Node.OPERAND);
+			newTree.addNode(opDOperand);
+			assertEquals("Tree did not get generated corectly", "(x-3)/(4*5)",
+=====================================================================
+Found a 8 line (86 tokens) duplication in the following files: 
+Starting at line 62 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 36 of C:\workspace\gp\src\test\CrossoverTest.java
+
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree = new Tree(root, new TerminalSet(),
+				new FunctionalSet());
+		final Node minusOperator = new Node(root, "-", Node.LEFT, Node.OPERATOR);
+		newTree.addNode(minusOperator);
+		final Node multiOperator = new Node(root, "*", Node.RIGHT,
+				Node.OPERATOR);
+		newTree.addNode(multiOperator);
+=====================================================================
+Found a 10 line (76 tokens) duplication in the following files: 
+Starting at line 41 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 36 of C:\workspace\gp\src\test\FitnessTest.java
+
+			final int[] dataset = TestHelper.genertateTrainingDataSet(-10, 10);
+			final int datasetSize = dataset.length;
+			double[] targetTreeValues = new double[datasetSize];
+			final Expression exp = ExpressionTree.parse("(x-3)/(4*5)");
+			final VarMap varMap = new VarMap(false /* case sensitive */);
+			for (int x = 0; x < datasetSize; x++) {
+				varMap.setValue("x", dataset[x]);
+				targetTreeValues[x] = exp.eval(varMap, null);
+			}
+			final Node root = new Node(null, "/", null, Node.OPERATOR);
+=====================================================================
+Found a 7 line (65 tokens) duplication in the following files: 
+Starting at line 76 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 93 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 110 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 127 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 144 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+
+		opBOperand = new Node(minusOperator, "5", Node.RIGHT, Node.OPERAND);
+		newTree.addNode(opBOperand);
+		opCOperand = new Node(multiOperator, "4", Node.LEFT, Node.OPERAND);
+		newTree.addNode(opCOperand);
+		opDOperand = new Node(multiOperator, "5", Node.RIGHT, Node.OPERAND);
+		newTree.addNode(opDOperand);
+		assertEquals("Tree did not get generated corectly", "(x-5)/(4*5)",
+=====================================================================
+Found a 9 line (63 tokens) duplication in the following files: 
+Starting at line 623 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 644 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+				.addKeyListener(new java.awt.event.KeyAdapter() {
+					@Override
+					public void keyTyped(final java.awt.event.KeyEvent evt) {
+						minTrainingDataTextFieldActionPerformed(evt);
+					}
+				});
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 14;
+=====================================================================
+Found a 6 line (61 tokens) duplication in the following files: 
+Starting at line 109 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 165 of C:\workspace\gp\src\test\TreeTest.java
+
+	public final void testTree() throws GeneticProgrammingException {
+		final TerminalSet terminalSet = TestHelper.getTerminalSet();
+		final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree = new Tree(root, terminalSet, functionalSet);
+		TestHelper.generateNodes(newTree, root, 3);
+=====================================================================
+Found a 8 line (60 tokens) duplication in the following files: 
+Starting at line 64 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 46 of C:\workspace\gp\src\test\FitnessTest.java
+
+			final Tree newTree = new Tree(root, terminalset, functionalset);
+			final Node minusOperator = new Node(root, "-", Node.LEFT,
+					Node.OPERATOR);
+			newTree.addNode(minusOperator);
+			final Node multiOperator = new Node(root, "*", Node.RIGHT,
+					Node.OPERATOR);
+			newTree.addNode(multiOperator);
+			final Node opAOperand = new Node(minusOperator, "x", Node.LEFT,
+=====================================================================
+Found a 8 line (56 tokens) duplication in the following files: 
+Starting at line 131 of C:\workspace\gp\src\test\TestHelper.java
+Starting at line 254 of C:\workspace\gp\src\gp\FindThread.java
+
+	private int[] genertateTrainingDataSet(final int newMin, final int newMax) {
+		int[] values = new int[newMax - newMin];
+		int temp = newMin;
+		for (int x = 0; x < values.length; x++) {
+			values[x] = temp++;
+		}
+		return values;
+	}
+=====================================================================
+Found a 6 line (55 tokens) duplication in the following files: 
+Starting at line 396 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 417 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 438 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 4;
+		gridBagConstraints.ipady = 4;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
+		finalResultPanel.add(finalTimeresultLabel, gridBagConstraints);
+=====================================================================
+Found a 5 line (53 tokens) duplication in the following files: 
+Starting at line 93 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 109 of C:\workspace\gp\src\test\TreeTest.java
+
+	public final void testGetHeight() throws GeneticProgrammingException {
+		final TerminalSet terminalSet = TestHelper.getTerminalSet();
+		final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree = new Tree(root, terminalSet, functionalSet);
+=====================================================================
+Found a 7 line (51 tokens) duplication in the following files: 
+Starting at line 64 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 32 of C:\workspace\gp\src\test\MutationTest.java
+
+			final Tree newTree = new Tree(root, terminalSet, functionalSet);
+			final Node minusOperator = new Node(root, "-", Node.LEFT,
+					Node.OPERATOR);
+			newTree.addNode(minusOperator);
+			final Node multiOperator = new Node(root, "*", Node.RIGHT,
+					Node.OPERATOR);
+			newTree.addNode(multiOperator);
+=====================================================================
+Found a 5 line (50 tokens) duplication in the following files: 
+Starting at line 699 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 737 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.gridy = 1;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
+		realTimeResultsPanel.add(fitnessValueLabel, gridBagConstraints);
+=====================================================================
+Found a 5 line (50 tokens) duplication in the following files: 
+Starting at line 681 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 718 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.gridy = 0;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
+		realTimeResultsPanel.add(bestValueLabel, gridBagConstraints);
+=====================================================================
+Found a 5 line (49 tokens) duplication in the following files: 
+Starting at line 52 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 79 of C:\workspace\gp\src\test\MutationTest.java
+
+			Tree newTree = new Tree(root, terminalSet, functionalSet);
+			Node minusOperator = new Node(root, "-", Node.LEFT, Node.OPERATOR);
+			newTree.addNode(minusOperator);
+			Node multiOperator = new Node(root, "*", Node.RIGHT, Node.OPERATOR);
+			newTree.addNode(multiOperator);
+=====================================================================
+Found a 5 line (49 tokens) duplication in the following files: 
+Starting at line 93 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 28 of C:\workspace\gp\src\test\MutationTest.java
+
+		try {
+			final TerminalSet terminalSet = TestHelper.getTerminalSet();
+			final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+			final Node root = new Node(null, "/", null, Node.OPERATOR);
+			final Tree newTree = new Tree(root, terminalSet, functionalSet);
+=====================================================================
+Found a 6 line (48 tokens) duplication in the following files: 
+Starting at line 44 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 112 of C:\workspace\gp\src\test\TestHelper.java
+
+		final Expression exp = ExpressionTree.parse(targetedExpresion);
+		final VarMap varMap = new VarMap(false /* case sensitive */);
+		for (int x = 0; x < datasetSize; x++) {
+			varMap.setValue("x", dataset[x]);
+			targetTreeValues[x] = exp.eval(varMap, null);
+		}
+=====================================================================
+Found a 4 line (45 tokens) duplication in the following files: 
+Starting at line 682 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 700 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
+		realTimeResultsPanel.add(runtimeValueLabel, gridBagConstraints);
+=====================================================================
+Found a 7 line (43 tokens) duplication in the following files: 
+Starting at line 85 of C:\workspace\gp\src\test\TestHelper.java
+Starting at line 595 of C:\workspace\gp\src\gp\FindThread.java
+
+					.getFunctionalSet());
+			rootNode.setTree(tree);
+			generateNodes(tree, rootNode, newHeight);
+
+			final double fitness = Fitness.checkFitness(targetTreeValues,
+					Fitness.calculateExpressionValues(tree, newDataset));
+			tree.setFitness(fitness);
+=====================================================================
+Found a 4 line (43 tokens) duplication in the following files: 
+Starting at line 27 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 45 of C:\workspace\gp\src\test\TreeTest.java
+
+	public final void testCopyTree() throws GeneticProgrammingException {
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree = new Tree(root, TestHelper.getTerminalSet(),
+				TestHelper.getFunctionalSet());
+=====================================================================
+Found a 5 line (42 tokens) duplication in the following files: 
+Starting at line 296 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 864 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 960 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+	private void terminalSetTextFieldActionPerformed(
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(Character.isDigit(value) || value == KeyEvent.VK_BACK_SPACE
+				|| value == KeyEvent.VK_COMMA || value == 'x' || value == KeyEvent.VK_DELETE)) {
+=====================================================================
+Found a 5 line (41 tokens) duplication in the following files: 
+Starting at line 93 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 26 of C:\workspace\gp\src\test\NodeTest.java
+
+	public final void testCopyNode() throws GeneticProgrammingException {
+		final TerminalSet terminalSet = TestHelper.getTerminalSet();
+		final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Node newNode = Node.copyNode(null, root, null, terminalSet,
+=====================================================================
+Found a 7 line (40 tokens) duplication in the following files: 
+Starting at line 498 of C:\workspace\gp\src\gp\FindThread.java
+Starting at line 505 of C:\workspace\gp\src\gp\FindThread.java
+
+		Crossover.cross(newTrees, this.getCrossoverRate(), this.getMaxHeight(),
+				newDataset, targetTreeValues);
+		sortTrees(newTrees);
+		if (isGui()) {
+			this.getRuntimeValueLabel().setText(
+					sdf.format(System.currentTimeMillis() - startTime));
+		}
+=====================================================================
+Found a 4 line (40 tokens) duplication in the following files: 
+Starting at line 708 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 718 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.gridy = 0;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
+=====================================================================
+Found a 4 line (40 tokens) duplication in the following files: 
+Starting at line 699 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 727 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.gridy = 1;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 19, 0, 0);
+=====================================================================
+Found a 4 line (40 tokens) duplication in the following files: 
+Starting at line 681 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 708 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.gridy = 0;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
+=====================================================================
+Found a 5 line (40 tokens) duplication in the following files: 
+Starting at line 614 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 635 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		maxTrainingDataLabel.setText("Max");
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 14;
+		gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 5);
+=====================================================================
+Found a 5 line (40 tokens) duplication in the following files: 
+Starting at line 63 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 62 of C:\workspace\gp\src\test\FitnessTest.java
+
+			final Node opDOperand = new Node(multiOperator, "5", Node.RIGHT,
+					Node.OPERAND);
+			newTree.addNode(opDOperand);
+			assertEquals("Tree did not get generated corectly", "(x-3)/(4*5)",
+					newTree.getEquation().toString());
+=====================================================================
+Found a 6 line (37 tokens) duplication in the following files: 
+Starting at line 127 of C:\workspace\gp\src\gp\Tree.java
+Starting at line 173 of C:\workspace\gp\src\gp\Tree.java
+
+		if (newNode.isRoot()) {
+			newNode.setLevel(0);
+		} else {
+			newNode.setLevel(newNode.getParent().getLevel() + 1);
+		}
+		if (newParentNode == newNode) {
+=====================================================================
+Found a 5 line (37 tokens) duplication in the following files: 
+Starting at line 26 of C:\workspace\gp\src\test\NodeTest.java
+Starting at line 28 of C:\workspace\gp\src\test\MutationTest.java
+
+		try {
+			final TerminalSet terminalSet = TestHelper.getTerminalSet();
+			final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+			final Node root = new Node(null, "/", null, Node.OPERATOR);
+			final Tree newTree = new Tree(root, terminalSet, functionalSet);
+=====================================================================
+Found a 4 line (37 tokens) duplication in the following files: 
+Starting at line 154 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 163 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+
+		while (iterator.hasNext()) {
+			final Tree tree = iterator.next();
+			final double fitness = Fitness.checkFitness(targetTreeValues,
+					Fitness.calculateExpressionValues(tree, dataset));
+=====================================================================
+Found a 4 line (36 tokens) duplication in the following files: 
+Starting at line 864 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 888 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+	private void populationSizeTextFieldActionPerformed(
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(Character.isDigit(value) || value == KeyEvent.VK_DELETE || value == KeyEvent.VK_BACK_SPACE)) {
+=====================================================================
+Found a 5 line (36 tokens) duplication in the following files: 
+Starting at line 386 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 407 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 428 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 4;
+		gridBagConstraints.ipady = 4;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		finalResultPanel.add(finalTimeLabel, gridBagConstraints);
+=====================================================================
+Found a 4 line (36 tokens) duplication in the following files: 
+Starting at line 296 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 888 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+	private void populationSizeTextFieldActionPerformed(
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(Character.isDigit(value) || value == KeyEvent.VK_DELETE || value == KeyEvent.VK_BACK_SPACE)) {
+=====================================================================
+Found a 3 line (35 tokens) duplication in the following files: 
+Starting at line 709 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 728 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 19, 0, 0);
+=====================================================================
+Found a 6 line (34 tokens) duplication in the following files: 
+Starting at line 403 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 687 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		runtimeLabel.setText("Run Time:");
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.gridx = 0;
+		gridBagConstraints.gridy = 1;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+=====================================================================
+Found a 6 line (34 tokens) duplication in the following files: 
+Starting at line 392 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 678 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		generationValueLabel.setText("0");
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 0;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+=====================================================================
+Found a 4 line (33 tokens) duplication in the following files: 
+Starting at line 117 of C:\workspace\gp\src\gp\Node.java
+Starting at line 124 of C:\workspace\gp\src\gp\Node.java
+
+			newNode = new Node(newNodeParent, nodeToCopy.getValue(), nodeToCopy
+					.getPointer(), nodeToCopy.getType());
+			newNode.setLevel(nodeToCopy.getLevel());
+			newNode.setRoot(nodeToCopy.isNodeRoot);
+=====================================================================
+Found a 5 line (32 tokens) duplication in the following files: 
+Starting at line 495 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 687 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		runtimeLabel.setText("Run Time:");
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.gridx = 0;
+		gridBagConstraints.gridy = 1;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+=====================================================================
+Found a 5 line (32 tokens) duplication in the following files: 
+Starting at line 434 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 515 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		});
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 2;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+=====================================================================
+Found a 5 line (32 tokens) duplication in the following files: 
+Starting at line 424 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 502 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		terminalSetLabel.setText("Terminal Set");
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.gridx = 0;
+		gridBagConstraints.gridy = 2;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+=====================================================================
+Found a 4 line (32 tokens) duplication in the following files: 
+Starting at line 417 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 428 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 4;
+		gridBagConstraints.ipady = 4;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+=====================================================================
+Found a 5 line (32 tokens) duplication in the following files: 
+Starting at line 413 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 488 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		});
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 1;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+=====================================================================
+Found a 4 line (32 tokens) duplication in the following files: 
+Starting at line 407 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 438 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 4;
+		gridBagConstraints.ipady = 4;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+=====================================================================
+Found a 5 line (32 tokens) duplication in the following files: 
+Starting at line 403 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 495 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		populationSizeLabel.setText("Population Size");
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.gridx = 0;
+		gridBagConstraints.gridy = 1;
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+=====================================================================
+Found a 4 line (32 tokens) duplication in the following files: 
+Starting at line 386 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 396 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 4;
+		gridBagConstraints.ipady = 4;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+=====================================================================
+Found a 3 line (31 tokens) duplication in the following files: 
+Starting at line 472 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 483 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 510 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 582 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 623 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+				.addKeyListener(new java.awt.event.KeyAdapter() {
+					@Override
+					public void keyTyped(final java.awt.event.KeyEvent evt) {
+=====================================================================
+Found a 3 line (31 tokens) duplication in the following files: 
+Starting at line 80 of C:\workspace\gp\src\test\TestHelper.java
+Starting at line 590 of C:\workspace\gp\src\gp\FindThread.java
+
+		this.population = new ArrayList<Tree>();
+		for (int y = 0; y < newNumberOfTrees; y++) {
+			final Node rootNode = new Node(null, this.getFunctionalSet()
+=====================================================================
+Found a 3 line (31 tokens) duplication in the following files: 
+Starting at line 27 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 61 of C:\workspace\gp\src\test\TreeTest.java
+
+	public final void testGetEquation() throws GeneticProgrammingException {
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree = new Tree(root, new TerminalSet(),
+=====================================================================
+Found a 2 line (30 tokens) duplication in the following files: 
+Starting at line 399 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 710 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
+=====================================================================
+Found a 2 line (30 tokens) duplication in the following files: 
+Starting at line 43 of C:\workspace\gp\src\test\MutationTest.java
+Starting at line 46 of C:\workspace\gp\src\test\CrossoverTest.java
+
+		newTree.addNode(new Node(multiOperator, "x", Node.LEFT, Node.OPERAND));
+		newTree.addNode(new Node(multiOperator, "5", Node.RIGHT, Node.OPERAND));
+=====================================================================
+Found a 4 line (30 tokens) duplication in the following files: 
+Starting at line 38 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 33 of C:\workspace\gp\src\test\FitnessTest.java
+
+		try {
+			final TerminalSet terminalset = TestHelper.getTerminalSet();
+			final FunctionalSet functionalset = TestHelper.getFunctionalSet();
+			final int[] dataset = TestHelper.genertateTrainingDataSet(-10, 10);
+=====================================================================
+Found a 4 line (29 tokens) duplication in the following files: 
+Starting at line 501 of C:\workspace\gp\src\gp\FindThread.java
+Starting at line 557 of C:\workspace\gp\src\gp\FindThread.java
+
+		if (isGui()) {
+			this.getRuntimeValueLabel().setText(
+					sdf.format(System.currentTimeMillis() - startTime));
+		}
+=====================================================================
+Found a 4 line (29 tokens) duplication in the following files: 
+Starting at line 112 of C:\workspace\gp\src\test\TestHelper.java
+Starting at line 45 of C:\workspace\gp\src\gp\Fitness.java
+
+		final Expression exp = ExpressionTree.parse(expression);
+		final VarMap varMap = new VarMap(false /* case sensitive */);
+		for (int x = 0; x < datasetSize; x++) {
+			varMap.setValue("x", trainingData[x]);
+=====================================================================
+Found a 3 line (29 tokens) duplication in the following files: 
+Starting at line 77 of C:\workspace\gp\src\test\TestHelper.java
+Starting at line 587 of C:\workspace\gp\src\gp\FindThread.java
+
+	private List<Tree> populate(final int newNumberOfTrees,
+			final int newHeight, final int[] newDataset,
+			final double[] targetTreeValues) throws GeneticProgrammingException {
+=====================================================================
+Found a 4 line (29 tokens) duplication in the following files: 
+Starting at line 44 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 45 of C:\workspace\gp\src\gp\Fitness.java
+
+		final Expression exp = ExpressionTree.parse(expression);
+		final VarMap varMap = new VarMap(false /* case sensitive */);
+		for (int x = 0; x < datasetSize; x++) {
+			varMap.setValue("x", trainingData[x]);
+=====================================================================
+Found a 4 line (29 tokens) duplication in the following files: 
+Starting at line 147 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 68 of C:\workspace\gp\src\test\CrossoverTest.java
+
+				newTree2.getEquation().toString());
+
+		final Node root3 = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree3 = new Tree(root3, new TerminalSet(),
+=====================================================================
+Found a 3 line (29 tokens) duplication in the following files: 
+Starting at line 143 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 49 of C:\workspace\gp\src\test\CrossoverTest.java
+
+				newTree.getEquation().toString());
+		final Node root2 = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree2 = new Tree(root2, new TerminalSet(),
+=====================================================================
+Found a 3 line (27 tokens) duplication in the following files: 
+Starting at line 105 of C:\workspace\gp\src\gp\EquationGraphPanel.java
+Starting at line 111 of C:\workspace\gp\src\gp\EquationGraphPanel.java
+
+			exp = ExpressionTree.parse(getTargetEquation());
+			for (int x = 0; x < datasetSize; x++) {
+				variableMap.setValue("x", getTrainingData()[x]);
+=====================================================================
+Found a 4 line (27 tokens) duplication in the following files: 
+Starting at line 635 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 649 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+				});
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 14;
+=====================================================================
+Found a 2 line (27 tokens) duplication in the following files: 
+Starting at line 529 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 601 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		maxTreeHeightComboBox.setModel(new javax.swing.DefaultComboBoxModel(
+				new String[] { "1", "2", "3", "4", "5" }));
+=====================================================================
+Found a 5 line (27 tokens) duplication in the following files: 
+Starting at line 475 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 626 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+						minTrainingDataTextFieldActionPerformed(evt);
+					}
+				});
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+=====================================================================
+Found a 3 line (27 tokens) duplication in the following files: 
+Starting at line 30 of C:\workspace\gp\src\test\MutationTest.java
+Starting at line 35 of C:\workspace\gp\src\test\CrossoverTest.java
+
+				"x*2-1/2", training);
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree = new Tree(root, new TerminalSet(),
+=====================================================================
+Found a 3 line (27 tokens) duplication in the following files: 
+Starting at line 63 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 80 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+
+		opDOperand = new Node(multiOperator, "5", Node.RIGHT, Node.OPERAND);
+		newTree.addNode(opDOperand);
+		assertEquals("Tree did not get generated corectly", "(x-4)/(4*5)",
+=====================================================================
+Found a 3 line (27 tokens) duplication in the following files: 
+Starting at line 95 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 35 of C:\workspace\gp\src\test\CrossoverTest.java
+
+				"x*2-1/2", training);
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree = new Tree(root, new TerminalSet(),
+=====================================================================
+Found a 3 line (26 tokens) duplication in the following files: 
+Starting at line 673 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 691 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+		realTimeResultsPanel.add(runtimeLabel, gridBagConstraints);
+=====================================================================
+Found a 4 line (26 tokens) duplication in the following files: 
+Starting at line 628 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 635 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		maxTrainingDataLabel.setText("Max");
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 14;
+=====================================================================
+Found a 4 line (26 tokens) duplication in the following files: 
+Starting at line 466 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 477 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		});
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		inputPanel.add(equationTextField, gridBagConstraints);
+=====================================================================
+Found a 4 line (26 tokens) duplication in the following files: 
+Starting at line 384 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 614 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+		minTrainingDataLabel.setText("Min");
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+		gridBagConstraints.ipadx = 14;
+=====================================================================
+Found a 2 line (26 tokens) duplication in the following files: 
+Starting at line 167 of C:\workspace\gp\src\gp\Node.java
+Starting at line 369 of C:\workspace\gp\src\gp\Node.java
+
+		if (newPointer.equals(Node.LEFT) || newPointer.equals(Node.RIGHT)) {
+			this.pointer = newPointer;
+=====================================================================
+Found a 2 line (26 tokens) duplication in the following files: 
+Starting at line 31 of C:\workspace\gp\src\test\MutationTest.java
+Starting at line 45 of C:\workspace\gp\src\test\FitnessTest.java
+
+			final Node root = new Node(null, "/", null, Node.OPERATOR);
+			final Tree newTree = new Tree(root, terminalset, functionalset);
+=====================================================================
+Found a 3 line (26 tokens) duplication in the following files: 
+Starting at line 50 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 77 of C:\workspace\gp\src\test\MutationTest.java
+
+			final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+			Node root = new Node(null, "/", null, Node.OPERATOR);
+			Tree newTree = new Tree(root, terminalSet, functionalSet);
+=====================================================================
+Found a 2 line (26 tokens) duplication in the following files: 
+Starting at line 96 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 45 of C:\workspace\gp\src\test\FitnessTest.java
+
+			final Node root = new Node(null, "/", null, Node.OPERATOR);
+			final Tree newTree = new Tree(root, terminalset, functionalset);
+=====================================================================
+Found a 3 line (26 tokens) duplication in the following files: 
+Starting at line 79 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 63 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+
+		Node opDOperand = new Node(multiOperator, "5", Node.RIGHT, Node.OPERAND);
+		newTree.addNode(opDOperand);
+		assertEquals("Tree did not get generated corectly", "(x-3)/(4*5)",
+=====================================================================
+Found a 2 line (26 tokens) duplication in the following files: 
+Starting at line 28 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 96 of C:\workspace\gp\src\test\TreeTest.java
+
+		final Node root = new Node(null, "/", null, Node.OPERATOR);
+		final Tree newTree = new Tree(root, terminalSet, functionalSet);
+=====================================================================
+Found a 6 line (25 tokens) duplication in the following files: 
+Starting at line 486 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 585 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+				functionalSetTextFieldActionPerformed(evt);
+			}
+		});
+		gridBagConstraints = new java.awt.GridBagConstraints();
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 3;
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 296 of C:\workspace\gp\src\gp\GeneticProgramming.java
+Starting at line 314 of C:\workspace\gp\src\gp\GeneticProgramming.java
+
+	private void functionalSetTextFieldActionPerformed(
+			final java.awt.event.KeyEvent event) {
+		final char value = event.getKeyChar();
+		if (!(value == KeyEvent.VK_BACK_SPACE || value == KeyEvent.VK_DELETE
+=====================================================================
+Found a 3 line (25 tokens) duplication in the following files: 
+Starting at line 42 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 110 of C:\workspace\gp\src\test\TestHelper.java
+
+		final int datasetSize = dataset.length;
+		double[] targetTreeValues = new double[datasetSize];
+		final Expression exp = ExpressionTree.parse(targetedExpresion);
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 93 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 137 of C:\workspace\gp\src\test\TreeTest.java
+
+	public final void testGetNumberOfNodes() throws GeneticProgrammingException {
+		final TerminalSet terminalSet = TestHelper.getTerminalSet();
+		final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+		final Node root1 = new Node(null, "/", null, Node.OPERATOR);
+=====================================================================
+Found a 3 line (25 tokens) duplication in the following files: 
+Starting at line 79 of C:\workspace\gp\src\test\TreeTest.java
+Starting at line 80 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+
+		opDOperand = new Node(multiOperator, "5", Node.RIGHT, Node.OPERAND);
+		newTree.addNode(opDOperand);
+		assertEquals("Tree did not get generated corectly", "(x-4)/(4*5)",
