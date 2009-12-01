@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="1.3.9" sequence="2" timestamp="1259636218281" analysisTimestamp="1259636212968" release="">
+  <Project></Project>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE" first="2" introducedByChange="true">
+    <Class classname="gp.EquationGraphPanel">
+      <SourceLine classname="gp.EquationGraphPanel"/>
+    </Class>
+    <Method classname="gp.EquationGraphPanel" name="setTrainingData" signature="([I)V" isStatic="false">
+      <SourceLine classname="gp.EquationGraphPanel"/>
+    </Method>
+    <Field classname="gp.EquationGraphPanel" name="trainingData" signature="[I" isStatic="false">
+      <SourceLine classname="gp.EquationGraphPanel" start="39" end="39" startBytecode="0" endBytecode="0" sourcefile="EquationGraphPanel.java" sourcepath="gp/EquationGraphPanel.java"/>
+    </Field>
+    <LocalVariable name="?" register="1" pc="2" role="LOCAL_VARIABLE_UNKNOWN"/>
+    <SourceLine classname="gp.EquationGraphPanel" startBytecode="2" endBytecode="2"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE" first="1" last="1" removedByChange="true">
+    <Class classname="gp.EquationGraphPanel">
+      <SourceLine classname="gp.EquationGraphPanel" sourcefile="EquationGraphPanel.java" sourcepath="gp/EquationGraphPanel.java"/>
+    </Class>
+    <Method classname="gp.EquationGraphPanel" name="setTrainingData" signature="([I)V" isStatic="false">
+      <SourceLine classname="gp.EquationGraphPanel" start="168" end="169" startBytecode="0" endBytecode="61" sourcefile="EquationGraphPanel.java" sourcepath="gp/EquationGraphPanel.java"/>
+    </Method>
+    <Field classname="gp.EquationGraphPanel" name="trainingData" signature="[I" isStatic="false">
+      <SourceLine classname="gp.EquationGraphPanel" sourcefile="EquationGraphPanel.java" sourcepath="gp/EquationGraphPanel.java"/>
+    </Field>
+    <LocalVariable name="newTrainingData" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="gp.EquationGraphPanel" start="168" end="168" startBytecode="2" endBytecode="2" sourcefile="EquationGraphPanel.java" sourcepath="gp/EquationGraphPanel.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_INVOKING_TOSTRING_ON_ARRAY" priority="2" abbrev="USELESS_STRING" category="CORRECTNESS" first="2" introducedByChange="true">
+    <Class classname="gp.Fitness">
+      <SourceLine classname="gp.Fitness"/>
+    </Class>
+    <Method classname="gp.Fitness" name="calculateExpressionValues" signature="(Ljava/lang/String;[I)[D" isStatic="true">
+      <SourceLine classname="gp.Fitness"/>
+    </Method>
+    <LocalVariable name="?" register="3" pc="149" role="LOCAL_VARIABLE_UNKNOWN"/>
+    <SourceLine classname="gp.Fitness" startBytecode="149" endBytecode="149"/>
+  </BugInstance>
+  <BugInstance type="DMI_INVOKING_TOSTRING_ON_ARRAY" priority="2" abbrev="USELESS_STRING" category="CORRECTNESS" first="1" last="1" removedByChange="true">
+    <Class classname="gp.Fitness">
+      <SourceLine classname="gp.Fitness" sourcefile="Fitness.java" sourcepath="gp/Fitness.java"/>
+    </Class>
+    <Method classname="gp.Fitness" name="calculateExpressionValues" signature="(Ljava/lang/String;[I)[D" isStatic="true">
+      <SourceLine classname="gp.Fitness" start="37" end="57" startBytecode="0" endBytecode="388" sourcefile="Fitness.java" sourcepath="gp/Fitness.java"/>
+    </Method>
+    <LocalVariable name="expressionValues" register="3" pc="143" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="gp.Fitness" start="56" end="56" startBytecode="143" endBytecode="143" sourcefile="Fitness.java" sourcepath="gp/Fitness.java"/>
+  </BugInstance>
+  <BugInstance type="DM_EXIT" priority="2" abbrev="Dm" category="BAD_PRACTICE" first="1">
+    <Class classname="gp.GeneticProgramming">
+      <SourceLine classname="gp.GeneticProgramming"/>
+    </Class>
+    <Method classname="gp.GeneticProgramming" name="okButtonMousePressed" signature="()V" isStatic="false">
+      <SourceLine classname="gp.GeneticProgramming"/>
+    </Method>
+    <SourceLine classname="gp.GeneticProgramming" startBytecode="1" endBytecode="1"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE" first="2" introducedByChange="true">
+    <Class classname="gp.PopulationFitnessPanel">
+      <SourceLine classname="gp.PopulationFitnessPanel"/>
+    </Class>
+    <Method classname="gp.PopulationFitnessPanel" name="setDataset" signature="([I)V" isStatic="false">
+      <SourceLine classname="gp.PopulationFitnessPanel"/>
+    </Method>
+    <Field classname="gp.PopulationFitnessPanel" name="dataset" signature="[I" isStatic="false">
+      <SourceLine classname="gp.PopulationFitnessPanel" start="36" end="36" startBytecode="0" endBytecode="0" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+    </Field>
+    <LocalVariable name="?" register="1" pc="2" role="LOCAL_VARIABLE_UNKNOWN"/>
+    <SourceLine classname="gp.PopulationFitnessPanel" startBytecode="2" endBytecode="2"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE" first="1" last="1" removedByChange="true">
+    <Class classname="gp.PopulationFitnessPanel">
+      <SourceLine classname="gp.PopulationFitnessPanel" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+    </Class>
+    <Method classname="gp.PopulationFitnessPanel" name="setDataset" signature="([I)V" isStatic="false">
+      <SourceLine classname="gp.PopulationFitnessPanel" start="163" end="164" startBytecode="0" endBytecode="61" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+    </Method>
+    <Field classname="gp.PopulationFitnessPanel" name="dataset" signature="[I" isStatic="false">
+      <SourceLine classname="gp.PopulationFitnessPanel" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+    </Field>
+    <LocalVariable name="newDataset" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="gp.PopulationFitnessPanel" start="163" end="163" startBytecode="2" endBytecode="2" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE" first="2" introducedByChange="true">
+    <Class classname="gp.PopulationFitnessPanel">
+      <SourceLine classname="gp.PopulationFitnessPanel"/>
+    </Class>
+    <Method classname="gp.PopulationFitnessPanel" name="setTargetTreeValues" signature="([D)V" isStatic="false">
+      <SourceLine classname="gp.PopulationFitnessPanel"/>
+    </Method>
+    <Field classname="gp.PopulationFitnessPanel" name="targetTreeValues" signature="[D" isStatic="false">
+      <SourceLine classname="gp.PopulationFitnessPanel" start="40" end="40" startBytecode="0" endBytecode="0" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+    </Field>
+    <LocalVariable name="?" register="1" pc="2" role="LOCAL_VARIABLE_UNKNOWN"/>
+    <SourceLine classname="gp.PopulationFitnessPanel" startBytecode="2" endBytecode="2"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE" first="1" last="1" removedByChange="true">
+    <Class classname="gp.PopulationFitnessPanel">
+      <SourceLine classname="gp.PopulationFitnessPanel" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+    </Class>
+    <Method classname="gp.PopulationFitnessPanel" name="setTargetTreeValues" signature="([D)V" isStatic="false">
+      <SourceLine classname="gp.PopulationFitnessPanel" start="143" end="144" startBytecode="0" endBytecode="61" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+    </Method>
+    <Field classname="gp.PopulationFitnessPanel" name="targetTreeValues" signature="[D" isStatic="false">
+      <SourceLine classname="gp.PopulationFitnessPanel" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+    </Field>
+    <LocalVariable name="newTargetTreeVal" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="gp.PopulationFitnessPanel" start="143" end="143" startBytecode="2" endBytecode="2" sourcefile="PopulationFitnessPanel.java" sourcepath="gp/PopulationFitnessPanel.java"/>
+  </BugInstance>
+  <BugInstance type="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" priority="2" abbrev="Se" category="BAD_PRACTICE" first="1">
+    <Class classname="gp.TreeFitnessComparator">
+      <SourceLine classname="gp.TreeFitnessComparator"/>
+    </Class>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 30 Nov 2009 20:56:52 -0600" total_classes="31" referenced_classes="434" total_bugs="0" total_size="1856" num_packages="2" vm_version="14.2-b01" cpu_seconds="10.08" clock_seconds="127.58" peak_mbytes="227.43" alloc_mbytes="254.06" gc_seconds="1.23">
+    <PackageStats package="gp" total_bugs="0" total_types="22" total_size="1343">
+      <ClassStats class="gp.Crossover" sourceFile="&lt;Unknown&gt;" interface="false" size="50" bugs="0"/>
+      <ClassStats class="gp.EquationGraphPanel" sourceFile="&lt;Unknown&gt;" interface="false" size="50" bugs="0"/>
+      <ClassStats class="gp.FindThread" sourceFile="&lt;Unknown&gt;" interface="false" size="266" bugs="0"/>
+      <ClassStats class="gp.Fitness" sourceFile="&lt;Unknown&gt;" interface="false" size="36" bugs="0"/>
+      <ClassStats class="gp.FunctionalSet" sourceFile="&lt;Unknown&gt;" interface="false" size="7" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming" sourceFile="&lt;Unknown&gt;" interface="false" size="490" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$1" sourceFile="&lt;Unknown&gt;" interface="false" size="4" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$2" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$3" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$4" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$5" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$6" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$7" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$8" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.GeneticProgramming$9" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.GeneticProgrammingException" sourceFile="&lt;Unknown&gt;" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gp.Mutation" sourceFile="&lt;Unknown&gt;" interface="false" size="58" bugs="0"/>
+      <ClassStats class="gp.Node" sourceFile="&lt;Unknown&gt;" interface="false" size="141" bugs="0"/>
+      <ClassStats class="gp.PopulationFitnessPanel" sourceFile="&lt;Unknown&gt;" interface="false" size="51" bugs="0"/>
+      <ClassStats class="gp.TerminalSet" sourceFile="&lt;Unknown&gt;" interface="false" size="7" bugs="0"/>
+      <ClassStats class="gp.Tree" sourceFile="&lt;Unknown&gt;" interface="false" size="129" bugs="0"/>
+      <ClassStats class="gp.TreeFitnessComparator" sourceFile="&lt;Unknown&gt;" interface="false" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="test" total_bugs="0" total_types="9" total_size="513">
+      <ClassStats class="test.AllTests" sourceFile="&lt;Unknown&gt;" interface="false" size="8" bugs="0"/>
+      <ClassStats class="test.CrossoverTest" sourceFile="&lt;Unknown&gt;" interface="false" size="86" bugs="0"/>
+      <ClassStats class="test.FitnessTest" sourceFile="&lt;Unknown&gt;" interface="false" size="34" bugs="0"/>
+      <ClassStats class="test.GeneticProgrammingTest" sourceFile="&lt;Unknown&gt;" interface="false" size="21" bugs="0"/>
+      <ClassStats class="test.MutationTest" sourceFile="&lt;Unknown&gt;" interface="false" size="64" bugs="0"/>
+      <ClassStats class="test.NodeTest" sourceFile="&lt;Unknown&gt;" interface="false" size="8" bugs="0"/>
+      <ClassStats class="test.TestHelper" sourceFile="&lt;Unknown&gt;" interface="false" size="53" bugs="0"/>
+      <ClassStats class="test.TreeFitnessComparatorTest" sourceFile="&lt;Unknown&gt;" interface="false" size="144" bugs="0"/>
+      <ClassStats class="test.TreeTest" sourceFile="&lt;Unknown&gt;" interface="false" size="95" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DuplicateBranches" totalMilliseconds="11" invocations="31" avgMicrosecondsPerInvocation="358" maxMicrosecondsPerInvocation="4015" standardDeviationMircosecondsPerInvocation="920"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="11" invocations="2446" avgMicrosecondsPerInvocation="4" maxMicrosecondsPerInvocation="159" standardDeviationMircosecondsPerInvocation="8"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="11" invocations="31" avgMicrosecondsPerInvocation="386" maxMicrosecondsPerInvocation="2589" standardDeviationMircosecondsPerInvocation="581"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReadOfInstanceFieldInMethodInvokedByConstructorInSuperclass" totalMilliseconds="13" invocations="31" avgMicrosecondsPerInvocation="440" maxMicrosecondsPerInvocation="6364" standardDeviationMircosecondsPerInvocation="1153"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="13" invocations="31" avgMicrosecondsPerInvocation="450" maxMicrosecondsPerInvocation="3704" standardDeviationMircosecondsPerInvocation="730"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteSuppressedWarnings" totalMilliseconds="16" invocations="434" avgMicrosecondsPerInvocation="39" maxMicrosecondsPerInvocation="7044" standardDeviationMircosecondsPerInvocation="338"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="17" invocations="31" avgMicrosecondsPerInvocation="563" maxMicrosecondsPerInvocation="8516" standardDeviationMircosecondsPerInvocation="1487"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="17" invocations="31" avgMicrosecondsPerInvocation="574" maxMicrosecondsPerInvocation="7784" standardDeviationMircosecondsPerInvocation="1410"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="19" invocations="3813" avgMicrosecondsPerInvocation="5" maxMicrosecondsPerInvocation="17" standardDeviationMircosecondsPerInvocation="0"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.URLProblems" totalMilliseconds="21" invocations="31" avgMicrosecondsPerInvocation="707" maxMicrosecondsPerInvocation="8677" standardDeviationMircosecondsPerInvocation="1590"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="22" invocations="208" avgMicrosecondsPerInvocation="107" maxMicrosecondsPerInvocation="2389" standardDeviationMircosecondsPerInvocation="250"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.IncompatMask" totalMilliseconds="22" invocations="31" avgMicrosecondsPerInvocation="738" maxMicrosecondsPerInvocation="21222" standardDeviationMircosecondsPerInvocation="3740"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteLoop" totalMilliseconds="22" invocations="31" avgMicrosecondsPerInvocation="739" maxMicrosecondsPerInvocation="13626" standardDeviationMircosecondsPerInvocation="2392"/>
+      <ClassProfile name="edu.umd.cs.findbugs.NonReportingDetectorToDetector2Adapter" totalMilliseconds="26" invocations="5704" avgMicrosecondsPerInvocation="4" maxMicrosecondsPerInvocation="123" standardDeviationMircosecondsPerInvocation="2"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="29" invocations="217" avgMicrosecondsPerInvocation="135" maxMicrosecondsPerInvocation="2098" standardDeviationMircosecondsPerInvocation="225"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="46" invocations="215" avgMicrosecondsPerInvocation="217" maxMicrosecondsPerInvocation="15485" standardDeviationMircosecondsPerInvocation="1350"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="49" invocations="217" avgMicrosecondsPerInvocation="229" maxMicrosecondsPerInvocation="4061" standardDeviationMircosecondsPerInvocation="461"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="52" invocations="216" avgMicrosecondsPerInvocation="244" maxMicrosecondsPerInvocation="7892" standardDeviationMircosecondsPerInvocation="704"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="53" invocations="434" avgMicrosecondsPerInvocation="123" maxMicrosecondsPerInvocation="2156" standardDeviationMircosecondsPerInvocation="217"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReflectiveClasses" totalMilliseconds="69" invocations="434" avgMicrosecondsPerInvocation="159" maxMicrosecondsPerInvocation="7655" standardDeviationMircosecondsPerInvocation="450"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="72" invocations="533" avgMicrosecondsPerInvocation="135" maxMicrosecondsPerInvocation="7765" standardDeviationMircosecondsPerInvocation="479"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="82" invocations="434" avgMicrosecondsPerInvocation="189" maxMicrosecondsPerInvocation="3281" standardDeviationMircosecondsPerInvocation="356"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="82" invocations="20" avgMicrosecondsPerInvocation="4119" maxMicrosecondsPerInvocation="79275" standardDeviationMircosecondsPerInvocation="17242"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="87" invocations="434" avgMicrosecondsPerInvocation="201" maxMicrosecondsPerInvocation="8285" standardDeviationMircosecondsPerInvocation="780"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="104" invocations="108" avgMicrosecondsPerInvocation="965" maxMicrosecondsPerInvocation="27426" standardDeviationMircosecondsPerInvocation="2869"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="105" invocations="434" avgMicrosecondsPerInvocation="243" maxMicrosecondsPerInvocation="3849" standardDeviationMircosecondsPerInvocation="403"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="122" invocations="223" avgMicrosecondsPerInvocation="548" maxMicrosecondsPerInvocation="10184" standardDeviationMircosecondsPerInvocation="1307"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="169" invocations="434" avgMicrosecondsPerInvocation="390" maxMicrosecondsPerInvocation="8445" standardDeviationMircosecondsPerInvocation="822"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="189" invocations="216" avgMicrosecondsPerInvocation="878" maxMicrosecondsPerInvocation="33111" standardDeviationMircosecondsPerInvocation="2915"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="195" invocations="215" avgMicrosecondsPerInvocation="909" maxMicrosecondsPerInvocation="25264" standardDeviationMircosecondsPerInvocation="2778"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="220" invocations="216" avgMicrosecondsPerInvocation="1019" maxMicrosecondsPerInvocation="23450" standardDeviationMircosecondsPerInvocation="2818"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="233" invocations="291" avgMicrosecondsPerInvocation="801" maxMicrosecondsPerInvocation="41550" standardDeviationMircosecondsPerInvocation="3106"/>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="298" invocations="2" avgMicrosecondsPerInvocation="149078" maxMicrosecondsPerInvocation="175851" standardDeviationMircosecondsPerInvocation="26770"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="349" invocations="1857" avgMicrosecondsPerInvocation="188" maxMicrosecondsPerInvocation="16278" standardDeviationMircosecondsPerInvocation="870"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="385" invocations="8565" avgMicrosecondsPerInvocation="45" maxMicrosecondsPerInvocation="15173" standardDeviationMircosecondsPerInvocation="270"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="400" invocations="434" avgMicrosecondsPerInvocation="923" maxMicrosecondsPerInvocation="15068" standardDeviationMircosecondsPerInvocation="2077"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="584" invocations="1860" avgMicrosecondsPerInvocation="314" maxMicrosecondsPerInvocation="39658" standardDeviationMircosecondsPerInvocation="2019"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="617" invocations="31" avgMicrosecondsPerInvocation="19931" maxMicrosecondsPerInvocation="597861" standardDeviationMircosecondsPerInvocation="105518"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1259632125203" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1259632125203" release="" codeSize="2230" numClasses="31"/>
+  </History>
+</BugCollection>
