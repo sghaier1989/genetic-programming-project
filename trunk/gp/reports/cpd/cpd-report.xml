@@ -1,0 +1,86 @@
+Found a 20 line (198 tokens) duplication in the following files: 
+Starting at line 27 of C:\workspace\gp\src\test\MutationTest.java
+Starting at line 74 of C:\workspace\gp\src\test\MutationTest.java
+
+	public final void testSetRandomNodeToValue() {
+		try {
+			final TerminalSet terminalSet = TestHelper.getTerminalSet();
+			final FunctionalSet functionalSet = TestHelper.getFunctionalSet();
+			final Node root = new Node(null, "/", null, Node.OPERATOR);
+			final Tree newTree = new Tree(root, terminalSet, functionalSet);
+			final Node minusOperator = new Node(root, "-", Node.LEFT, Node.OPERATOR);
+			newTree.addNode(minusOperator);
+			final Node multiOperator = new Node(root, "*", Node.RIGHT, Node.OPERATOR);
+			newTree.addNode(multiOperator);
+			newTree.addNode(new Node(minusOperator, "1", Node.LEFT,
+					Node.OPERAND));
+			newTree.addNode(new Node(minusOperator, "3", Node.RIGHT,
+					Node.OPERAND));
+			newTree.addNode(new Node(multiOperator, "4", Node.LEFT,
+					Node.OPERAND));
+			newTree.addNode(new Node(multiOperator, "5", Node.RIGHT,
+					Node.OPERAND));
+			final String originalTree = newTree.getEquation().toString();
+			assertEquals("Trees should be equal", "(1-3)/(4*5)", originalTree);
+=====================================================================
+Found a 20 line (174 tokens) duplication in the following files: 
+Starting at line 223 of C:\workspace\gp\src\gp\FindThread.java
+Starting at line 36 of C:\workspace\gp\src\test\TestHelper.java
+
+	protected static Tree generateNodes(final Tree newTree,
+			final Node newParent, final int howDeepToMakeIt)
+			throws GeneticProgrammingException {
+		if (newParent.getLevel() == howDeepToMakeIt - 1) {
+			final Node lOperand = new Node(newParent, getTerminalSet()
+					.randomOperand(), Node.LEFT, Node.OPERAND);
+			newTree.addNode(lOperand);
+			final Node rOperand = new Node(newParent, getTerminalSet()
+					.randomOperand(), Node.RIGHT, Node.OPERAND);
+			newTree.addNode(rOperand);
+		} else {
+			final Node lOperator = new Node(newParent, getFunctionalSet()
+					.randomOperator(), Node.LEFT, Node.OPERATOR);
+			newTree.addNode(lOperator);
+			generateNodes(newTree, lOperator, howDeepToMakeIt);
+			final Node rOperator = new Node(newParent, getFunctionalSet()
+					.randomOperator(), Node.RIGHT, Node.OPERATOR);
+			newTree.addNode(rOperator);
+			generateNodes(newTree, rOperator, howDeepToMakeIt);
+		}
+=====================================================================
+Found a 12 line (119 tokens) duplication in the following files: 
+Starting at line 65 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 82 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 99 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 116 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+Starting at line 133 of C:\workspace\gp\src\test\TreeFitnessComparatorTest.java
+
+		assertEquals("Tree did not get generated corectly", "(x-8)/(4*5)",
+				newTree.getEquation().toString());
+		trees.add(newTree);
+		root = new Node(null, "/", null, Node.OPERATOR);
+		newTree = new Tree(root, terminalset, functionalset);
+		minusOperator = new Node(root, "-", Node.LEFT, Node.OPERATOR);
+		newTree.addNode(minusOperator);
+		multiOperator = new Node(root, "*", Node.RIGHT, Node.OPERATOR);
+		newTree.addNode(multiOperator);
+		opAOperand = new Node(minusOperator, "x", Node.LEFT, Node.OPERAND);
+		newTree.addNode(opAOperand);
+		opBOperand = new Node(minusOperator, "5", Node.RIGHT, Node.OPERAND);
+=====================================================================
+Found a 12 line (100 tokens) duplication in the following files: 
+Starting at line 38 of C:\workspace\gp\src\test\CrossoverTest.java
+Starting at line 32 of C:\workspace\gp\src\test\MutationTest.java
+
+			final Tree newTree = new Tree(root, terminalSet, functionalSet);
+			final Node minusOperator = new Node(root, "-", Node.LEFT,
+					Node.OPERATOR);
+			newTree.addNode(minusOperator);
+			final Node multiOperator = new Node(root, "*", Node.RIGHT,
+					Node.OPERATOR);
+			newTree.addNode(multiOperator);
+			newTree.addNode(new Node(minusOperator, "1", Node.LEFT,
+					Node.OPERAND));
+			newTree.addNode(new Node(minusOperator, "3", Node.RIGHT,
+					Node.OPERAND));
+			newTree.addNode(new Node(multiOperator, "4", Node.LEFT,
