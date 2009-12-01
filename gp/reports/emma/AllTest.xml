@@ -1,0 +1,1485 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- EMMA v2.0.5312 EclEmma Fix 1 report, generated Mon Nov 30 20:06:49 CST 2009 -->
+
+<report>
+  <stats>
+    <packages value="2"/>
+    <classes value="31"/>
+    <methods value="216"/>
+    <srcfiles value="22"/>
+    <srclines value="1831"/>
+  </stats>
+  <data>
+    <all name="all classes">
+      <coverage type="class, %" value="52%  (16/31)"/>
+      <coverage type="method, %" value="38%  (82/216)"/>
+      <coverage type="block, %" value="46%  (3314/7222)"/>
+      <coverage type="line, %" value="44%  (798.4/1831)"/>
+
+      <package name="gp">
+        <coverage type="class, %" value="36%  (8/22)"/>
+        <coverage type="method, %" value="31%  (57/186)"/>
+        <coverage type="block, %" value="24%  (1190/4933)"/>
+        <coverage type="line, %" value="25%  (319.7/1298)"/>
+
+        <srcfile name="EquationGraphPanel.java">
+          <coverage type="class, %" value="0%   (0/1)"/>
+          <coverage type="method, %" value="0%   (0/9)"/>
+          <coverage type="block, %" value="0%   (0/192)"/>
+          <coverage type="line, %" value="0%   (0/55)"/>
+
+          <class name="EquationGraphPanel">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/9)"/>
+            <coverage type="block, %" value="0%   (0/192)"/>
+            <coverage type="line, %" value="0%   (0/55)"/>
+
+            <method name="EquationGraphPanel (JFreeChart): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/13)"/>
+              <coverage type="line, %" value="0%   (0/5)"/>
+            </method>
+            <method name="createChart (XYDataset): JFreeChart">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/49)"/>
+              <coverage type="line, %" value="0%   (0/20)"/>
+            </method>
+            <method name="createDataset (): XYDataset">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/109)"/>
+              <coverage type="line, %" value="0%   (0/21)"/>
+            </method>
+            <method name="getTargetEquation (): String">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getTrainingData (): int []">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getTree (): Tree">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="setTargetEquation (String): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setTrainingData (int []): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setTree (Tree): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="FindThread.java">
+          <coverage type="class, %" value="0%   (0/1)"/>
+          <coverage type="method, %" value="0%   (0/62)"/>
+          <coverage type="block, %" value="0%   (0/854)"/>
+          <coverage type="line, %" value="0%   (0/239)"/>
+
+          <class name="FindThread">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/62)"/>
+            <coverage type="block, %" value="0%   (0/854)"/>
+            <coverage type="line, %" value="0%   (0/239)"/>
+
+            <method name="&lt;static initializer&gt;">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="FindThread (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/45)"/>
+              <coverage type="line, %" value="0%   (0/12)"/>
+            </method>
+            <method name="calculateTargetValues (String, int []): double []">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/37)"/>
+              <coverage type="line, %" value="0%   (0/8)"/>
+            </method>
+            <method name="cull (List): List">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/47)"/>
+              <coverage type="line, %" value="0%   (0/7)"/>
+            </method>
+            <method name="generateNodes (Tree, Node, int): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/70)"/>
+              <coverage type="line, %" value="0%   (0/16)"/>
+            </method>
+            <method name="genertateTrainingDataSet (int, int): int []">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/22)"/>
+              <coverage type="line, %" value="0%   (0/5)"/>
+            </method>
+            <method name="getBestResultValueLabel (): JLabel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getCrossoverRate (): double">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getEquationGraphPanel (): EquationGraphPanel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getFinalEquationResultLabel (): JLabel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getFinalGenerationResultLabel (): JLabel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getFinalTimeresultLabel (): JLabel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getFitnessValueLabel (): JLabel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getFrame (): JFrame">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getFunctionalSet (): FunctionalSet">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getGenerationValueLabel (): JLabel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getHieghtOfTree (): int">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getMaxHeight (): int">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getMaxRange (): int">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getMinRange (): int">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getMutationRate (): double">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getNumberOfTrees (): int">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getPopulationFitnessPanel (): PopulationFitnessPanel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getResultDialog (): JDialog">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getRuntimeValueLabel (): JLabel">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getTargetExpersion (): String">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getTerminalSet (): TerminalSet">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="getTreeComparator (): TreeFitnessComparator">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="isGui (): boolean">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="keepLooking (List, int [], double []): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/298)"/>
+              <coverage type="line, %" value="0%   (0/68)"/>
+            </method>
+            <method name="populate (int, int, int [], double []): List">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/56)"/>
+              <coverage type="line, %" value="0%   (0/13)"/>
+            </method>
+            <method name="run (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/36)"/>
+              <coverage type="line, %" value="0%   (0/11)"/>
+            </method>
+            <method name="setBestResultValueLabel (JLabel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setCrossoverRate (double): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setEquationGraphPanel (EquationGraphPanel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setFinalEquationResultLabel (JLabel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setFinalGenerationResultLabel (JLabel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setFinalTimeresultLabel (JLabel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setFitnessValueLabel (JLabel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setFrame (JFrame): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setFunctionalSet (FunctionalSet): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setGeneration (int): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setGenerationValueLabel (JLabel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setGui (boolean): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setHieghtOfTree (int): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setLowestFitness (double): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setMaxHeight (int): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setMaxRange (int): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setMinRange (int): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setMutationRate (double): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setNumberOfTrees (int): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setPopulation (List): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setPopulationFitnessPanel (PopulationFitnessPanel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setResultDialog (JDialog): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setRuntimeValueLabel (JLabel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setStartTime (long): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setTargetExpersion (String): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setTerminalSet (TerminalSet): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setTreeComparator (TreeFitnessComparator): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="sortTrees (List): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="updateEquationChart (Tree): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/34)"/>
+              <coverage type="line, %" value="0%   (0/9)"/>
+            </method>
+            <method name="updateFitnessChart (int [], double [], List, PopulationFitnessPanel): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/23)"/>
+              <coverage type="line, %" value="0%   (0/9)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="GeneticProgramming.java">
+          <coverage type="class, %" value="0%   (0/10)"/>
+          <coverage type="method, %" value="0%   (0/38)"/>
+          <coverage type="block, %" value="0%   (0/2173)"/>
+          <coverage type="line, %" value="0%   (0/531)"/>
+
+          <class name="GeneticProgramming">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/20)"/>
+            <coverage type="block, %" value="0%   (0/2078)"/>
+            <coverage type="line, %" value="0%   (0/512)"/>
+
+            <method name="&lt;static initializer&gt;">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="GeneticProgramming (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/44)"/>
+              <coverage type="line, %" value="0%   (0/11)"/>
+            </method>
+            <method name="access$0 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="access$1 (GeneticProgramming, KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="access$2 (GeneticProgramming, KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="access$3 (GeneticProgramming, KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="access$4 (GeneticProgramming, KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="access$5 (GeneticProgramming, KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="access$6 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="createChart (): JFreeChart">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/10)"/>
+              <coverage type="line, %" value="0%   (0/7)"/>
+            </method>
+            <method name="equationTextFieldActionPerformed (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/42)"/>
+              <coverage type="line, %" value="0%   (0/8)"/>
+            </method>
+            <method name="functionalSetTextFieldActionPerformed (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/33)"/>
+              <coverage type="line, %" value="0%   (0/7)"/>
+            </method>
+            <method name="initComponents (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/1522)"/>
+              <coverage type="line, %" value="0%   (0/347)"/>
+            </method>
+            <method name="isInputValid (): boolean">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/123)"/>
+              <coverage type="line, %" value="0%   (0/52)"/>
+            </method>
+            <method name="main (String []): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="minTrainingDataTextFieldActionPerformed (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/21)"/>
+              <coverage type="line, %" value="0%   (0/6)"/>
+            </method>
+            <method name="okButtonMousePressed (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="populationSizeTextFieldActionPerformed (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/18)"/>
+              <coverage type="line, %" value="0%   (0/5)"/>
+            </method>
+            <method name="runButtonActionPerformed (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/203)"/>
+              <coverage type="line, %" value="0%   (0/49)"/>
+            </method>
+            <method name="terminalSetTextFieldActionPerformed (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/24)"/>
+              <coverage type="line, %" value="0%   (0/6)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$1">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/9)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$1 (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="run (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$2">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/10)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$2 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="mousePressed (MouseEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$3">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/11)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$3 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="keyTyped (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$4">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/11)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$4 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="keyTyped (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$5">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/11)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$5 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="keyTyped (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$6">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/11)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$6 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="keyTyped (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$7">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/11)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$7 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="keyTyped (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$8">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/11)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$8 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="keyTyped (KeyEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+          <class name="GeneticProgramming$9">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/10)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgramming$9 (GeneticProgramming): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="actionPerformed (ActionEvent): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="GeneticProgrammingException.java">
+          <coverage type="class, %" value="0%   (0/1)"/>
+          <coverage type="method, %" value="0%   (0/2)"/>
+          <coverage type="block, %" value="0%   (0/8)"/>
+          <coverage type="line, %" value="0%   (0/4)"/>
+
+          <class name="GeneticProgrammingException">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/8)"/>
+            <coverage type="line, %" value="0%   (0/4)"/>
+
+            <method name="GeneticProgrammingException (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="GeneticProgrammingException (String): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="PopulationFitnessPanel.java">
+          <coverage type="class, %" value="0%   (0/1)"/>
+          <coverage type="method, %" value="0%   (0/8)"/>
+          <coverage type="block, %" value="0%   (0/178)"/>
+          <coverage type="line, %" value="0%   (0/55)"/>
+
+          <class name="PopulationFitnessPanel">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/8)"/>
+            <coverage type="block, %" value="0%   (0/178)"/>
+            <coverage type="line, %" value="0%   (0/55)"/>
+
+            <method name="&lt;static initializer&gt;">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="PopulationFitnessPanel (JFreeChart): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/10)"/>
+              <coverage type="line, %" value="0%   (0/4)"/>
+            </method>
+            <method name="createChart (DefaultPieDataset): JFreeChart">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/9)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="createDataset (): DefaultPieDataset">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/140)"/>
+              <coverage type="line, %" value="0%   (0/38)"/>
+            </method>
+            <method name="getTrees (): List">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="setDataset (int []): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setTargetTreeValues (double []): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setTrees (List): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="Node.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="91%  (21/23)"/>
+          <coverage type="block, %" value="55%  (254/464)"/>
+          <coverage type="line, %" value="64%  (83/130)"/>
+
+          <class name="Node">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="91%  (21/23)"/>
+            <coverage type="block, %" value="55%  (254/464)"/>
+            <coverage type="line, %" value="64%  (83/130)"/>
+
+            <method name="printNodeInfo (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/114)"/>
+              <coverage type="line, %" value="0%   (0/13)"/>
+            </method>
+            <method name="setType (String): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/22)"/>
+              <coverage type="line, %" value="0%   (0/6)"/>
+            </method>
+            <method name="setParent (Node): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="25%  (10/40)"/>
+              <coverage type="line, %" value="25%  (4/16)"/>
+            </method>
+            <method name="setLeft (Node): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="37%  (7/19)"/>
+              <coverage type="line, %" value="38%  (3/8)"/>
+            </method>
+            <method name="setRight (Node): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="37%  (7/19)"/>
+              <coverage type="line, %" value="38%  (3/8)"/>
+            </method>
+            <method name="setPointer (String): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="57%  (13/23)"/>
+              <coverage type="line, %" value="43%  (3/7)"/>
+            </method>
+            <method name="setChild (Node): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="77%  (17/22)"/>
+              <coverage type="line, %" value="83%  (5/6)"/>
+            </method>
+            <method name="Node (Node, String, String, String): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="93%  (68/73)"/>
+              <coverage type="line, %" value="96%  (22/23)"/>
+            </method>
+            <method name="&lt;static initializer&gt;">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (3/3)"/>
+            </method>
+            <method name="copyNode (Tree, Node, Node, TerminalSet, FunctionalSet): Node">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (85/85)"/>
+              <coverage type="line, %" value="100% (23/23)"/>
+            </method>
+            <method name="getLeft (): Node">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getLevel (): int">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getParent (): Node">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getPointer (): String">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getRight (): Node">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getTree (): Tree">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getType (): String">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getValue (): String">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="isRoot (): boolean">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="setLevel (int): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+            <method name="setRoot (boolean): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+            <method name="setTree (Tree): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+            <method name="setValue (String): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="Tree.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="80%  (20/25)"/>
+          <coverage type="block, %" value="82%  (381/462)"/>
+          <coverage type="line, %" value="75%  (104/139)"/>
+
+          <class name="Tree">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="80%  (20/25)"/>
+            <coverage type="block, %" value="82%  (381/462)"/>
+            <coverage type="line, %" value="75%  (104/139)"/>
+
+            <method name="setEquation (StringBuilder): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setNodes (ArrayList): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setOperands (ArrayList): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setOperators (ArrayList): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="setRoot (Node): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/18)"/>
+              <coverage type="line, %" value="0%   (0/8)"/>
+            </method>
+            <method name="addNode (Node): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="78%  (43/55)"/>
+              <coverage type="line, %" value="77%  (10/13)"/>
+            </method>
+            <method name="Tree (Node, TerminalSet, FunctionalSet): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="82%  (71/87)"/>
+              <coverage type="line, %" value="68%  (19/28)"/>
+            </method>
+            <method name="getEquation (): StringBuilder">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="85%  (28/33)"/>
+              <coverage type="line, %" value="88%  (7/8)"/>
+            </method>
+            <method name="findRandomNonRootOperatorNode (): Node">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="87%  (34/39)"/>
+              <coverage type="line, %" value="80%  (8/10)"/>
+            </method>
+            <method name="evaluateTree (Node, Node): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="91%  (91/100)"/>
+              <coverage type="line, %" value="85%  (23/27)"/>
+            </method>
+            <method name="&lt;static initializer&gt;">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+            <method name="copyTree (): Tree">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (25/25)"/>
+              <coverage type="line, %" value="100% (6/6)"/>
+            </method>
+            <method name="getFitness (): double">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getFunctionalSet (): FunctionalSet">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getHeight (): int">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (40/40)"/>
+              <coverage type="line, %" value="100% (14/14)"/>
+            </method>
+            <method name="getNodes (): List">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getOperandAt (int): Node">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (6/6)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getOperands (): List">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getOperatorAt (int): Node">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (6/6)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getOperators (): List">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getRoot (): Node">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="getTerminalSet (): TerminalSet">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="setFitness (double): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+            <method name="setFunctionalSet (FunctionalSet): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+            <method name="setTerminalSet (TerminalSet): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="TreeFitnessComparator.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (2/2)"/>
+          <coverage type="block, %" value="83%  (19/23)"/>
+          <coverage type="line, %" value="83%  (5/6)"/>
+
+          <class name="TreeFitnessComparator">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (2/2)"/>
+            <coverage type="block, %" value="83%  (19/23)"/>
+            <coverage type="line, %" value="83%  (5/6)"/>
+
+            <method name="compare (Tree, Tree): int">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="80%  (16/20)"/>
+              <coverage type="line, %" value="80%  (4/5)"/>
+            </method>
+            <method name="TreeFitnessComparator (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="Fitness.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="80%  (4/5)"/>
+          <coverage type="block, %" value="83%  (121/145)"/>
+          <coverage type="line, %" value="81%  (26.6/33)"/>
+
+          <class name="Fitness">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="80%  (4/5)"/>
+            <coverage type="block, %" value="83%  (121/145)"/>
+            <coverage type="line, %" value="81%  (26.6/33)"/>
+
+            <method name="Fitness (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="calculateExpressionValues (String, int []): double []">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="79%  (61/77)"/>
+              <coverage type="line, %" value="76%  (13/17)"/>
+            </method>
+            <method name="checkFitness (double [], double []): double">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="89%  (40/45)"/>
+              <coverage type="line, %" value="80%  (8/10)"/>
+            </method>
+            <method name="&lt;static initializer&gt;">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+            <method name="calculateExpressionValues (Tree, int []): double []">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (16/16)"/>
+              <coverage type="line, %" value="100% (4/4)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="Mutation.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="80%  (4/5)"/>
+          <coverage type="block, %" value="95%  (201/212)"/>
+          <coverage type="line, %" value="95%  (46.6/49)"/>
+
+          <class name="Mutation">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="80%  (4/5)"/>
+            <coverage type="block, %" value="95%  (201/212)"/>
+            <coverage type="line, %" value="95%  (46.6/49)"/>
+
+            <method name="Mutation (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="mutateTree (Tree): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="80%  (33/41)"/>
+              <coverage type="line, %" value="82%  (9/11)"/>
+            </method>
+            <method name="&lt;static initializer&gt;">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+            <method name="mutateTrees (List, double, int [], double []): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (123/123)"/>
+              <coverage type="line, %" value="100% (23/23)"/>
+            </method>
+            <method name="setRandomNodeToValue (Tree, String, String): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (41/41)"/>
+              <coverage type="line, %" value="100% (13/13)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="Crossover.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="67%  (2/3)"/>
+          <coverage type="block, %" value="96%  (180/188)"/>
+          <coverage type="line, %" value="95%  (46.6/49)"/>
+
+          <class name="Crossover">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="67%  (2/3)"/>
+            <coverage type="block, %" value="96%  (180/188)"/>
+            <coverage type="line, %" value="95%  (46.6/49)"/>
+
+            <method name="Crossover (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="cross (List, double, int, int [], double []): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="97%  (176/181)"/>
+              <coverage type="line, %" value="96%  (45/47)"/>
+            </method>
+            <method name="&lt;static initializer&gt;">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (4/4)"/>
+              <coverage type="line, %" value="100% (2/2)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="FunctionalSet.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (2/2)"/>
+          <coverage type="block, %" value="100% (17/17)"/>
+          <coverage type="line, %" value="100% (4/4)"/>
+
+          <class name="FunctionalSet">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (2/2)"/>
+            <coverage type="block, %" value="100% (17/17)"/>
+            <coverage type="line, %" value="100% (4/4)"/>
+
+            <method name="FunctionalSet (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="randomOperator (): String">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (14/14)"/>
+              <coverage type="line, %" value="100% (3/3)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="TerminalSet.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (2/2)"/>
+          <coverage type="block, %" value="100% (17/17)"/>
+          <coverage type="line, %" value="100% (4/4)"/>
+
+          <class name="TerminalSet">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (2/2)"/>
+            <coverage type="block, %" value="100% (17/17)"/>
+            <coverage type="line, %" value="100% (4/4)"/>
+
+            <method name="TerminalSet (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="randomOperand (): String">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (14/14)"/>
+              <coverage type="line, %" value="100% (3/3)"/>
+            </method>
+          </class>
+        </srcfile>
+      </package>
+      <package name="test">
+        <coverage type="class, %" value="89%  (8/9)"/>
+        <coverage type="method, %" value="83%  (25/30)"/>
+        <coverage type="block, %" value="93%  (2124/2289)"/>
+        <coverage type="line, %" value="90%  (478.7/533)"/>
+
+        <srcfile name="GeneticProgrammingTest.java">
+          <coverage type="class, %" value="0%   (0/1)"/>
+          <coverage type="method, %" value="0%   (0/2)"/>
+          <coverage type="block, %" value="0%   (0/92)"/>
+          <coverage type="line, %" value="0%   (0/31)"/>
+
+          <class name="GeneticProgrammingTest">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/2)"/>
+            <coverage type="block, %" value="0%   (0/92)"/>
+            <coverage type="line, %" value="0%   (0/31)"/>
+
+            <method name="GeneticProgrammingTest (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="testBestPopulationTest (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/89)"/>
+              <coverage type="line, %" value="0%   (0/30)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="TestHelper.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="71%  (5/7)"/>
+          <coverage type="block, %" value="79%  (194/247)"/>
+          <coverage type="line, %" value="77%  (47/61)"/>
+
+          <class name="TestHelper">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="71%  (5/7)"/>
+            <coverage type="block, %" value="79%  (194/247)"/>
+            <coverage type="line, %" value="77%  (47/61)"/>
+
+            <method name="TestHelper (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="populate (int, int, int [], double []): List">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/50)"/>
+              <coverage type="line, %" value="0%   (0/13)"/>
+            </method>
+            <method name="calculateTargetValues (String, int []): double []">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (37/37)"/>
+              <coverage type="line, %" value="100% (8/8)"/>
+            </method>
+            <method name="generateNodes (Tree, Node, int): Tree">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (67/67)"/>
+              <coverage type="line, %" value="100% (16/16)"/>
+            </method>
+            <method name="genertateTrainingDataSet (int, int): int []">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (22/22)"/>
+              <coverage type="line, %" value="100% (5/5)"/>
+            </method>
+            <method name="getFunctionalSet (): FunctionalSet">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (22/22)"/>
+              <coverage type="line, %" value="100% (6/6)"/>
+            </method>
+            <method name="getTerminalSet (): TerminalSet">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (46/46)"/>
+              <coverage type="line, %" value="100% (12/12)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="AllTests.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="50%  (1/2)"/>
+          <coverage type="block, %" value="89%  (24/27)"/>
+          <coverage type="line, %" value="80%  (8/10)"/>
+
+          <class name="AllTests">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="50%  (1/2)"/>
+            <coverage type="block, %" value="89%  (24/27)"/>
+            <coverage type="line, %" value="80%  (8/10)"/>
+
+            <method name="AllTests (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/2)"/>
+            </method>
+            <method name="suite (): Test">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (24/24)"/>
+              <coverage type="line, %" value="100% (8/8)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="FitnessTest.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (2/2)"/>
+          <coverage type="block, %" value="96%  (149/155)"/>
+          <coverage type="line, %" value="92%  (37/40)"/>
+
+          <class name="FitnessTest">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (2/2)"/>
+            <coverage type="block, %" value="96%  (149/155)"/>
+            <coverage type="line, %" value="92%  (37/40)"/>
+
+            <method name="testFitness (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="96%  (146/152)"/>
+              <coverage type="line, %" value="92%  (36/39)"/>
+            </method>
+            <method name="FitnessTest (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="MutationTest.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (3/3)"/>
+          <coverage type="block, %" value="96%  (265/275)"/>
+          <coverage type="line, %" value="94%  (63.7/68)"/>
+
+          <class name="MutationTest">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (3/3)"/>
+            <coverage type="block, %" value="96%  (265/275)"/>
+            <coverage type="line, %" value="94%  (63.7/68)"/>
+
+            <method name="testSetRandomNodeToValue (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="95%  (132/139)"/>
+              <coverage type="line, %" value="92%  (27.7/30)"/>
+            </method>
+            <method name="testMutateTrees (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="98%  (130/133)"/>
+              <coverage type="line, %" value="95%  (35/37)"/>
+            </method>
+            <method name="MutationTest (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="TreeFitnessComparatorTest.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (2/2)"/>
+          <coverage type="block, %" value="100% (654/655)"/>
+          <coverage type="line, %" value="100% (131.9/132)"/>
+
+          <class name="TreeFitnessComparatorTest">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (2/2)"/>
+            <coverage type="block, %" value="100% (654/655)"/>
+            <coverage type="line, %" value="100% (131.9/132)"/>
+
+            <method name="testSort (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (651/652)"/>
+              <coverage type="line, %" value="100% (130.9/131)"/>
+            </method>
+            <method name="TreeFitnessComparatorTest (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="CrossoverTest.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (2/2)"/>
+          <coverage type="block, %" value="100% (373/373)"/>
+          <coverage type="line, %" value="100% (87/87)"/>
+
+          <class name="CrossoverTest">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (2/2)"/>
+            <coverage type="block, %" value="100% (373/373)"/>
+            <coverage type="line, %" value="100% (87/87)"/>
+
+            <method name="CrossoverTest (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="testCross (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (370/370)"/>
+              <coverage type="line, %" value="100% (86/86)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="NodeTest.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (2/2)"/>
+          <coverage type="block, %" value="100% (29/29)"/>
+          <coverage type="line, %" value="100% (9/9)"/>
+
+          <class name="NodeTest">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (2/2)"/>
+            <coverage type="block, %" value="100% (29/29)"/>
+            <coverage type="line, %" value="100% (9/9)"/>
+
+            <method name="NodeTest (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="testCopyNode (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (26/26)"/>
+              <coverage type="line, %" value="100% (8/8)"/>
+            </method>
+          </class>
+        </srcfile>
+        <srcfile name="TreeTest.java">
+          <coverage type="class, %" value="100% (1/1)"/>
+          <coverage type="method, %" value="100% (8/8)"/>
+          <coverage type="block, %" value="100% (436/436)"/>
+          <coverage type="line, %" value="100% (95/95)"/>
+
+          <class name="TreeTest">
+            <coverage type="class, %" value="100% (1/1)"/>
+            <coverage type="method, %" value="100% (8/8)"/>
+            <coverage type="block, %" value="100% (436/436)"/>
+            <coverage type="line, %" value="100% (95/95)"/>
+
+            <method name="TreeTest (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (3/3)"/>
+              <coverage type="line, %" value="100% (1/1)"/>
+            </method>
+            <method name="testAddNode (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (44/44)"/>
+              <coverage type="line, %" value="100% (9/9)"/>
+            </method>
+            <method name="testCopyTree (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (30/30)"/>
+              <coverage type="line, %" value="100% (7/7)"/>
+            </method>
+            <method name="testGetEquation (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (92/92)"/>
+              <coverage type="line, %" value="100% (23/23)"/>
+            </method>
+            <method name="testGetFunctionalSet (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (26/26)"/>
+              <coverage type="line, %" value="100% (7/7)"/>
+            </method>
+            <method name="testGetHeight (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (90/90)"/>
+              <coverage type="line, %" value="100% (19/19)"/>
+            </method>
+            <method name="testGetNumberOfNodes (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (109/109)"/>
+              <coverage type="line, %" value="100% (19/19)"/>
+            </method>
+            <method name="testTree (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (42/42)"/>
+              <coverage type="line, %" value="100% (10/10)"/>
+            </method>
+          </class>
+        </srcfile>
+      </package>
+    </all>
+  </data>
+</report>
