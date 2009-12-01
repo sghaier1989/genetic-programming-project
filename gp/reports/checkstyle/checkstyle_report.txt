@@ -1,0 +1,49 @@
+Starting audit...
+C:\workspace\gp\src\gp\Crossover.java:0: warning: Missing package-info.java file.
+C:\workspace\gp\src\gp\Crossover.java:15:1: warning: Utility classes should not have a public or default constructor.
+C:\workspace\gp\src\gp\Crossover.java:75: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\FindThread.java:483: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\FindThread.java:590: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\FindThread.java:856: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Fitness.java:18:1: warning: Utility classes should not have a public or default constructor.
+C:\workspace\gp\src\gp\Fitness.java:92: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Fitness.java:96: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\GeneticProgramming.java:172: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\GeneticProgramming.java:319:5: warning: Method length is 442 lines (max allowed is 150).
+C:\workspace\gp\src\gp\GeneticProgramming.java:808: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\GeneticProgramming.java:821: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\GeneticProgramming.java:881: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\GeneticProgramming.java:955: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Mutation.java:17:1: warning: Utility classes should not have a public or default constructor.
+C:\workspace\gp\src\gp\Mutation.java:61: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Node.java:344: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Tree.java:98: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Tree.java:101: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Tree.java:109: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Tree.java:139: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Tree.java:221: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Tree.java:242: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\gp\Tree.java:443: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\AllTests.java:0: warning: Missing package-info.java file.
+C:\workspace\gp\src\test\CrossoverTest.java:39: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:60: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:62: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:64: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:66: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:86: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:88: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:90: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:92: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:94: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\CrossoverTest.java:96: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\GeneticProgrammingTest.java:52:34: warning: Must have at least one statement.
+C:\workspace\gp\src\test\MutationTest.java:80: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\MutationTest.java:82: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\TestHelper.java:21:1: warning: Utility classes should not have a public or default constructor.
+C:\workspace\gp\src\test\TestHelper.java:79: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\TreeFitnessComparatorTest.java:59: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\TreeFitnessComparatorTest.java:63: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\TreeTest.java:65: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\TreeTest.java:93: warning: Line is longer than 80 characters.
+C:\workspace\gp\src\test\TreeTest.java:137: warning: Line is longer than 80 characters.
+Audit done.
